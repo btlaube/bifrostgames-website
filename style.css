@@ -85,9 +85,16 @@ hr {
     margin: 10px 0 0 0;
 }
 
-#banner img {
-    max-width: 100%;
+.banner-img {
+    background-size: cover;
+    background-position: center;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #333;
 }
 
 /* About Me section styles */
