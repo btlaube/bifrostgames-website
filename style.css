@@ -63,10 +63,10 @@ hr {
 
 /* Banner styles */
 #banner {
-    /* background-image: url('img/BifrostGamesBanner_v2.png'); */
+    /* background-image: url('img/BifrostGamesBannerNoBG.png'); */
     background-size: cover;
     background-position: center;
-    height: 300px;
+    /* height: 300px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -83,6 +83,11 @@ hr {
 #banner p {
     font-size: 1.3rem;
     margin: 10px 0 0 0;
+}
+
+#banner img {
+    width: 100%;
+    height: auto;
 }
 
 /* About Me section styles */
