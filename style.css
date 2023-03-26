@@ -86,7 +86,7 @@ hr {
 }
 
 #banner img {
-    width: 100%;
+    max-width: 900px;
     height: auto;
 }
 
