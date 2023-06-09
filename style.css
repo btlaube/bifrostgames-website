@@ -160,6 +160,34 @@ hr {
     image-rendering: crisp-edges;
 }
 
+.audio_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.audio_list_item {
+    /* display: inline-block; */
+    margin-right: 10px;
+}
+
+.audio_list_item figure {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.audio_list_item figcaption {
+	order: -1;             /* default value for all flex items is 1 */
+	display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 280px;
+    color: var(--accentColor);
+    padding: 10px 5px 10px 5px;
+	
+}
+
 /* Resume section styles */
 #resume h2 {
     padding: 50px 20px;
