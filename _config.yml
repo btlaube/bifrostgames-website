@@ -1,3 +1,6 @@
+title: Test Title Fart Butt
+
+
 collections:
   portfolio:
     output: true
@@ -5,5 +8,5 @@ collections:
   links:
     output: true
     permalink: /links
-# baseurl: ""
-title: Test Title Fart Butt
+
+
