@@ -2,4 +2,7 @@ collections:
   portfolio:
     output: true
     permalink: /portfolio/:title/
+  links:
+    output: true
+    permalink: /links
 baseurl: ""
