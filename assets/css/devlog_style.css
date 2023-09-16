@@ -1,0 +1,62 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bgColor: #280126;
+    --bgColor2: #ffffff;
+    --accentColor: #000000;
+    --accentColor2: #969696;
+    --font: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+}
+
+/* Basic styling */
+body {
+    font-family: var(--font);
+    background-color: var(--bgColor);
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    color: var(--bgColor2);
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+.entry {
+    max-width: 900px;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--bgColor2);
+    border-radius: 5px;
+}
+
+.entry h1 {
+    font-size: 24px;
+    color: var(--accentColor);
+}
+
+.entry h2 {
+    font-size: 18px;
+    color: var(--accentColor2);
+    font-weight: normal;
+}
+
+footer {
+    color: var(--accentColor2);
+}
