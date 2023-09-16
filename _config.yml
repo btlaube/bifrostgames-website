@@ -1,0 +1,5 @@
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
+baseurl: ""
