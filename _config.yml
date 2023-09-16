@@ -5,4 +5,4 @@ collections:
   links:
     output: true
     permalink: /links
-baseurl: ""
+# baseurl: ""
