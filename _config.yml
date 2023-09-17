@@ -1,22 +1,7 @@
-# collections:
-#   portfolio:
-#     output: true
-#     permalink: /portfolio/:title/
-#   links:
-#     output: true
-#     permalink: /links
-
-title: Portfolio
-baseurl: /portfolio
-url: "http://bifrostgames.org"
-google_analytics: # set tracking
-
-gems:
-  - jekyll-redirect-from
-
-exclude:
- - Gemfile
- - Gemfile.lock
-
-permalinks: pretty
-markdown: kramdown
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
+  links:
+    output: true
+    permalink: /links
