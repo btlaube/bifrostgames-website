@@ -64,10 +64,10 @@ h1 {
   
 .image-text-container img {
     width: 100%;
-    /* height: auto;
-    object-fit: cover;
-    max-width: 200px; */ */
-    margin-left: 20px; /* Add some spacing between the image and text */
+    /* height: auto; */
+    /* object-fit: cover; */
+    max-width: 200px;
+    /* margin-left: 20px;
 }
   
 
