@@ -92,6 +92,154 @@ permalink: /portfolio/personal-project-devlog/
                 I think I will go with a mostly open area with choke points to help guide the player. I plan on using the Slenderman map as inspiration.
             </p>
         </section>
+
+        <section class="entry">
+            <h1>Dev Log 4: Level Design Research</h1>
+            <h2>October 8, 2023</h2>
+            <p>
+                Today I didn't do a lot of technical work. Instead, I focused on researching level design, specifically for horror games. 
+                I also watched a GDC talk on YouTube about radically non-linear level design that gave me some good ideas. 
+                While I was researching level design, I realized that before I can decide how I should layout my level I really 
+                need to decide what my game is about. What is my game’s story? I realized that I wasn’t able to shorten my game’s 
+                concept down into a few words or even a few sentences. I also didn’t know what I wanted the main goal of the game to be. 
+                I can’t tackle level design until I have at least a main goal, so figuring that out will be the next thing I do.
+            </p>
+        </section>
+
+        <section class="entry">
+            <h1>Dev Log 5: Story and Experimenting with Shaders</h1>
+            <h2>October 9, 2023</h2>
+            <p>
+                Today I finally ironed out the story of my game. The story went through a few iterations, but each version had the player 
+                make their way back to the campsite, and had a different ending for what happens once the player reaches the campsite. 
+                Originally, the plan was to present the player with a decision as the monster approaches (implemented as a quick-time event):
+            </p>
+            <ol>
+                <li>Run: if the player chooses to run, they end up hurting themselves in the process. This is considered a bad ending.</li>
+                <li>Fight: if the player chooses to fight, they overpower and kill the monster. The hallucination then fades, and the 
+                    player realizes what they have done. This is considered a bad ending.</li>
+                <li>Nothing: A secret third option would be to let the quick-time event pass without making a decision. 
+                    If the player chooses this, then the monster approaches, and the hallucination fades, revealing the true 
+                    identity of the monster was the friends all along. This would be the only good ending.</li>
+            </ol>
+            <p>I had a few issues with this ending:</p>
+            <ul>
+                <li>I would have to implement a quick-time event, which would feel out of place unless quick-time events were a part of the rest of the game.</li>
+                <li>I might not have time to implement a quick-time event.</li>
+                <li>The majority of the endings are “bad”, which isn’t a huge issue for a horror game.</li>
+                <li>The player’s actions during the game don’t impact the ending in any way.</li>
+            </ul>
+            <p>The next iteration of the ending took these issues into account. The plan was to implement a few new mechanics:</p>
+            <ul>
+                <li>Stress level</li>
+                    <ul>
+                        <li>Tied to heart rate, breathing SFX, visual effects</li>
+                        <li>Triggers lose condition if it gets too high</li>
+                        <li>Lowers slowly over time</li>
+                    </ul>
+                <li>Faded level (highness)</li>
+                    <ul>
+                        <li>Tied to hallucination level (i.e. haziness filter)</li>
+                        <li>No way to lower</li>
+                    </ul>
+                <li>Smoke to increase Faded level and lower stress</li>
+                <li>Things that increase stress/heart rate:</li>
+                    <ul>
+                        <li>Looking at the monster</li>
+                        <li>Being close to the monster</li>
+                        <li>Sprinting</li>
+                    </ul>
+            </ul>
+            <p>With these mechanics, I would implement multiple endings once the player reaches the campsite. 
+                Similarly to the previous version, the player reaches the campsite, and the monster begins to approach.
+            </p>
+            <ol>
+                <li>If the player’s Faded Level is too high, the monster approaches and the game ends with visual effects 
+                    indicating the player succumbing to their hallucinations.</li>
+                    <ol>
+                        <li>Bad ending</li>
+                    </ol>
+                <li>If the player’s Faded Level is low enough, the hallucination fades, and the monster is revealed to be their friends.</li>
+                    <ol>
+                        <li>Good ending</li>
+                    </ol>
+                <li>If the player chooses to hide in a tent, then the player is safe until morning, and nothing is revealed about the monster or friends.</li>
+                    <ol>
+                        <li>Ambiguous ending</li>
+                    </ol>
+            </ol>
+            <p>I like this version due to the balance of good, bad, and ambiguous endings; however, the biggest limitation is 
+                the large amounts of mechanics I would have to implement which would increase development time and muddy-up the gameplay.
+            </p>
+            <p>The third and final version of the ending is similar to the previous version; however, it is more simplified. 
+                The simplified mechanics are now just
+            </p>
+            <ol>
+                <li>Stress level
+                    <ol>
+                        <li>Tied to heart rate, breathing SFX, visual effects</li>
+                        <li>Triggers lose condition if it gets too high</li>
+                        <li>Lowers slowly over time</li>
+                    </ol>
+                </li>
+            </ol>
+            <p>I had always planned to have an artifact collecting mechanic in some shape or form. Artifact collection would be a 
+                main part of the gameplay, similar to Slender: The Eight Pages, so I wanted it to play a role in the ending of the game. 
+                Similar to the past version, once the player reaches the campsite, the monster begins to approach, then one of the following happen:
+            </p>
+            <ol>
+                <li>If the player didn't collect enough artifacts, the hallucination takes over and the monster closes in.</li>
+                    <ol>
+                        <li>Bad ending</li>
+                    </ol>
+                <li>If the player collected enough artifacts, the hallucination fades and the monster is revealed to be the friends.</li>
+                    <ol>
+                        <li>Good ending</li>
+                    </ol>
+                <li>If the player hides in a tent, the player is safe until day and nothing is revealed about the monster or friends.</li>
+                    <ol>
+                        <li>Ambiguous ending</li>
+                    </ol>
+            </ol>
+            <p>This version of the story keeps the balance and player agency of the previous version, while simplifying the necessary mechanics.</p>
+            <p>Besides ironing out the story, I also worked with shaders and post processing in Unity. 
+                I wrote a few scripts that gave me the ability to influence a few different audio and visual effects with a single variable. 
+                The player has a stress variable that will start at 0, and if it gets to 1 at any point the lose condition is triggered 
+                (not yet implemented).
+            </p>
+            <p>This stress variable is tied to a few different effects:</p>
+            <ul>
+                <li>Heartbeat audio volume and pitch</li>
+                <li>Shader noise strength</li>
+                <li>Shader red filter strength</li>
+            </ul>
+        </section>
+
+        <section class="entry">
+            <h1>Dev Log 6: Getting Ready For Playtesting: Level Design and Artifact Mechanic</h1>
+            <h2>October 10, 2023</h2>
+            <p>Admittedly, today involved a little bit of crunch. I wanted to make sure I had something for in-class playtesting tomorrow. 
+                While I was in my meteorology lecture, I came up with an idea for the map of my game. 
+                I got inspiration from the show Yellowjackets, a show about a highschool soccer team that is stranded in a remote forest after 
+                a plane crash. In the show, a few of the characters begin mapping the nearby sections of woods and discover a set of symbols, 
+                and when the location of each symbol is mapped they all collectively form a larger version of the symbol. I wanted to do something 
+                similar with my game, so I designed a witchy, occult-like symbol using some alchemical symbols. 
+                I then drew the game map over this symbol, and placed the artifacts at each of the symbol’s key vertices
+            </p>
+            <p>To design this map in Unity I used a Terrain object, which allowed me to “paint” elevation, trees, and ground textures. 
+                Using this technique I was able to quickly lay out the game map that I had previously designed; 
+                however, it is not very easily edited or updated. For example, I decided the tree model I used did not match the aesthetic of 
+                my game, but I would have to repaint the entire map in order to change it.
+            </p>
+            <p>Painting trees onto the terrain also did not give me a lot of control over spacing. 
+                I want to have two hidden paths, and the spacing of the trees makes it quite difficult to find these paths. 
+                I’ll have to see if they are too difficult to find during playtesting tomorrow.
+            </p>
+            <p>I also implemented a simple artifact collection mechanic that was mainly recycled from my Ludum Dare 54 game jam entry. 
+                I then placed an “Artifact” (currently just a cube) at each vertex of the occult symbol I designed.
+            </p>
+        </section>
+
     </main>
 
     <footer>
