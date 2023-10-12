@@ -59,9 +59,9 @@ h1 {
 
 
 .entry img {
-    width: 100%;
-    height: auto;
+    /* width: 100%; */
     max-width: 900px;
+    height: auto;
 }
 
 .image-text-container {
