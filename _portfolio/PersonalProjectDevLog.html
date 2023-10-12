@@ -29,6 +29,7 @@ permalink: /portfolio/personal-project-devlog/
                 ends up killing their friends thinking they were defending themselves from a beast. I now realize that this is also what happens in the movie The Village 
                 except she was blind and not on drugs.
             </p>
+            <br>
             <p>
                 For this project I want to focus on the visual aspect. I want to create visuals that are reminiscent of old indie-horror games. I found an interesting 
                 method to give the game a pixelated look by rendering the camera view to a render texture, then putting the render texture onto a large image on a canvas. 
@@ -40,7 +41,7 @@ permalink: /portfolio/personal-project-devlog/
             <h1>Dev Log 1: Player Movement</h1>
             <h2>September 27, 2023</h2>
             <p>
-                Didn't do a ton today, but I got the beginnings of a 3D first person player movement script working. The movement is incredibly important for this game 
+                I didn't do a ton today, but I got the beginnings of a 3D first person player movement script working. The movement is incredibly important for this game 
                 as it is most of the gameplay and it is what connects the player to the game world. The better that connection is the scarier the game will be.
             </p>
         </section>
@@ -51,15 +52,18 @@ permalink: /portfolio/personal-project-devlog/
             <p>
                 I started today by creating a basic environment to test my player movement in. I added a plane, and some stretched cubes to be walls.
             </p>
+            <br>
             <p>
                 After trying for too long to use the mouse to control the player's gaze, I ended up giving up and getting a prebuilt first person 
                 player controller from the Unity Asset Store. I modified the code to use Unity's new input system because I want to be able to play 
                 this game with mouse and keyboard or controller. The asset also came with crouch, sprint, and jump which may come in handy. 
             </p>
+            <br>
             <p>
                 Additionally, the asset came with an audio manager for footsteps, jump sound, crouch sounds, etc. The sounds were really good right off 
                 the bat; however, I slowed the player movement way down, so I also had to pitch down all of the audio sources. 
             </p>
+            <br>
             <p>
                 The last thing I added was a dynamic camera bob to simulate walking that adjusts when the player sprints. With the camera bob, repitched 
                 audio, and slowed movement the player controller was finished. I really like how it turned out, and it is the perfect horror vibe I was going for.
@@ -72,6 +76,7 @@ permalink: /portfolio/personal-project-devlog/
             <p>
                 During our in-class lab time I was able to do some experimenting with lighting and materials.
             </p>
+            <br>
             <p>
                 I want the scene to be dark, but it can't be completely dark (the player has to be able to see something). I originally set up my
                 moon as a sphere that was very far away from the player and very large. This created a nice effect of the moon always being the same.
@@ -80,6 +85,7 @@ permalink: /portfolio/personal-project-devlog/
                 one aimed at the moon to further illuminate the sphere, and another aimed away from the moon to act as the light coming from the moon and to illuminate
                 the scene. After some experimenting, I decided that just making the moon's material an emitter was enough and made the scene dark enough but not too dark.
             </p>
+            <br>
             <p>
                 I also messed around with a 3D character model. A big goal of mine is to create a properly horrifying monster for my game. A huge inspiration for me
                 is The Beast from Over the Garden Wall. In OTGW, The Beast is always depicted as a creepy sillihuet until the end, when The Beast's true form is illuminated for
@@ -87,6 +93,7 @@ permalink: /portfolio/personal-project-devlog/
                 I have not figured out a way to make a 3D model that is both darker than the surrounding area and yet still visible. I have a few ideas that I will test in the future.
                 One of which is to have the monster always illuminated from the back.
             </p>
+            <br>
             <p>
                 Lastly, I talked to Professor Francesca about level design, which I had been putting off thinking about. I will have to experiment, but I
                 I think I will go with a mostly open area with choke points to help guide the player. I plan on using the Slenderman map as inspiration.
@@ -172,7 +179,7 @@ permalink: /portfolio/personal-project-devlog/
                 the large amounts of mechanics I would have to implement which would increase development time and muddy-up the gameplay.
             </p>
             <p>The third and final version of the ending is similar to the previous version; however, it is more simplified. 
-                The simplified mechanics are now just
+                The simplified mechanics are now just:
             </p>
             <ol>
                 <li>Stress level
@@ -202,6 +209,7 @@ permalink: /portfolio/personal-project-devlog/
                     </ol>
             </ol>
             <p>This version of the story keeps the balance and player agency of the previous version, while simplifying the necessary mechanics.</p>
+            <br>
             <p>Besides ironing out the story, I also worked with shaders and post processing in Unity. 
                 I wrote a few scripts that gave me the ability to influence a few different audio and visual effects with a single variable. 
                 The player has a stress variable that will start at 0, and if it gets to 1 at any point the lose condition is triggered 
@@ -226,15 +234,18 @@ permalink: /portfolio/personal-project-devlog/
                 similar with my game, so I designed a witchy, occult-like symbol using some alchemical symbols. 
                 I then drew the game map over this symbol, and placed the artifacts at each of the symbol’s key vertices
             </p>
+            <br>
             <p>To design this map in Unity I used a Terrain object, which allowed me to “paint” elevation, trees, and ground textures. 
                 Using this technique I was able to quickly lay out the game map that I had previously designed; 
                 however, it is not very easily edited or updated. For example, I decided the tree model I used did not match the aesthetic of 
                 my game, but I would have to repaint the entire map in order to change it.
             </p>
+            <br>
             <p>Painting trees onto the terrain also did not give me a lot of control over spacing. 
                 I want to have two hidden paths, and the spacing of the trees makes it quite difficult to find these paths. 
                 I’ll have to see if they are too difficult to find during playtesting tomorrow.
             </p>
+            <br>
             <p>I also implemented a simple artifact collection mechanic that was mainly recycled from my Ludum Dare 54 game jam entry. 
                 I then placed an “Artifact” (currently just a cube) at each vertex of the occult symbol I designed.
             </p>
