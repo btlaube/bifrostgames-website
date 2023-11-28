@@ -1,11 +1,8 @@
-# RewriteEngine On
-# RewriteBase /
+RewriteEngine On
+RewriteBase /
 
 # # Remove folder names from the URL
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^([^/]+)/?$ /pages/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ /portfolio/$1 [L]
 
-RewriteEngine On
-Options -Indexes #prevents access to folders
-RewriteRule ^links?$ ./pages/links.html
