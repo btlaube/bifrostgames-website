@@ -4,5 +4,5 @@ RewriteBase /
 # # Remove folder names from the URL
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^([^/]+)/?$ /portfolio/$1 [L]
+RewriteRule ^([^/]+)/?$ /$1 [L]
 
