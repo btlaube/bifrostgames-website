@@ -1,11 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Remove folder names from the URL
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-
-RewriteCond %{REQUEST_URI} !^/testfolder/ [NC]
-RewriteRule ^(.*)$ testfolder/$1 [L]
-
-RewriteCond %{REQUEST_URI} !^/pages/portfolio/ [NC]
-RewriteRule ^(.*)$ pages/portfolio/$1 [L]
-
-RewriteCond %{REQUEST_URI} !^/pages/projects/ [NC]
-RewriteRule ^(.*)$ pages/projects/$1 [L]
+RewriteRule ^([^/]+)/?$ /pages/portfolio/$1 [L]
