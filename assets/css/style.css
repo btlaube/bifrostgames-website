@@ -29,6 +29,11 @@ body {
     margin:0 auto;
 }
 
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 /* Header styles */
 header {
     background-color: var(--bgColor2);
