@@ -1,7 +1,0 @@
-collections:
-  portfolio:
-    output: true
-    permalink: /portfolio/:name
-  links:
-    output: true
-    permalink: /links
