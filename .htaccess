@@ -1,5 +1,0 @@
-RewriteEngine On
-
-
-RewriteCond %{REQUEST_URI} ^/portfolio/
-RewriteRule (.*) /$1 [L]
