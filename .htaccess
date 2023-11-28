@@ -8,4 +8,4 @@
 
 RewriteEngine On
 Options -Indexes #prevents access to folders
-RewriteRule ^links?$ ./subdipagesr2/links.html
+RewriteRule ^links?$ ./pages/links.html
