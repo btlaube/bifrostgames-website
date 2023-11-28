@@ -1,4 +1,11 @@
-RewriteCond %{REQUEST_URI} !^/folder/ [NC]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ folder/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/testfolder/ [NC]
+RewriteRule ^(.*)$ testfolder/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/pages/portfolio/ [NC]
+RewriteRule ^(.*)$ pages/portfolio/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/pages/projects/ [NC]
+RewriteRule ^(.*)$ pages/projects/$1 [L]
