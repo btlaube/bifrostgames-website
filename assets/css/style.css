@@ -152,7 +152,7 @@ hr {
 
 .image-text-container {
     display: flex; /* Use flexbox for layout control */
-    align-items: center; /* Vertically center the items */
+    align-items: flex-start; /* Vertically center the items */
 }
   
 .image-text-container img {
