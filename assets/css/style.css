@@ -168,7 +168,7 @@ hr {
 }
 
 .subtle-link {
-    color: inherit;
+    color: var(--accentColor);
     text-decoration: inherit;
 }
 
