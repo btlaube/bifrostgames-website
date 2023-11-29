@@ -156,7 +156,7 @@ hr {
 }
   
 .image-text-container img {
-    width: 100%;
+    width: 300px;
     height: auto;
     max-width: 300px;
     margin-right: 30px;
