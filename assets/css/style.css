@@ -159,6 +159,11 @@ hr {
     width: 100%;
     height: auto;
     max-width: 300px;
+    margin-right: 10px;
+}
+
+.text-container {
+    text-align: left;
 }
 
 .games_gallery {
@@ -190,32 +195,6 @@ hr {
     object-fit: cover;
     max-width: 400px;
 }
-
-/* .artwork_gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
-.artwork_gallery img {
-    width: max=300px;
-    height: auto;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-} */
-
-/* .artwork_gallery_rectangle {
-    width: var(--img-size, 400px);
-    height: auto;
-    object-fit: cover;
-}
-
-.artwork_gallery_square {
-    width: var(--img-size, 200px);
-    height: auto;
-    object-fit: cover;
-} */
 
 .audio_list {
     margin: 0;
