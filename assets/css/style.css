@@ -172,6 +172,11 @@ hr {
     text-decoration: inherit;
 }
 
+#portfolio a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+}
+
 .games_gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
