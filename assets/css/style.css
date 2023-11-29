@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--accentColor);
-    max-width: 900px;
+    max-width: 1080px;
     padding-left: 5%;
     padding-right: 5%;
     margin:0 auto;
@@ -123,23 +123,31 @@ hr {
 /* Portfolio section styles */
 #portfolio {
     padding: 50px 20px;
+    text-align: left;
+}
+
+#portfolio h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 #portfolio h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 #portfolio h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 #portfolio h4 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    text-align: center;
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .image-text-container {
@@ -150,7 +158,7 @@ hr {
 .image-text-container img {
     width: 100%;
     height: auto;
-    max-width: 450px;
+    max-width: 300px;
 }
 
 .games_gallery {
