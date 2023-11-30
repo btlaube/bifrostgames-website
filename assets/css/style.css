@@ -172,7 +172,7 @@ hr {
     text-decoration: none;
 }
 
-.subtle-link:hover {
+.image-text-container .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
