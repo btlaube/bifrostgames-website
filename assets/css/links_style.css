@@ -76,6 +76,15 @@ body {
     color: var(--bgColor);
 }
 
+.subtle-link {
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+.subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
 #footer {
     position: relative;
     padding-bottom: 20px;
