@@ -172,6 +172,10 @@ hr {
     text-decoration: none;
 }
 
+.subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
 /* .subtle_link a:hover {
     background-color: var(--accentColor2);
     color: var(--accentColor);
