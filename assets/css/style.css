@@ -271,15 +271,33 @@ hr {
 }
 
 /* Resume section styles */
-#resume h2 {
+#resume {
     padding: 50px 20px;
-    text-align: center;
+    text-align: left;
+}
+
+#resume h1 {
     font-size: 3rem;
     margin-bottom: 30px;
+    text-align: center;
+}
+
+#resume h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 #resume h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#resume h4 {
+    font-size: 1.0rem;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 #resume li {
