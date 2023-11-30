@@ -169,13 +169,18 @@ hr {
 
 .subtle-link {
     color: var(--accentColor);
-    text-decoration: inherit;
+    text-decoration: none;
 }
 
-#portfolio a:hover {
+/* .subtle_link a:hover {
     background-color: var(--accentColor2);
     color: var(--accentColor);
-}
+} */
+
+/* #portfolio a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+} */
 
 .games_gallery {
     display: grid;
