@@ -76,12 +76,12 @@ body {
     color: var(--bgColor);
 }
 
-.subtle-link {
+#userName .subtle-link {
     color: var(--accentColor);
     text-decoration: none;
 }
 
-.subtle-link:hover {
+#userName .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
