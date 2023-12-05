@@ -51,6 +51,15 @@
             <br>
             <p>In the end, I landed on a space game inspired by asteroids and the third minigame from OUTBREAK (made by Liv, Laynie, and Danielle). You control an orbital demolition drone equipped with a chargeable pulse attack, and you must destroy various space themed obstacles (decommissioned satellites, asteroids, etc.). Your attacks are limited and you must collect fragments from destroyed obstacles to recharge your weapon. You will have to release your pulse attacks at the optimal time with the optimal strength to create chain reactions. Chain reactions are necessary to create the most fragments in order to recharge your weapon.</p>
         </section>
+
+        <section class="entry">
+            <h1>Dev Log 2: Player Movement</h1>
+            <p>Day 2 was spent ironing out a movement system. It was fairly simple and did not take long. As you can see from the GIF below it is heavily inspired by asteroids as well as OUTBREAK</p>
+            <a><img src="/assets/img/Devlogs/astralPulse/playerMovement.gif" alt=""></a>
+            <p>I wanted another way to show the player charging up an attack with varying levels of output potential, so I used a particle system and wrote a script that modified various attributes of the particle system to show an increase in power.</p>
+            <a><img src="/assets/img/Devlogs/astralPulse/openIdleCharge.gif" alt=""></a>
+            <p>I had not implemented many particle systems in past projects, so this was a learning experience. I had not realized how many customizable features Unity particle systems had, so I spent quite a bit of time experimenting. One thing I added was making the particles increase with opacity over their lifetime, which gave the effect of the particles materializing around the player. I also wanted the particles to have trails that would increase in opacity as well; however, I could not figure out a way to do this. It seems using Unity’s built in particle trail would apply the opacity to the entire trail as opposed to giving the trail its own gradient. I may come back to this later; however, I think the particles without trails achieves the look I was going for.</p>
+        </section>
     </main>
 
     <footer>
