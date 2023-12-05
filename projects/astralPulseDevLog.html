@@ -60,6 +60,27 @@
             <a><img src="/assets/img/Devlogs/astralPulse/openIdleCharge.gif" alt=""></a>
             <p>I had not implemented many particle systems in past projects, so this was a learning experience. I had not realized how many customizable features Unity particle systems had, so I spent quite a bit of time experimenting. One thing I added was making the particles increase with opacity over their lifetime, which gave the effect of the particles materializing around the player. I also wanted the particles to have trails that would increase in opacity as well; however, I could not figure out a way to do this. It seems using Unity’s built in particle trail would apply the opacity to the entire trail as opposed to giving the trail its own gradient. I may come back to this later; however, I think the particles without trails achieves the look I was going for.</p>
         </section>
+
+        <section class="entry">
+            <h1>Dev Log 3: Additional Player Visuals</h1>
+            <p></p>
+        </section>
+
+        <section class="entry">
+            <h1>Dev Log 5: A Break From Visuals…</h1>
+            <p>Today I took a break from visuals to focus on the mechanics I needed for a minimum viable product. I was able to reuse and adapt much of the code I needed from past projects.</p>
+            <br>
+
+            <p>For example, I quickly created a health and death system by adapting a similar system.
+                Obstacle spawning was a simple solution for now, and may need to be updated later. The obstacle health/death system was also an adaptation of my previously written code. In addition to making the player’s attacks damage and destroy obstacles, I made obstacles able to damage and destroy other obstacles on collisions. I am hoping this encourages the player to try to plan their attacks strategically. 
+                </p>
+            <br>
+
+            <p>I also added some additional game-juice effects, such as adjusting the scaling of both the attack visual and in-game effect programmatically depending on the player’s charged attack level and adjusting the time scale to create a slow-mo effect when the player fully charges their attack.</p>
+            <br>
+
+            <p>The last thing I added today was a boundary that deletes all objects, to increase performance.</p>
+        </section>
     </main>
 
     <footer>
