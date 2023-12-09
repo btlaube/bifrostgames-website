@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Lessons And Skills Section */
+.lessons-and-skills {
+    background-color: #f5f5f5;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.lessons-and-skills h2 {
+    color: #007bff;
+}
+
+.lessons-and-skills p {
+    line-height: 1.6;
+}
+
+/* Office Hours Section */
+.office-hours, .weekly-lab-section, .issues-resolved, .week-in-review, .personal-goals {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.office-hours h2, .weekly-lab-section h2, .issues-resolved h2, .week-in-review h2, .personal-goals h2 {
+    color: #007bff;
+}
+
+/* Summary and Hours Worked Styling */
+.office-hours .summary, .weekly-lab-section .summary {
+    margin-bottom: 20px;
+}
+
+.office-hours .hours-worked, .weekly-lab-section .hours-worked {
+    margin-bottom: 20px;
+}
+
+/* Issues Resolved Section */
+.issues-resolved p {
+    line-height: 1.6;
+}
+
+/* Week In Review Section */
+.week-in-review {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.week-in-review h2 {
+    color: #007bff;
+}
+
+/* Personal Goals Section */
+.personal-goals p {
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
