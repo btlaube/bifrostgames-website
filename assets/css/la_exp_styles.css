@@ -64,6 +64,30 @@ nav a:hover {
     color: #000000;
 }
 
+#entries h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#entries h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#entries h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#entries h4 {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 /* Date Styles */
 .date {
     color: #555;
