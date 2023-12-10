@@ -7,6 +7,10 @@ body {
     font-family: 'Karla', sans-serif;
     margin: 0;
     background-color: #280126;
+    flex-direction: column; /* Align items vertically
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */ */
+    max-width:900px;
 }
 
 /* Header styles */
