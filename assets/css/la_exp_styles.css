@@ -4,6 +4,12 @@
     --bgColor2: #ffffff;
     --accentColor: #000000;
     --accentColor2: #969696;
+    --headerBg: #000000;
+    --bodybg: #280126;
+    --oddEntryAccent:#ffffff;
+    --oddEntryBg:#969696;
+    --evenEntryAccent:#969696;
+    --evenEntryBg:#ffffff;
     --font: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
@@ -55,66 +61,15 @@ main {
     padding: 20px;
 }
 
-/* Lessons And Skills Section */
-.lessons-and-skills {
-    background-color: var(--accentColor2);
-    border: 2px solid var(--bgColor);
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.lessons-and-skills h2 {
-    color: var(--bgColor);
-}
-
-.lessons-and-skills p {
-    line-height: 1.6;
-}
-
-/* Office Hours Section */
-.office-hours, .weekly-lab-section, .issues-resolved, .week-in-review, .personal-goals {
-    background-color: var(--bgColor2);
-    border: 1px solid var(--accentColor2);
+#entries .oddEntry
+{
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
 }
 
-.office-hours h2, .weekly-lab-section h2, .issues-resolved h2, .week-in-review h2, .personal-goals h2 {
-    color: var(--bgColor);
-}
-
-/* Summary and Hours Worked Styling */
-.office-hours .summary, .weekly-lab-section .summary {
-    margin-bottom: 20px;
-}
-
-.office-hours .hours-worked, .weekly-lab-section .hours-worked {
-    margin-bottom: 20px;
-}
-
-/* Issues Resolved Section */
-.issues-resolved p {
-    line-height: 1.6;
-}
-
-/* Week In Review Section */
-.week-in-review {
-    background-color: var(--accentColor2);
-    border: 1px solid var(--bgColor2);
-    padding: 15px;
-    margin-bottom: 20px;
-}
-
-.week-in-review h2 {
-    color: var(--bgColor);
-}
-
-/* Personal Goals Section */
-.personal-goals p {
-    line-height: 1.6;
-}
 
 footer {
     background-color: var(--accentColor);
