@@ -9,7 +9,7 @@ body {
     background-color: #280126;
     flex-direction: column; /* Align items vertically
     align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */ */
+    justify-content: center; /* Center items vertically */ 
     max-width:900px;
 }
 
@@ -67,20 +67,22 @@ nav a:hover {
 }
 
 #entries h1 {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-top: 0;
     margin-bottom: 0px;
     text-align: left;
 }
 
 #entries h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0px;
     text-align: left;
 }
 
 #entries h3 {
-    font-size: 2rem;
+    font-size: 0.9rem;
+    margin-top: 0;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -94,9 +96,10 @@ nav a:hover {
 .tags {
     color: #9b9b9b;
     font-style: italic;
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
     margin-bottom: 10px;
     text-align: left;
+    font-weight: normal;
 }
 
 /* Date Styles */
@@ -105,12 +108,12 @@ nav a:hover {
     margin-top: 0px;
     margin-bottom: 5px;
     /* text-align: left; */
-    /* font-size: 2rem; */
+    /* font-size: 1rem; */
     /* margin-bottom: 20px; */
     /* text-align: left; */
     font-size: 18px;
     color: #000000;
-    font-weight: normal;
+    /* font-weight: normal; */
 }
 
 footer {
