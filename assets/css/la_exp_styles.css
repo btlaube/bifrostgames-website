@@ -10,7 +10,7 @@ body {
     flex-direction: column; /* Align items vertically
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */ 
-    max-width:900px;
+    /* max-width:900px; */
 }
 
 /* Header styles */
@@ -64,6 +64,11 @@ nav a:hover {
     padding: 100px;
     background-color: #280126;
     color: #000000;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    /* align-items: center; /* Center items horizontally */ */
+    justify-content: center; /* Center items vertically */
 }
 
 #entries h1 {
