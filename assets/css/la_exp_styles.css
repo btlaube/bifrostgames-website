@@ -43,9 +43,9 @@ nav a:hover {
 
 /* Odd Entry Styles */
 .oddEntry {
-    background-color: #969696;
+    background-color: #542a4f;
     color: #000000;
-    border: 1px solid #ffffff;
+    border: 1px solid #ff80f0;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
@@ -53,9 +53,9 @@ nav a:hover {
 
 /* Even Entry Styles */
 .evenEntry {
-    background-color: #ffffff;
+    background-color: #ff80f0;
     color: #000000;
-    border: 1px solid #969696;
+    border: 1px solid #542a4f;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
