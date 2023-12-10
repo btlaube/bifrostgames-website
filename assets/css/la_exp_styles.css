@@ -1,15 +1,9 @@
 
 :root {
-    --bgColor: #280126;
-    --bgColor2: #ffffff;
-    --accentColor: #000000;
-    --accentColor2: #969696;
     --headerBg: #000000;
     --bodybg: #280126;
-    --oddEntryAccent:#ffffff;
-    --oddEntryBg:#969696;
-    --evenEntryAccent:#969696;
-    --evenEntryBg:#ffffff;
+    --white:#ffffff;
+    --grey:#969696;
     --font: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
@@ -61,13 +55,34 @@ main {
     padding: 20px;
 }
 
-#entries .oddEntry
-{
-    background-color: #fff;
-    border: 1px solid #ddd;
+/* Odd Entry Styles */
+#entries .oddEntry {
+    background-color: var(--white);
+    color: var(--headerBg);
+    border: 1px solid var(--grey);
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
+}
+
+/* Even Entry Styles */
+#entries .evenEntry {
+    background-color: var(--grey);
+    color: var(--headerBg);
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#entries .oddEntry h2, .evenEntry h2 {
+    color: #007bff;
+}
+
+/* Date Styles */
+.date {
+    color: #555;
+    font-style: italic;
 }
 
 
