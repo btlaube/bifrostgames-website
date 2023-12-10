@@ -29,11 +29,27 @@ nav li {
 nav a {
     display: block;
     padding: 5px;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#entries {
+    padding:20px;
+}
+
+.oddEntry {
+    background: #ffffff;
+    border: #989898;
+    border-radius: 5px;
+}
+
+.evenEntry {
+    background: #989898;
+    border: #ffffff;
+    border-radius: 5px;
 }
