@@ -12,13 +12,13 @@ body {
 /* Header styles */
 header {
     background-color: #000000;
-    padding: 10px;
+    padding: 50px;
     opacity: 0.8;
 }
 
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 50px;
     list-style: none;
 }
 
