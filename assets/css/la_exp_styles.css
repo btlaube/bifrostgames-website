@@ -17,34 +17,65 @@ main {
     padding: 20px;
 }
 
-/* Odd Entry Styles */
-.oddEntry {
-    background-color: var(--oddEntryBg, #969696);
-    color: var(--oddEntryAccent, #ffffff);
-    border: 1px solid #ddd;
+/* Lessons And Skills Section */
+.lessons-and-skills, .oddEntry {
+    background-color: #f5f5f5;
+    border: 2px solid #007bff;
     border-radius: 8px;
-    margin-bottom: 20px;
     padding: 20px;
+    margin-bottom: 20px;
 }
 
-/* Even Entry Styles */
-.evenEntry {
-    background-color: var(--evenEntryBg, #ffffff);
-    color: var(--evenEntryAccent, #969696);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.oddEntry h2, .evenEntry h2 {
+.lessons-and-skills, .oddEntry h2 {
     color: #007bff;
 }
 
-/* Date Styles */
-.date {
-    color: #555;
-    font-style: italic;
+.lessons-and-skills, .oddEntry p {
+    line-height: 1.6;
+}
+
+/* Office Hours Section */
+.office-hours, .weekly-lab-section, .issues-resolved, .week-in-review, .personal-goals, .oddEntry {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.office-hours h2, .weekly-lab-section h2, .issues-resolved h2, .week-in-review h2, .personal-goals, .oddEntry h2 {
+    color: #007bff;
+}
+
+/* Summary and Hours Worked Styling */
+.office-hours .summary, .weekly-lab-section .summary, .oddEntry {
+    margin-bottom: 20px;
+}
+
+.office-hours .hours-worked, .weekly-lab-section .hours-worked, .oddEntry {
+    margin-bottom: 20px;
+}
+
+/* Issues Resolved Section */
+.issues-resolved, .oddEntry p {
+    line-height: 1.6;
+}
+
+/* Week In Review Section */
+.week-in-review, .oddEntry {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.week-in-review, .oddEntry h2 {
+    color: #007bff;
+}
+
+/* Personal Goals Section */
+.personal-goals, .oddEntry p {
+    line-height: 1.6;
 }
 
 footer {
