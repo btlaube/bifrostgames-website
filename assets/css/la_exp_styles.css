@@ -16,7 +16,7 @@ header {
 }
 
 nav ul {
-    margin-left: 50px;
+    margin: 0;
     list-style: none;
 }
 
@@ -38,9 +38,9 @@ nav a:hover {
 
 /* Odd Entry Styles */
 .oddEntry {
-    background-color: #542a4f;
+    background-color: #4a4a4a;
     color: #000000;
-    border: 1px solid #ff80f0;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
@@ -48,9 +48,9 @@ nav a:hover {
 
 /* Even Entry Styles */
 .evenEntry {
-    background-color: #ff80f0;
+    background-color: #4a4a4a;
     color: #000000;
-    border: 1px solid #542a4f;
+    border: 1px solid #ffffff;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
@@ -96,6 +96,9 @@ nav a:hover {
 
 /* Date Styles */
 .date {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
     /* font-size: 2rem; */
     margin-bottom: 20px;
     text-align: center;
