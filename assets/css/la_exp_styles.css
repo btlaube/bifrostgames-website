@@ -17,16 +17,21 @@ body {
 header {
     background-color: #000000;
     opacity: 0.8;
+    padding: 10px;
+    padding-left: 10%;
+    
 }
 
 nav ul {
     margin: 0;
     list-style: none;
+    
 }
 
 nav li {
     display: inline-block;
     margin-right: 10px;
+    
 }
 
 nav a {
@@ -34,6 +39,7 @@ nav a {
     padding: 5px;
     color: #ffffff;
     text-decoration: none;
+    
 }
 
 nav a:hover {
@@ -61,14 +67,24 @@ nav a:hover {
 }
 
 #entries {
-    padding: 100px;
+    /* padding: 100px; */
     background-color: #280126;
     color: #000000;
     max-width: 900px;
     display: flex;
     flex-direction: column; /* Align items vertically */
-    /* align-items: center; /* Center items horizontally */ */
+    /* align-items: center; /* Center items horizontally */ 
     justify-content: center; /* Center items vertically */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* color: var(--accentColor); */
+    max-width: 1080px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin:0 auto;
 }
 
 #entries h1 {
