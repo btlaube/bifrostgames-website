@@ -6,7 +6,6 @@ html {
 body {
     font-family: 'Karla', sans-serif;
     margin: 0;
-    padding: 100px;
 }
 
 /* Header styles */
@@ -60,6 +59,7 @@ nav a:hover {
 }
 
 #entries {
+    padding: 100px;
     background-color: #280126;
     color: #000000;
 }
