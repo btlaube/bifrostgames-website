@@ -114,6 +114,22 @@ nav a:hover {
     text-align: left;
 }
 
+#entries table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+#entries th, td {
+    padding: 10px;
+    border: none;
+    vertical-align: middle;
+}
+
+#entries th {
+    background-color: #f2f2f2; /* Optional: Add background color to header cells */
+}
+
 .tags {
     color: #9b9b9b;
     font-style: italic;
