@@ -116,7 +116,7 @@ nav a:hover {
 
 #entries table {
     border-collapse: collapse;
-    width: 100%;
+    width: 80%;
     text-align: center;
 }
 
@@ -124,10 +124,6 @@ nav a:hover {
     padding: 10px;
     border: none;
     vertical-align: middle;
-}
-
-#entries th {
-    background-color: #f2f2f2; /* Optional: Add background color to header cells */
 }
 
 .tags {
