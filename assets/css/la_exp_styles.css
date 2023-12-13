@@ -83,19 +83,22 @@ nav a:hover {
 }
 
 #about h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
+    font-size: 2.3rem;
+    margin-top: 0;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
 #about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0px;
+    text-align: left;
 }
 
 #about h3 {
-    font-size: 2rem;
+    font-size: 0.9rem;
+    margin-top: 0;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -114,7 +117,7 @@ nav a:hover {
 #posts {
     /* padding: 100px; */
     background-color: #280126;
-    color: #000000;
+    /* color: #000000; */
     max-width: 900px;
     display: flex;
     flex-direction: column; /* Align items vertically */
