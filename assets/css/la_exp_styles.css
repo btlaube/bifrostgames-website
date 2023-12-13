@@ -70,9 +70,49 @@ nav a:hover {
 
 /* Week Review Entry Styles */
 .weekReview {
-    background-color: #4a4a4a;
+    background-color: #ff009d;
     color: #000000;
     border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.keyEvents {
+    background-color: #00d9ff;
+    color: #000000;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.issueResolved {
+    background-color: #4400ff;
+    color: #000000;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.personalGoal {
+    background-color: #91ff00;
+    color: #000000;
+    border: 1px solid #4a4a4a;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.lessonsSkills {
+    background-color: #ff0000;
+    color: #000000;
+    border: 1px solid #4a4a4a;
     border-radius: 8px;
     margin-bottom: 30px;
     padding: 20px;
