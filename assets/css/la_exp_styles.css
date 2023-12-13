@@ -54,6 +54,7 @@ nav a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 /* Even Entry Styles */
@@ -64,6 +65,7 @@ nav a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 /* Week Review Entry Styles */
@@ -74,6 +76,7 @@ nav a:hover {
     border-radius: 8px;
     margin-bottom: 30px;
     padding: 20px;
+    margin-top: 20px;
 }
 
 /* About Me section styles */
@@ -94,14 +97,16 @@ nav a:hover {
     max-width: 1080px;
     padding-left: 100px;
     padding-right: 100px;
-    margin:0 auto;
+    /* margin:0 auto; */
+    margin-top: 20px;
 }
 
 #about h1 {
-    font-size: 2.3rem;
-    margin-top: 0;
+    font-size: 3rem;
+    margin-top: 30px;
     margin-bottom: 0px;
     text-align: left;
+    color: #ffffff;
 }
 
 #about h2 {
@@ -148,6 +153,7 @@ nav a:hover {
     padding-left: 100px;
     padding-right: 100px;
     margin:0 auto;
+    margin-top: 20px;
 }
 
 #posts h1 {
@@ -173,7 +179,7 @@ nav a:hover {
 
 #posts h4 {
     font-size: 3rem;
-    margin-top: 0;
+    margin-top: 30px;
     margin-bottom: 0px;
     text-align: left;
     color: #ffffff;
