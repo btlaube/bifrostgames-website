@@ -70,7 +70,7 @@ nav a:hover {
 
 /* Week Review Entry Styles */
 .weekReview {
-    background-color: #ff009d;
+    background-color: #2f2f2f;
     color: #000000;
     border: 1px solid #ffffff;
     border-radius: 8px;
@@ -80,7 +80,7 @@ nav a:hover {
 }
 
 .keyEvent {
-    background-color: #00d9ff;
+    background-color: #004a78;
     color: #000000;
     border: 1px solid #4a4a4a;
     border-radius: 8px;
@@ -90,7 +90,7 @@ nav a:hover {
 }
 
 .issueResolved {
-    background-color: #4400ff;
+    background-color: #0e4f00;
     color: #000000;
     border: 1px solid #4a4a4a;
     border-radius: 8px;
@@ -100,7 +100,7 @@ nav a:hover {
 }
 
 .personalGoal {
-    background-color: #91ff00;
+    background-color: #72006b;
     color: #000000;
     border: 1px solid #4a4a4a;
     border-radius: 8px;
@@ -110,7 +110,7 @@ nav a:hover {
 }
 
 .lessonsSkills {
-    background-color: #ff0000;
+    background-color: #000131;
     color: #000000;
     border: 1px solid #4a4a4a;
     border-radius: 8px;
