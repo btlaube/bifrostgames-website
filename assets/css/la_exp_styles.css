@@ -104,17 +104,33 @@ nav a:hover {
     border-radius: 8px;
     margin: 20px;
     padding: 20px;
+    position: relative;
 }
 
-.personalGoal h2 {
-    color: #007bff;
-}
-
-.goal, .progress, .trending {
+.goal {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
 }
 
-.goal h3, .progress h3, .trending h3 {
+.goal-image {
+    width: 100px;
+    height: 100px;
+    /* background-image: ""; Replace with your actual image */
+    background-size: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.goal-content {
+    flex-grow: 1;
+}
+
+.goal-content h3 {
+    color: #007bff;
+}
+
+.progress h3, .trending h3 {
     color: #007bff;
 }
 
