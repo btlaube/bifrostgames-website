@@ -66,6 +66,16 @@ nav a:hover {
     padding: 20px;
 }
 
+/* Week Review Entry Styles */
+.weekReview {
+    background-color: #4a4a4a;
+    color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
 #entries {
     /* padding: 100px; */
     background-color: #280126;
