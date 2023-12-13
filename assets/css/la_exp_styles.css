@@ -117,8 +117,8 @@ nav a:hover {
 #posts {
     /* padding: 100px; */
     background-color: #280126;
-    /* color: #000000; */
-    max-width: 900px;
+    color: #000000;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column; /* Align items vertically */
     /* align-items: center; /* Center items horizontally */ 
@@ -128,7 +128,7 @@ nav a:hover {
     position: relative;
     margin: 0;
     padding: 0;
-    color: #ffffff;
+    /* color: #ffffff; */
     max-width: 1080px;
     padding-left: 100px;
     padding-right: 100px;
@@ -157,9 +157,11 @@ nav a:hover {
 }
 
 #posts h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0px;
     text-align: left;
+    color: #ffffff;
 }
 
 #posts table {
