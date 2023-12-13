@@ -255,9 +255,10 @@ nav a:hover {
 }
 
 #reflection {
-    padding: 50px 20px;
-    text-align: left;
+    /* padding: 100px; */
+    background-color: #003249;
     color: #ffffff;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column; /* Align items vertically */
     /* align-items: center; /* Center items horizontally */ 
@@ -271,7 +272,7 @@ nav a:hover {
     max-width: 1080px;
     padding-left: 100px;
     padding-right: 100px;
-    /* margin:0 auto; */
+    margin:0 auto;
     margin-top: 20px;
 }
 
