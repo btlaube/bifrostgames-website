@@ -81,6 +81,20 @@ nav a:hover {
     padding: 50px 20px;
     text-align: left;
     color: #ffffff;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    /* align-items: center; /* Center items horizontally */ 
+    justify-content: center; /* Center items vertically */
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    /* color: #ffffff; */
+    max-width: 1080px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin:0 auto;
 }
 
 #about h1 {
