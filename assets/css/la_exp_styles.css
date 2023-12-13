@@ -221,6 +221,10 @@ nav a:hover {
     text-align: center;
 }
 
+.personalGoal table {
+    text-align: left;
+}
+
 #posts th, td {
     padding: 10px;
     border: none;
