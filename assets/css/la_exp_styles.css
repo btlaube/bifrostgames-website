@@ -61,51 +61,51 @@ nav a:hover {
 .weekReview {
     background-color: #003049;
     color: #000000;
-    border: 1px solid #ffffff;
+    border: 3px solid #000000;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .keyEvent {
     background-color: #f77f00;
     color: #000000;
-    border: 1px solid #4a4a4a;
+    border: 2px solid #000000;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-top: 25;
+    margin-bottom: 25;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .issueResolved {
     background-color: #eae2b7;
     color: #000000;
-    border: 1px solid #4a4a4a;
+    border: 2px solid #000000;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-top: 25;
+    margin-bottom: 25;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .personalGoal {
     background-color: #d62828;
     color: #000000;
-    border: 1px solid #4a4a4a;
+    border: 2px solid #000000;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-top: 25;
+    margin-bottom: 25;
     padding: 20px;
-    margin-top: 20px;
 }
 
 .lessonsSkills {
     background-color: #fcbf49;
     color: #000000;
-    border: 1px solid #4a4a4a;
+    border: 2px solid #000000;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-top: 25;
+    margin-bottom: 25;
     padding: 20px;
-    margin-top: 20px;
 }
 
 /* About Me section styles */
@@ -165,7 +165,7 @@ nav a:hover {
 
 #posts {
     /* padding: 100px; */
-    background-color: #280126;
+    background-color: #001520;
     color: #000000;
     /* max-width: 900px; */
     display: flex;
