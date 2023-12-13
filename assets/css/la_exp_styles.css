@@ -111,7 +111,7 @@ nav a:hover {
     height: auto;
 }
 
-#entries {
+#posts {
     /* padding: 100px; */
     background-color: #280126;
     color: #000000;
@@ -125,47 +125,47 @@ nav a:hover {
     position: relative;
     margin: 0;
     padding: 0;
-    /* color: var(--accentColor); */
+    color: #ffffff;
     max-width: 1080px;
     padding-left: 100px;
     padding-right: 100px;
     margin:0 auto;
 }
 
-#entries h1 {
+#posts h1 {
     font-size: 2.3rem;
     margin-top: 0;
     margin-bottom: 0px;
     text-align: left;
 }
 
-#entries h2 {
+#posts h2 {
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 0px;
     text-align: left;
 }
 
-#entries h3 {
+#posts h3 {
     font-size: 0.9rem;
     margin-top: 0;
     margin-bottom: 20px;
     text-align: left;
 }
 
-#entries h4 {
+#posts h4 {
     font-size: 1.0rem;
     margin-bottom: 10px;
     text-align: left;
 }
 
-#entries table {
+#posts table {
     border-collapse: collapse;
     width: 80%;
     text-align: center;
 }
 
-#entries th, td {
+#posts th, td {
     padding: 10px;
     border: none;
     vertical-align: middle;
