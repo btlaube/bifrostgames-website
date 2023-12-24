@@ -23,9 +23,12 @@ body {
     background-color: var(--bgColor);
     margin: 20px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+
+    max-width: 1080px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin:0 auto;
 }
 
 header {
