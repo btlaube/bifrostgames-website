@@ -38,6 +38,29 @@ h1 {
     font-size: 36px;
 }
 
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 5px;
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+}
+
 .entry {
     max-width: 900px;
     margin: 20px;
