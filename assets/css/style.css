@@ -304,6 +304,35 @@ hr {
     padding-bottom: 10px;
 }
 
+.tab-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #f2f2f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Large drop shadow for the tab list */
+}
+
+.tab-item {
+    margin: 0;
+}
+
+.tab-link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow for each tab item */
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+
+
+
 /* Links section styles */
 
 #links h2 {
