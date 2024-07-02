@@ -43,7 +43,7 @@ header {
 }
 
 #about img {
-    max-width: 100%;
+    min-width: 200%;
     justify-content: center;
     display: flex;
 }
