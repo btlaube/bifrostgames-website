@@ -42,12 +42,6 @@ header {
     opacity: 0.8;
 }
 
-#about img {
-    min-width: 200%;
-    justify-content: center;
-    display: flex;
-}
-
 nav ul {
     margin: 0;
     padding: 0;
@@ -144,8 +138,8 @@ hr {
 }
 
 #about img {
-    max-width: 200px;
-    height: auto;
+    justify-content: center;
+    display: flex;
 }
 
 /* Portfolio section styles */
