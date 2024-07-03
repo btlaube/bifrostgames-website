@@ -42,12 +42,6 @@ header {
     opacity: 0.8;
 }
 
-#about img {
-    max-width: 100%;
-    justify-content: center;
-    display: flex;
-}
-
 nav ul {
     margin: 0;
     padding: 0;
@@ -142,11 +136,11 @@ hr {
     margin-bottom: 10px;
     text-align: left;
 }
-
+/* 
 #about img {
-    max-width: 200px;
-    height: auto;
-}
+    justify-content: center;
+    display: flex;
+} */
 
 /* Portfolio section styles */
 #portfolio {
@@ -180,14 +174,14 @@ hr {
 
 .image-text-container {
     display: flex; /* Use flexbox for layout control */
-    align-items: flex-start; /* Vertically center the items */
+    justify-content: space-around;
     margin-bottom: 30px;
 }
   
 .image-text-container img {
-    width: 300px;
+    width: 300%;
     height: auto;
-    max-width: 300px;
+    max-width: 350px;
     margin-right: 30px;
 }
 
