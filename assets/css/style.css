@@ -29,11 +29,6 @@ body {
     margin:0 auto;
 }
 
-/* a {
-    color: inherit;
-    text-decoration: inherit;
-} */
-
 /* Header styles */
 header {
     background-color: var(--bgColor2);
@@ -136,11 +131,6 @@ hr {
     margin-bottom: 10px;
     text-align: left;
 }
-/* 
-#about img {
-    justify-content: center;
-    display: flex;
-} */
 
 /* Portfolio section styles */
 #portfolio {
@@ -181,12 +171,13 @@ hr {
 .image-text-container img {
     width: 300%;
     height: auto;
-    max-width: 350px;
-    /* margin-right: 30px; */
+    max-width: 400px;
+    padding: 20px;
 }
 
 .text-container {
     text-align: left;
+    padding: 20px;
 }
 
 .subtle-link {
@@ -201,16 +192,6 @@ hr {
 .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
-
-/* .subtle_link a:hover {
-    background-color: var(--accentColor2);
-    color: var(--accentColor);
-} */
-
-/* #portfolio a:hover {
-    background-color: var(--accentColor2);
-    color: var(--accentColor);
-} */
 
 .games_gallery {
     display: grid;
