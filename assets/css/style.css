@@ -169,7 +169,7 @@ hr {
 }
   
 .image-text-container img {
-    width: 300%;
+    width: 300px;
     height: auto;
     max-width: 400px;
     padding: 20px;
