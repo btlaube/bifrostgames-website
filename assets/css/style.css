@@ -174,9 +174,8 @@ hr {
 
 .image-text-container {
     display: flex; /* Use flexbox for layout control */
-    align-items: flex-start; /* Vertically center the items */
+    justify-content: space-around;
     margin-bottom: 30px;
-    margin-left: 10px;
 }
   
 .image-text-container img {
