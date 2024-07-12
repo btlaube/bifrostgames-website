@@ -169,6 +169,12 @@ hr {
     margin-bottom: 30px;
 }
 
+.horizontal-container img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
 .image-text-container {
     display: flex; /* Use flexbox for layout control */
     justify-content: space-around;
