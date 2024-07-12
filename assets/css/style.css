@@ -17,9 +17,9 @@ html {
 body {
     font-family: var(--font);
     background: var(--bgColor2);
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
     color: var(--accentColor);
     max-width: 900px;
     display: flex;
@@ -34,6 +34,7 @@ header {
     opacity: 0.8;
 }
 
+/*General styles */
 nav ul {
     list-style: none;
 }
@@ -55,7 +56,6 @@ nav a:hover {
     color: var(--accentColor);
 }
 
-/*General styles */
 hr {
     border: solid 1px var(--accentColor);
     border-color: var(--accentColor);
@@ -71,6 +71,59 @@ hr {
 	float: right;
 }
 
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.horizontal-container {
+    display: flex; 
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.horizontal-container img {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
+.image-text-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+  
+.image-text-container img {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+}
+
+.text-container {
+    text-align: left;
+    width: auto;
+    padding: 20px;
+}
+
+.subtle-link {
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+.image-text-container .subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Section styles */
 /* Banner styles */
 #banner {
     display: flex;
@@ -158,115 +211,6 @@ hr {
     text-align: left;
 }
 
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.horizontal-container {
-    display: flex; 
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.horizontal-container img {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-}
-
-.image-text-container {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-  
-.image-text-container img {
-    width: 300px;
-    height: auto;
-    padding: 20px;
-}
-
-.text-container {
-    text-align: left;
-    width: auto;
-    padding: 20px;
-}
-
-.subtle-link {
-    color: var(--accentColor);
-    text-decoration: none;
-}
-
-.image-text-container .subtle-link:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-.subtle-link:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-.games_gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 10px;
-}
-
-.games_gallery img {
-    width: var(--img-size, 200px);
-    height: auto;
-    object-fit: cover;
-}  
-
-.artwork_gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 10px;
-    /* justify-items: center; */
-    align-items: center;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-}
-
-.artwork_gallery img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-width: 400px;
-}
-
-.audio_list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.audio_list_item {
-    /* display: inline-block; */
-    margin-right: 10px;
-}
-
-.audio_list_item figure {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.audio_list_item figcaption {
-	order: -1;             /* default value for all flex items is 1 */
-	display: flex;
-    flex-direction: row;
-    justify-content: left;
-    width: 280px;
-    color: var(--accentColor);
-    padding: 10px 5px 10px 5px;
-	
-}
-
 /* Resume section styles */
 #resume {
     padding: 50px 20px;
@@ -301,37 +245,7 @@ hr {
     padding-bottom: 10px;
 }
 
-.tab-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: #f2f2f2;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Large drop shadow for the tab list */
-}
-
-.tab-item {
-    margin: 0;
-}
-
-.tab-link {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Drop shadow for each tab item */
-}
-
-.tab-link:hover {
-    background-color: #ddd;
-}
-
-
-
-
 /* Links section styles */
-
 #links h2 {
     padding: 50px 20px;
     text-align: center;
@@ -375,49 +289,6 @@ hr {
     color: var(--bgColor);
 }
 
-/* Contact Me section styles */
-#contact {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
-
-form {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-input[type="submit"] {
-    background-color: transparent;
-    color: var(--accentColor);
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    cursor: pointer;
-    padding: 10px 20px;
-}
-
-input[type="submit"]:hover {
-    background-color: var(--accentColor);
-    color: var(--bgColor2);
-}
 
 /* Footer styles */
 footer {
