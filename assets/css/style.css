@@ -163,6 +163,12 @@ hr {
     text-align: left;
 }
 
+.horizontal-container {
+    display: flex; /* Use flexbox for layout control */
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
 .image-text-container {
     display: flex; /* Use flexbox for layout control */
     justify-content: space-around;
