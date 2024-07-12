@@ -164,7 +164,7 @@ hr {
 }
 
 .horizontal-container {
-    display: flex; /* Use flexbox for layout control */
+    display: flex; 
     justify-content: space-around;
     margin-bottom: 30px;
 }
@@ -176,7 +176,7 @@ hr {
 }
 
 .image-text-container {
-    display: flex; /* Use flexbox for layout control */
+    display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
 }
