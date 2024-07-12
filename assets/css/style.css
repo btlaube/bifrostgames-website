@@ -21,7 +21,7 @@ body {
     background-size: cover;
     position: relative;
     color: var(--accentColor);
-    max-width: 1080px;
+    max-width: 900px;
     display: flex;
     flex-direction: column;
     justify-content: center;
