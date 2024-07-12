@@ -69,16 +69,6 @@ hr {
 	float: right;
 }
 
-.horizontal-container {
-    display: flex; 
-    justify-content: space-around;
-}
-
-.horizontal-container img {
-    width: 300px;
-    height: auto;
-}
-
 .image-text-container {
     display: flex;
     justify-content: space-around;
@@ -87,11 +77,13 @@ hr {
 .image-text-container img {
     width: 300px;
     height: auto;
+    padding: 10px;
 }
 
 .text-container {
     text-align: left;
     width: auto;
+    padding: 10px;
 }
 
 .subtle-link {
@@ -276,8 +268,9 @@ hr {
 
 /* Footer styles */
 footer {
+    padding-top: 150px;
+    padding-bottom: 10px;
     background-color: var(--bgColor2);
-    padding: 10px;
     text-align: center;
     color: var(--accentColor);
 }
