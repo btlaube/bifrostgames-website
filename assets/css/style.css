@@ -22,6 +22,9 @@ body {
     position: relative;
     color: var(--accentColor);
     max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Header styles */
