@@ -165,7 +165,7 @@ hr {
 
 .horizontal-container {
     display: flex; /* Use flexbox for layout control */
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 30px;
 }
 
