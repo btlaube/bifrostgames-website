@@ -11,20 +11,18 @@
 html {
     scroll-behavior: smooth;
     scroll-padding: 10rem;
+    display: table;
+    margin: auto;
 }
 
 /* Basic styles for the entire website */
 body {
     font-family: var(--font);
     background: var(--bgColor2);
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; */
     color: var(--accentColor);
     max-width: 900px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 /* Header styles */
