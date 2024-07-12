@@ -69,43 +69,29 @@ hr {
 	float: right;
 }
 
-
-.vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
 .horizontal-container {
     display: flex; 
     justify-content: space-around;
-    margin-bottom: 30px;
 }
 
 .horizontal-container img {
-    width: 100%;
+    width: 300px;
     height: auto;
-    padding: 20px;
 }
 
 .image-text-container {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 30px;
 }
   
 .image-text-container img {
     width: 300px;
     height: auto;
-    padding: 20px;
 }
 
 .text-container {
     text-align: left;
     width: auto;
-    padding: 20px;
 }
 
 .subtle-link {
