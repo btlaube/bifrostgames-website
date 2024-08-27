@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
+
+:root {
+    --bgColor: #280126;
+    --bgColor2: #050505;
+    --accentColor: #FFF;
+    --accentColor2: #333;
+    --font: 'Karla', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+    display: table;
+    margin: auto;
+}
+
+/* Basic styles for the entire website */
+body {
+    font-family: var(--font);
+    background: var(--bgColor2);
+    color: var(--accentColor);
+    max-width: 900px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #846936;
+    background-image: url(https://bifrostgames.org/assets/img/round_self_portrait.png);
+    background-repeat: repeat;
+    background-position: 50% 0;
+}
+
+/* Header styles */
+header {
+    background-color: var(--bgColor2);
+    padding: 50px;
+    opacity: 0.8;
+}
+
+/*General styles */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 5px;
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+}
+
+hr {
+    border: solid 1px var(--accentColor);
+    border-color: var(--accentColor);
+    /* box-shadow: 0px 0px 3px 0px var(--accentColor); */
+    width: 100%;
+    margin: 5px 0;
+} 
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+
+.image-text-container {
+    display: flex;
+    justify-content: space-around;
+}
+  
+.image-text-container img {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+}
+
+.text-container {
+    text-align: left;
+    width: auto;
+    padding: 10px;
+}
+
+.subtle-link {
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+.image-text-container .subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Section styles */
+/* Banner styles */
+#banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--accentColor);
+}
+
+#banner h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+#banner p {
+    font-size: 1.3rem;
+    margin: 10px 0 0 0;
+}
+
+#banner img {
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+/* About Me section styles */
+#about {
+    padding: 50px 20px;
+    text-align: left;
+}
+
+#about h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#about h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#about h4 {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Portfolio section styles */
+#portfolio {
+    padding: 50px 20px;
+    text-align: left;
+}
+
+#portfolio h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#portfolio h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#portfolio h4 {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Resume section styles */
+#resume {
+    padding: 50px 20px;
+    text-align: left;
+}
+
+#resume h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#resume h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#resume h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#resume h4 {
+    font-size: 1.0rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#resume li {
+    padding-bottom: 10px;
+}
+
+/* Links section styles */
+#links h2 {
+    padding: 50px 20px;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+#links {
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin: 27px auto;
+}
+
+.link {
+    position: relative;
+    background-color: transparent;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .link:hover {
+        background-color: var(--accentColor);
+        color: var(--bgColor);
+    }
+}
+
+.link:active {
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+}
+
+
+/* Footer styles */
+footer {
+    padding-top: 150px;
+    padding-bottom: 10px;
+    background-color: var(--bgColor2);
+    text-align: center;
+    color: var(--accentColor);
+}
+
