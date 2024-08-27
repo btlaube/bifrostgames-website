@@ -32,8 +32,8 @@ body {
 /* Header styles */
 header {
     background-color: var(--bgColor2);
-    padding: 50px;
-    opacity: 0.8;
+    padding: 10px;
+    /* opacity: 0.8; */
 }
 
 /*General styles */
