@@ -103,62 +103,19 @@ hr {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Section styles */
-/* Banner styles */
-#banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--accentColor);
-}
-
-#banner h1 {
+h1 {
     font-size: 3rem;
-    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-#banner p {
-    font-size: 1.3rem;
-    margin: 10px 0 0 0;
-}
+/* Section styles */
 
 #banner img {
     max-width: 100%;
     justify-content: center;
     display: flex;
     padding-bottom: 30px;
-}
-
-/* About Me section styles */
-#about {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#about h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#about h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#about h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
 }
 
 /* Portfolio section styles */
