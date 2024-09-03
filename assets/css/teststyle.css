@@ -231,7 +231,7 @@ h1 {
 footer {
     padding-top: 150px;
     padding-bottom: 10px;
-    background-color: var(--bgColor2);
+    /* background-color: var(--bgColor2); */
     text-align: center;
     color: var(--accentColor);
 }
