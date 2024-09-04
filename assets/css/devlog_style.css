@@ -1,49 +1,43 @@
-/* Reset some default styles */
-body, h1, h2, p {
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
 :root {
     --bgColor: #280126;
-    --bgColor2: #ffffff;
-    --accentColor: #000000;
-    --accentColor2: #969696;
-    --font: Helvetica Neue, Helvetica, Arial, sans-serif;
+    --bgColor2: #050505;
+    --accentColor: #FFF;
+    --accentColor2: #333;
+    --font: 'Karla', sans-serif;
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding: 10rem;
+    display: table;
+    margin: auto;
 }
 
-/* Basic styling */
+/* Basic styles for the entire website */
 body {
     font-family: var(--font);
-    background-color: var(--bgColor);
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-
-    max-width: 1080px;
-    padding-left: 5%;
-    padding-right: 5%;
-    margin:0 auto;
+    background: var(--bgColor2);
+    color: var(--accentColor);
+    max-width: 900px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: var(--bgColor2);
+    background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png);
+    background-repeat: repeat;
+    background-position: 50% 0;
+    padding: 50px 20px;
+    text-align: left;
 }
 
+/* Header styles */
 header {
-    color: var(--bgColor2);
-    text-align: center;
-    padding: 10px;
+    padding: 50px;
 }
 
-h1 {
-    font-size: 36px;
-}
-
+/*General styles */
 nav ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
 }
 
@@ -64,45 +58,117 @@ nav a:hover {
     color: var(--accentColor);
 }
 
-.entry {
-    max-width: 900px;
-    margin: 20px;
-    padding: 20px;
-    background-color: var(--bgColor2);
-    border-radius: 5px;
+hr {
+    border: solid 1px var(--accentColor);
+    border-color: var(--accentColor);
+    width: 100%;
+    margin: 5px 0;
+} 
+
+.alignleft {
+	float: left;
 }
-
-.entry h1 {
-    font-size: 24px;
-    color: var(--accentColor);
-}
-
-.entry h2 {
-    font-size: 18px;
-    color: var(--accentColor2);
-    font-weight: normal;
-}
-
-
-.entry img {
-    /* width: 100%; */
-    max-width: 900px;
-    height: auto;
-    align-items: center;
+.alignright {
+	float: right;
 }
 
 .image-text-container {
-    display: flex; /* Use flexbox for layout control */
-    align-items: center; /* Vertically center the items */
+    display: flex;
+    justify-content: space-around;
 }
   
 .image-text-container img {
-    width: 100%;
+    width: 300px;
     height: auto;
-    max-width: 450px;
+    padding: 10px;
 }
-  
 
-footer {
-    color: var(--accentColor2);
+.text-container {
+    text-align: left;
+    width: auto;
+    padding: 10px;
 }
+
+.subtle-link {
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+.subtle-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.horizontal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+/* Section styles */
+#banner img {
+    max-width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+#links {
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin: 27px auto;
+}
+
+.link {
+    position: relative;
+    background-color: transparent;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+    .link:hover {
+        background-color: var(--accentColor);
+        color: var(--bgColor);
+    }
+}
+
+.link:active {
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+}
+
+
+/* Footer styles */
+footer {
+    padding-top: 150px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: var(--accentColor);
+}
+
