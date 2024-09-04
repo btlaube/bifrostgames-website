@@ -105,6 +105,12 @@ hr {
     text-decoration: underline; /* Underline on hover */
 }
 
+.horizontal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 h1 {
     font-size: 3rem;
     margin-bottom: 30px;
