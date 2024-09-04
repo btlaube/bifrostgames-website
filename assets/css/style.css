@@ -28,7 +28,14 @@ body {
 /* Header styles */
 header {
     padding: 50px;
+    text-align: center;
 }
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*General styles */
 nav ul {
