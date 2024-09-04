@@ -21,9 +21,6 @@ body {
     background: var(--bgColor2);
     color: var(--accentColor);
     max-width: 900px;
-    /* display: table-cell;
-    vertical-align: middle;
-    text-align: left; */
 }
 
 .element-box {
@@ -128,34 +125,24 @@ h3 {
 }
 
 #links {
-    max-width: 675px;
-    width: auto;
-    display: block;
+    max-width: 800px;
     margin: 27px auto;
 }
 
 .link {
-    position: relative;
-    background-color: transparent;
     color: var(--accentColor);
     border: solid var(--accentColor) 2px;
     border-radius: 10px;
-    font-size: 1rem;
     text-align: center;
     display: block;
-    margin-left: 10px;
-    margin-right: 10px;
     margin-bottom: 10px;
     padding: 10px;
     text-decoration: none;
-    -webkit-tap-highlight-color: transparent;
 }
 
-@media (hover: hover) {
-    .link:hover {
-        background-color: var(--accentColor);
-        color: var(--bgColor);
-    }
+.link:hover {
+    background-color: var(--accentColor);
+    color: var(--bgColor);
 }
 
 .link:active {
@@ -169,6 +156,5 @@ footer {
     padding-top: 150px;
     padding-bottom: 10px;
     text-align: center;
-    color: var(--accentColor);
 }
 
