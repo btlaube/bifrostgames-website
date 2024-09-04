@@ -27,6 +27,8 @@ body {
     background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png);
     background-repeat: repeat;
     background-position: 50% 0;
+    padding: 50px 20px;
+    text-align: left;
 }
 
 /* Header styles */
@@ -110,7 +112,6 @@ h1 {
 }
 
 /* Section styles */
-
 #banner img {
     max-width: 100%;
     justify-content: center;
@@ -118,77 +119,12 @@ h1 {
     padding-bottom: 30px;
 }
 
-/* Portfolio section styles */
-#portfolio {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#portfolio h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#portfolio h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#portfolio h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#portfolio h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
 /* Resume section styles */
-#resume {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#resume h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#resume h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#resume h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#resume h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
-}
 
 #resume li {
     padding-bottom: 10px;
 }
 
-/* Links section styles */
-#links h2 {
-    padding: 50px 20px;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 30px;
-}
 
 #links {
     max-width: 675px;
