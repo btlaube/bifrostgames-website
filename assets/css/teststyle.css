@@ -27,6 +27,10 @@ body {
     padding: 50px 20px;
 }
 
+banner {
+    text-align: center;
+}
+
 /* Header styles */
 header {
     padding: 50px;
