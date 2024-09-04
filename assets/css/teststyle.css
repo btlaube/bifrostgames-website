@@ -23,10 +23,10 @@ body {
     max-width: 900px;
     display: table-cell;
     vertical-align: middle;
-    background-color: var(--bgColor2);
-    background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png);
-    background-repeat: repeat;
-    background-position: 50% 0;
+    /* background-color: var(--bgColor2); */
+    /* background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png); */
+    /* background-repeat: repeat; */
+    /* background-position: 50% 0; */
     padding: 50px 20px;
     text-align: left;
 }

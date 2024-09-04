@@ -27,9 +27,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: var(--bgColor2);
     padding: 50px;
-    opacity: 0.8;
 }
 
 /*General styles */
@@ -57,7 +55,6 @@ nav a:hover {
 hr {
     border: solid 1px var(--accentColor);
     border-color: var(--accentColor);
-    /* box-shadow: 0px 0px 3px 0px var(--accentColor); */
     width: 100%;
     margin: 5px 0;
 } 
@@ -91,142 +88,38 @@ hr {
     text-decoration: none;
 }
 
-.image-text-container .subtle-link:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
 .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
 }
 
-/* Section styles */
-/* Banner styles */
-#banner {
+.horizontal-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    color: var(--accentColor);
 }
 
-#banner h1 {
+h1 {
     font-size: 3rem;
-    margin: 0;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-#banner p {
-    font-size: 1.3rem;
-    margin: 10px 0 0 0;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
+h3 {
+    font-size: 1rem;
+    margin-bottom: 1px;
+}
+
+/* Section styles */
 #banner img {
     max-width: 100%;
     justify-content: center;
     display: flex;
     padding-bottom: 30px;
-}
-
-/* About Me section styles */
-#about {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#about h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#about h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#about h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-/* Portfolio section styles */
-#portfolio {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#portfolio h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#portfolio h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-#portfolio h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#portfolio h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-/* Resume section styles */
-#resume {
-    padding: 50px 20px;
-    text-align: left;
-}
-
-#resume h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-#resume h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#resume h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-#resume h4 {
-    font-size: 1.0rem;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-#resume li {
-    padding-bottom: 10px;
-}
-
-/* Links section styles */
-#links h2 {
-    padding: 50px 20px;
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 30px;
 }
 
 #links {
@@ -270,7 +163,6 @@ hr {
 footer {
     padding-top: 150px;
     padding-bottom: 10px;
-    background-color: var(--bgColor2);
     text-align: center;
     color: var(--accentColor);
 }
