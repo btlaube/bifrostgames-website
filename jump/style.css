@@ -3,6 +3,18 @@
     margin: 0;
     overflow-x: hidden;
 }
+
+body {
+    max-width: 900px;
+    display: table-cell;
+    vertical-align: middle;
+    background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png);
+    background-repeat: repeat;
+    background-position: 50% 0;
+    padding: 50px 20px;
+    text-align: left;
+}
+
 .game{
     width: 500px;
     height: 200px;
@@ -13,6 +25,7 @@
     width: 20px;
     height: 50px;
     background-color: red;
+    background-image: url(https://bifrostgames.org/assets/img/Icons/LoopBGProrfilPage.png);
     position:relative;
     top: 150px;
 }
