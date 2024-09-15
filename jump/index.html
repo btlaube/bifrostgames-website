@@ -1,25 +1,52 @@
-<!DOCTYPE html>
-<html lang="en" onclick="jump()">
-<head>
-    <meta charset="UTF-8">
-    <title>Jump Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="game">
-        <div id="character"></div>
-        <div id="block"></div>
-    </div>
-    <p>Score: <span id="scoreSpan"></span></p>
+var character = document.getElementById("character");
+var block = document.getElementById("block");
+var counter = 0;
+var modal = document.getElementById("gameOverModal");
+var modalText = document.getElementById("modalText");
+var restartButton = document.getElementById("restartButton");
+var quitButton = document.getElementById("quitButton");
 
-    <div id="gameOverModal" class="modal">
-        <div class="modal-content">
-            <span id="modalText"></span>
-            <button id="restartButton">Restart</button>
-            <button id="quitButton">Quit</button>
-        </div>
-    </div>
-    
-</body>
-<script src="script.js"></script>
-</html>
+function jump() {
+    if (character.classList.contains("animate")) { return; }
+    character.classList.add("animate");
+    setTimeout(function () {
+        character.classList.remove("animate");
+    }, 300);
+}
+
+var checkDead = setInterval(function () {
+    let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    if (blockLeft < 20 && blockLeft > -20 && characterTop >= 130) {
+        block.style.animation = "none";
+        showModal();  // Replace alert with showModal
+    } else {
+        counter++;
+        document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+    }
+}, 10);
+
+function showModal() {
+    modal.style.display = "block"; // Display the custom modal
+    modalText.innerHTML = "Game Over. Score: " + Math.floor(counter / 100); // Set modal text
+}
+
+// Restart button - Resets the game
+restartButton.onclick = function () {
+    modal.style.display = "none"; // Hide the modal
+    counter = 0;
+    block.style.animation = "block 1s infinite linear"; // Restart block animation
+};
+
+// Quit button - Customize what happens when the user clicks "Quit"
+quitButton.onclick = function () {
+    modal.style.display = "none"; // Hide the modal
+    alert("Thanks for playing!");  // You can change this to redirect or close the game
+};
+
+// Close the modal if the user clicks anywhere outside of it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
