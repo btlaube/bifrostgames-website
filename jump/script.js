@@ -5,6 +5,9 @@ var modal = document.getElementById("gameOverModal");
 var modalText = document.getElementById("modalText");
 var restartButton = document.getElementById("restartButton");
 var quitButton = document.getElementById("quitButton");
+var startModal = document.getElementById("startModal");
+var startModalText = document.getElementById("startModalText");
+var startButton = document.getElementById("startButton");
 
 function jump()
 {
@@ -18,6 +21,7 @@ function jump()
 function showStartModal()
 {
     startModal.style.display = "block";
+    startModalText.innerHTML = "Play the jump game!";
 }
 
 startButton.onclick = function()
