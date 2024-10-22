@@ -28,15 +28,15 @@ body {
     background-color: rgba(100, 0, 100, 0);
     background-image: url("https://bifrostgames.org/assets/img/JumpGame/Player.png");
     position:relative;
-    top: 150px;
+    top: 49px;
 }
 .animate{
     animation: jump 0.3s linear;
 }
 @keyframes jump{
     0%{top: 149px;}
-    30%{top: 101px;}
-    70%{top: 101px;}
+    30%{top: 99px;}
+    70%{top: 99px;}
     100%{top: 149px;}
 }
 
