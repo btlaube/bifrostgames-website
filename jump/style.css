@@ -6,7 +6,8 @@
 
 body {
     max-width: 900px;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
     background-color: rgb(10, 0, 10);
     padding: 50px 20px;
     text-align: left;
@@ -14,8 +15,6 @@ body {
 }
 
 .game{
-    display: flex;
-    justify-content: center;
     width: 500px;
     height: 200px;
     border: 1px solid rgb(125, 0, 125);
