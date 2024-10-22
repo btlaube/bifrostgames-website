@@ -23,8 +23,8 @@ body {
     margin: auto;
 }
 #character{
-    width: 20px;
-    height: 50px;
+    width: 17px;
+    height: 51px;
     background-color: rgba(100, 0, 100, 0);
     background-image: url("https://bifrostgames.org/assets/img/JumpGame/Player.png");
     position:relative;
@@ -34,19 +34,19 @@ body {
     animation: jump 0.3s linear;
 }
 @keyframes jump{
-    0%{top: 150px;}
-    30%{top: 100px;}
-    70%{top: 100px;}
-    100%{top: 150px;}
+    0%{top: 149px;}
+    30%{top: 101px;}
+    70%{top: 101px;}
+    100%{top: 149px;}
 }
 
 #block{
     background-color: rgba(255, 255, 255, 0);
     background-image: url("https://bifrostgames.org/assets/img/JumpGame/Haz.png");
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     position: relative;
-    top: 130px;
+    top: 132px;
     left: 500px;
     animation: block 1s infinite linear;
 }
