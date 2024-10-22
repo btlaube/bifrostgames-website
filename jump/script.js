@@ -41,6 +41,7 @@ var checkDead = setInterval(function()
     {
         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+        // Check if block is at player down position and check if player is in down (not jumping) position
         if(blockLeft < 20 && blockLeft > -20 && characterTop >= 130){
             block.style.animation = "none";
             showModal();
