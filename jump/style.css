@@ -28,7 +28,7 @@ body {
     background-color: rgba(100, 0, 100, 0);
     background-image: url("https://bifrostgames.org/assets/img/JumpGame/Player.png");
     position:relative;
-    top: 49px;
+    top: 149px;
 }
 .animate{
     animation: jump 0.3s linear;
