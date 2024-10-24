@@ -6,9 +6,9 @@ var scoreText = document.getElementById("score");
 
 // Array of image sources for animation frames
 const imageFrames = [
-    '/assets/img/PfpAnimFrames/Frame1.png',
-    '/assets/img/PfpAnimFrames/Frame2.png',
-    '/assets/img/PfpAnimFrames/Frame3.png'
+    '../assets/img/PfpAnimFrames/Frame1.png',
+    '../assets/img/PfpAnimFrames/Frame2.png',
+    '../assets/img/PfpAnimFrames/Frame3.png'
 ];
 
 
