@@ -55,6 +55,11 @@ var updateScore = setInterval(function()
     scoreSpan.innerHTML = counter;
 }, 10);
 
+shiftyScalesButton.onclick = function()
+{
+    animateBorder();
+}
+
 // Function to trigger border animation
 function animateBorder()
 {
