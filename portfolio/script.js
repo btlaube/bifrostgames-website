@@ -4,6 +4,8 @@ var profileImage = document.getElementById('profileImage');
 var scoreSpan =  document.getElementById("scoreSpan");
 var scoreText = document.getElementById("score");
 
+var shiftyScalesButton = document.getElementById("shiftyScalesButton");
+
 // Array of image sources for animation frames
 const imageFrames = [
     '../assets/img/PfpAnimFrames/Frame1.png',
@@ -49,6 +51,17 @@ function animatePfp()
 }
 
 var updateScore = setInterval(function()
-    {
-        scoreSpan.innerHTML = counter;
-    }, 10);
+{
+    scoreSpan.innerHTML = counter;
+}, 10);
+
+// Function to trigger border animation
+function animateBorder()
+{
+    if(shiftyScalesButton.classList.contains("animate")) { return; }
+    shiftyScalesButton.classList.add('active');
+    // Remove the class after animation ends to allow retriggering on next click
+    setTimeout(() => {
+        shiftyScalesButton.classList.remove('active');
+    }, 500); // Matches the duration of the CSS animation
+}

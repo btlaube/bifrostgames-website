@@ -156,7 +156,7 @@ h3 {
     margin-bottom: 1px;
 }
 
-/* Easter egg */
+/* Easter eggs */
 #score {
     display: none; /* Hide the score by default */
 }
@@ -165,5 +165,37 @@ button {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     cursor: pointer;
+}
+
+/* Style for the button */
+#pfpClicker {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* Pseudo-element for the border animation */
+#pfpClicker::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 50%; /* Rounded border effect */
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* The active class triggers the animation */
+#pfpClicker.active::after {
+    transform: translate(-50%, -50%) scale(2); /* Scales the border outward */
+    opacity: 1; /* Reduces opacity for fade-out effect */
+    border-color: rgba(255, 255, 255, 1); /* Border color */
 }
 
