@@ -9,8 +9,8 @@ var shiftyScalesButton = document.getElementById("shiftyScalesButton");
 // Array of image sources for animation frames
 const imageFrames = [
     '../assets/img/PfpAnimFrames/Frame1.png',
-    '../assets/img/PfpAnimFrames/Frame2.png',
     '../assets/img/PfpAnimFrames/Frame3.png',
+    '../assets/img/PfpAnimFrames/Frame2.png',
     '../assets/img/PfpAnimFrames/Frame1.png'
 ];
 
@@ -63,7 +63,7 @@ shiftyScalesButton.onclick = function()
 // Function to trigger border animation
 function animateBorder()
 {
-    if(shiftyScalesButton.classList.contains("animate")) { return; }
+    if(shiftyScalesButton.classList.contains("active")) { return; }
     shiftyScalesButton.classList.add('active');
     // Remove the class after animation ends to allow retriggering on next click
     setTimeout(() => {
