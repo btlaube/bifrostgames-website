@@ -168,16 +168,16 @@ button {
 }
 
 /* Style for the button */
-#pfpClicker {
+#shiftScalesButton {
     position: relative;
     padding: 10px;
-    border: none;
+    /* border: none; */
     background: none;
     outline: none;
 }
 
 /* Pseudo-element for the border animation */
-#pfpClicker::after {
+#shiftScalesButton::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -193,7 +193,7 @@ button {
 }
 
 /* The active class triggers the animation */
-#pfpClicker.active::after {
+#shiftScalesButton.active::after {
     transform: translate(-50%, -50%) scale(2); /* Scales the border outward */
     opacity: 1; /* Reduces opacity for fade-out effect */
     border-color: rgba(255, 255, 255, 0); /* Border color */
