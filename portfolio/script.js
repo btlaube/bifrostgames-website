@@ -12,10 +12,10 @@ pfpClicker.onclick = function()
 function addScore()
 {
     counter++;
-    display: block; /* Show the score */
+    block; /* Show the score */
 }
 
 var updateScore = setInterval(function()
     {
-        document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+        document.getElementById("scoreSpan").innerHTML = counter;
     }, 10);

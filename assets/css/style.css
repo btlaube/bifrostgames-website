@@ -161,3 +161,8 @@ h3 {
     display: none; /* Hide the score by default */
 }
 
+button {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
