@@ -1,6 +1,7 @@
 var counter = 0;
 var pfpClicker = document.getElementById("pfpClicker");
 var scoreSpan =  document.getElementById("scoreSpan");
+var scoreText = document.getElementById("score");
 
 
 // 
@@ -13,7 +14,7 @@ pfpClicker.onclick = function()
 function addScore()
 {
     counter++;
-    scoreSpan.style.display = "block"; /* Show the score */
+    scoreText.style.display = "block"; /* Show the score */
 }
 
 var updateScore = setInterval(function()

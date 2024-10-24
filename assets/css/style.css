@@ -157,7 +157,7 @@ h3 {
 }
 
 /* Easter egg */
-#scoreSpan {
+#score {
     display: none; /* Hide the score by default */
 }
 
