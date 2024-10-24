@@ -167,7 +167,14 @@ button {
     cursor: pointer;
 }
 
-/* Style for the button */
+/* Style for the buttons */
+#pfpclicker {
+    position: relative;
+    border: none;
+    background: none;
+    outline: none;
+}
+
 #shiftScalesButton {
     position: relative;
     padding: 10px;
