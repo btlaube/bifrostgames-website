@@ -1,5 +1,5 @@
 var counter = 0;
-var pfpClicker = document.getElementById("restartpfpClickerButton");
+var pfpClicker = document.getElementById("pfpClicker");
 
 
 // 
