@@ -44,10 +44,10 @@ function animatePfp()
         currentFrame++;
         // Stop the interval after completing one loop
         if (currentFrame >= imageFrames.length) {
-            profileImage.src = imageFrames[0]; // Reset to first frame
             clearInterval(intervalId); // Stop the animation
         }
     }, 200); // Change frame every 200ms (adjust as needed)
+    profileImage.src = imageFrames[0]; // Reset to first frame
 }
 
 var updateScore = setInterval(function()
