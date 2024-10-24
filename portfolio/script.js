@@ -36,8 +36,14 @@ function animatePfp()
         
     // Animation logic - cycles through image frames
     intervalId = setInterval(function() {
-        currentFrame = (currentFrame + 1) % imageFrames.length;
+        // Update the image source
         profileImage.src = imageFrames[currentFrame];
+        // Move to the next frame
+        currentFrame++;
+        // Stop the interval after completing one loop
+        if (currentFrame >= imageFrames.length) {
+            clearInterval(intervalId); // Stop the animation
+        }
     }, 200); // Change frame every 200ms (adjust as needed)
 }
 
