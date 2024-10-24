@@ -156,4 +156,8 @@ h3 {
     margin-bottom: 1px;
 }
 
+/* Easter egg */
+#scoreSpan {
+    display: none; /* Hide the score by default */
+}
 
