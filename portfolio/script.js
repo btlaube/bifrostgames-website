@@ -28,6 +28,9 @@ function addScore()
 
 function animatePfp()
 {
+    let currentFrame = 0;
+    let intervalId;
+    
     // Clear any existing interval before starting a new one
     clearInterval(intervalId);
         
