@@ -10,7 +10,8 @@ var shiftyScalesButton = document.getElementById("shiftyScalesButton");
 const imageFrames = [
     '../assets/img/PfpAnimFrames/Frame1.png',
     '../assets/img/PfpAnimFrames/Frame2.png',
-    '../assets/img/PfpAnimFrames/Frame3.png'
+    '../assets/img/PfpAnimFrames/Frame3.png',
+    '../assets/img/PfpAnimFrames/Frame1.png'
 ];
 
 
@@ -47,7 +48,6 @@ function animatePfp()
             clearInterval(intervalId); // Stop the animation
         }
     }, 200); // Change frame every 200ms (adjust as needed)
-    profileImage.src = imageFrames[0]; // Reset to first frame
 }
 
 var updateScore = setInterval(function()
