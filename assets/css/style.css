@@ -215,6 +215,14 @@ button {
     z-index: 1000; /* Above other content */
 }
 
+.hidden-button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    pointer-events: auto; /* Allows clicking on buttons */
+}
+
 /* Individual overlay buttons */
 .overlay-button {
     position: absolute; /* Positioned relative to .overlay-container */
