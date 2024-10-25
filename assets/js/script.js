@@ -100,12 +100,12 @@ function animateBorder(button) {
 // Hidden buttons
 hiddenButtons.forEach(button => {
     button.onclick = function() {
-        animateBorder(button);
+        // animateBorder(button);
         revealHidden(button);
     };
 });
 
 function revealHidden(button) {
     button.style.display = "none";
-    hiddenButtons[hiddenAwardCounter].style.display = "inline";
+    awards[hiddenAwardCounter].style.display = "inline";
 }
