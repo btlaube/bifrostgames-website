@@ -4,7 +4,7 @@ var profileImage = document.getElementById('profileImage');
 var scoreSpan =  document.getElementById("scoreSpan");
 var scoreText = document.getElementById("score");
 // Select all buttons with the animate-btn class
-var buttons = document.querySelectorAll('.animate-btn');
+var buttons = document.querySelectorAll('.animButton');
 
 // var shiftyScalesButton = document.getElementById("shiftyScalesButton");
 
