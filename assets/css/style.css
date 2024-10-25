@@ -220,6 +220,10 @@ button {
     padding: 0px 0px;
 }
 
+.hidden-award {
+    display: none; /* Hide awards by default */
+}
+
 /* Positioning each button within the overlay container */
 #button1 {
     top: 50%;  /* 10% from the top of the viewport */

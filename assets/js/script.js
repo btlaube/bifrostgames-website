@@ -3,10 +3,14 @@ var pfpClicker = document.getElementById("pfpClicker");
 var profileImage = document.getElementById('profileImage');
 var scoreSpan =  document.getElementById("scoreSpan");
 var scoreText = document.getElementById("score");
-// Select all buttons with the animate-btn class
+// Select all buttons with the animButton class
 var buttons = document.querySelectorAll('.animButton');
 
-// var shiftyScalesButton = document.getElementById("shiftyScalesButton");
+// Select all hiddenButton
+var hiddenButtons = document.querySelectorAll('.hidden-button');
+// Select all hiddenAward
+var awards = document.querySelectorAll(".hiddenAward")
+var hiddenAwardCounter = 0;
 
 // Array of image sources for animation frames
 const imageFrames = [
@@ -91,4 +95,17 @@ function animateBorder(button) {
     setTimeout(() => {
         button.classList.remove('active');
     }, 500); // Matches the duration of the CSS animation
+}
+
+// Hidden buttons
+hiddenButtons.forEach(button => {
+    button.onclick = function() {
+        animateBorder(button);
+        revealHidden(button);
+    };
+});
+
+function revealHidden(button) {
+    button.style.display = "none";
+    hiddenButtons[hiddenAwardCounter].style.display = "inline";
 }
