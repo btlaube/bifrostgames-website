@@ -204,17 +204,44 @@ button {
     border-color: var(--transparent-border-color, rgba(255, 0, 0, 0)); /* Fades border to transparent */
 }
 
-.overlay {
-    position: fixed; /* Sticks to the viewport */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+/* General floating button style */
+.floating-button {
+    position: fixed; /* Positions relative to the viewport */
+    z-index: 1000; /* Appears over other elements */
+    background-color: #3498db; /* Custom background color */
     color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* A high z-index to ensure it appears on top */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+/* Optional hover effect to scale the button */
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+/* Individual button positions and sizes */
+.button-1 {
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: 50px;
+}
+
+.button-2 {
+    top: 150px;
+    right: 20px;
+    width: 120px;
+    height: 50px;
+}
+
+.button-3 {
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%); /* Center button horizontally */
+    width: 140px;
+    height: 60px;
 }
 
