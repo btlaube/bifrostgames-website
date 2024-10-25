@@ -3,8 +3,10 @@ var pfpClicker = document.getElementById("pfpClicker");
 var profileImage = document.getElementById('profileImage');
 var scoreSpan =  document.getElementById("scoreSpan");
 var scoreText = document.getElementById("score");
+// Select all buttons with the animate-btn class
+var buttons = document.querySelectorAll('.animate-btn');
 
-var shiftyScalesButton = document.getElementById("shiftyScalesButton");
+// var shiftyScalesButton = document.getElementById("shiftyScalesButton");
 
 // Array of image sources for animation frames
 const imageFrames = [
@@ -54,18 +56,20 @@ var updateScore = setInterval(function()
     scoreSpan.innerHTML = counter;
 }, 10);
 
-shiftyScalesButton.onclick = function()
-{
-    animateBorder();
-}
+// Attach event listeners to each button
+buttons.forEach(button => {
+    button.onclick = function() {
+        animateBorder(button);
+    };
+});
 
 // Function to trigger border animation
-function animateBorder()
-{
-    if(shiftyScalesButton.classList.contains("active")) { return; }
-    shiftyScalesButton.classList.add('active');
+function animateBorder(button) {
+    if (button.classList.contains("active")) { return; }
+    button.classList.add('active');
+
     // Remove the class after animation ends to allow retriggering on next click
     setTimeout(() => {
-        shiftyScalesButton.classList.remove('active');
+        button.classList.remove('active');
     }, 500); // Matches the duration of the CSS animation
 }

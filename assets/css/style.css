@@ -175,7 +175,7 @@ button {
     outline: none;
 }
 
-#shiftyScalesButton {
+.animButton {
     position: relative;
     padding: 10px;
     border: none;
@@ -183,25 +183,26 @@ button {
     outline: none;
 }
 
-#shiftyScalesButton::after {
+.animButton::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    border: 2px solid rgb(255 0 0);
+    border: 2px solid rgb(255, 0, 0); /* Initial border color */
     border-radius: 50%; /* Rounded border effect */
-    transform: translate(-50%, -50%) scale(2);
-    opacity: 0;
+    transform: translate(-50%, -50%) scale(2); /* Start scale */
+    opacity: 0; /* Start opacity */
     pointer-events: none;
     transition: transform 0.5s cubic-bezier(0, 0, 0, 1.01), opacity 0.5s ease;
 }
 
 /* The active class triggers the animation */
-#shiftyScalesButton.active::after {
+.animButton.active::after {
     transform: translate(-50%, -50%) scale(0.5); /* Scales the border outward */
-    opacity: 1; /* Reduces opacity for fade-out effect */
-    border-color: rgba(255, 255, 255, 0); /* Border color */
+    opacity: 1; /* Full opacity at animation start */
+    border-color: rgba(255, 255, 255, 0); /* Fades border to transparent */
 }
+
 
