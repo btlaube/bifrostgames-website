@@ -18,7 +18,9 @@ html {
 /* Section Styles */
 #banner {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center;    /* Center items horizontally within the column */
+    justify-content: center; /* Center items vertically within the column */
 }
 
 /* Header styles */
