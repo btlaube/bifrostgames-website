@@ -204,44 +204,44 @@ button {
     border-color: var(--transparent-border-color, rgba(255, 0, 0, 0)); /* Fades border to transparent */
 }
 
-/* General floating button style */
-.floating-button {
-    position: fixed; /* Positions relative to the viewport */
-    z-index: 1000; /* Appears over other elements */
-    background-color: #3498db; /* Custom background color */
+/* Container that covers the whole screen */
+.overlay-container {
+    position: fixed; /* Stays in one place relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Allows clicks to pass through container */
+    z-index: 1000; /* Above other content */
+}
+
+/* Individual overlay buttons */
+.overlay-button {
+    position: absolute; /* Positioned relative to .overlay-container */
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease; /* Optional: Add hover effect */
+    pointer-events: auto; /* Allows clicking on buttons */
 }
 
-/* Optional hover effect to scale the button */
-.floating-button:hover {
-    transform: scale(1.1);
+/* Positioning each button within the overlay container */
+#button1 {
+    top: 10%;  /* 10% from the top of the viewport */
+    left: 10%; /* 10% from the left */
 }
 
-/* Individual button positions and sizes */
-.button-1 {
-    top: 20px;
-    left: 20px;
-    width: 100px;
-    height: 50px;
-}
-
-.button-2 {
-    top: 150px;
-    right: 20px;
-    width: 120px;
-    height: 50px;
-}
-
-.button-3 {
-    bottom: 30px;
+#button2 {
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%); /* Center button horizontally */
-    width: 140px;
-    height: 60px;
+    transform: translate(-50%, -50%); /* Centered */
 }
+
+#button3 {
+    bottom: 10%; /* 10% from the bottom */
+    right: 10%; /* 10% from the right */
+}
+
 
