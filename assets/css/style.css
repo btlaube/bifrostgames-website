@@ -219,10 +219,15 @@ button {
 
 .hidden-button {
     border: none;
+    top: 50px;
+    left: 50px;
+    width: 32px;
+    height: 32px;
+    z-index: 1000; /* Above other content */
     /* padding: 10px 20px; */
     cursor: pointer;
     pointer-events: auto; /* Allows clicking on buttons */
-    position: absolute; /* Positioned relative to .overlay-container */
+    /* position: absolute; Positioned relative to .overlay-container */
 }
 
 .hidden-button img {
