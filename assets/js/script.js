@@ -108,4 +108,5 @@ hiddenButtons.forEach(button => {
 function revealHidden(button) {
     button.style.display = "none";
     awards[hiddenAwardCounter].style.display = "inline";
+    hiddenAwardCounter++;
 }
