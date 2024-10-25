@@ -206,41 +206,18 @@ button {
     border-color: var(--transparent-border-color, rgba(255, 0, 0, 0)); /* Fades border to transparent */
 }
 
-/* Container that covers the whole screen */
-.overlay-container {
-    position: fixed; /* Stays in one place relative to the viewport */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* Allows clicks to pass through container */
-    z-index: 1000; /* Above other content */
-}
-
 .hidden-button {
     border: none;
     z-index: 1000; /* Above other content */
     padding: 0px 0px;
     cursor: pointer;
     pointer-events: auto; /* Allows clicking on buttons */
-    /* position: absolute; Positioned relative to .overlay-container */
 }
 
 .hidden-button img {
     width: 100%;
     height: 100%;
-}
-
-/* Individual overlay buttons */
-.overlay-button {
-    position: absolute; /* Positioned relative to .overlay-container */
-    /* background-color: #3498db; */
-    /* color: white; */
-    border: none;
-    /* padding: 10px 20px; */
-    /* border-radius: 5px; */
-    cursor: pointer;
-    pointer-events: auto; /* Allows clicking on buttons */
+    padding: 0px 0px;
 }
 
 /* Positioning each button within the overlay container */
@@ -250,7 +227,7 @@ button {
     width: 32px;
     height: 32px;
 }
-/* 
+
 #button2 {
     top: 50%;
     left: 50%;
@@ -260,6 +237,6 @@ button {
 #button3 {
     bottom: 10%; /* 10% from the bottom */
     right: 10%; /* 10% from the right */
-} */
+}
 
 
