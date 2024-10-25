@@ -9,7 +9,7 @@ var buttons = document.querySelectorAll('.animButton');
 // Select all hiddenButton
 var hiddenButtons = document.querySelectorAll('.hidden-button');
 // Select all hiddenAward
-var awards = document.querySelectorAll(".hiddenAward")
+var awards = document.querySelectorAll(".hidden-award")
 var hiddenAwardCounter = 0;
 
 // Array of image sources for animation frames
