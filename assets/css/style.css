@@ -224,6 +224,11 @@ button {
     pointer-events: auto; /* Allows clicking on buttons */
 }
 
+.hidden-button img {
+    width: 100%;
+    height: 100%;
+}
+
 /* Individual overlay buttons */
 .overlay-button {
     position: absolute; /* Positioned relative to .overlay-container */
