@@ -3,8 +3,8 @@
 :root {
     --bgColor: #280126;
     --bgColor2: #050505;
-    --accentColor: #FFF;
-    --accentColor2: #333;
+    --accentColor: #ffffff;
+    --accentColor2: #61005c;
     --font: 'Karla', sans-serif;
 }
 
@@ -150,6 +150,7 @@ h3 {
 
 .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
+    color: var(--accentColor2)
 }
 
 .horizontal-container {
