@@ -3,8 +3,8 @@
 :root {
     --bgColor: #280126;
     --bgColor2: #050505;
-    --accentColor: #FFF;
-    --accentColor2: #333;
+    --accentColor: #ffffff;
+    --accentColor2: #61005c;
     --font: 'Karla', sans-serif;
 }
 
@@ -15,22 +15,12 @@ html {
     margin: auto;
 }
 
-/* Basic styles for the entire website */
-body {
-    font-family: var(--font);
-    background: var(--bgColor2);
-    color: var(--accentColor);
-    max-width: 900px;
-}
-
-.element-box {
-    padding: 50px 20px;
-}
-
 /* Section Styles */
 #banner {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center;    /* Center items horizontally within the column */
+    justify-content: center; /* Center items vertically within the column */
 }
 
 /* Header styles */
@@ -72,7 +62,14 @@ footer {
     text-align: center;
 }
 
-/*General styles */
+/* Basic styles for the entire website */
+body {
+    font-family: var(--font);
+    background: var(--bgColor2);
+    color: var(--accentColor);
+    max-width: 900px;
+}
+
 nav ul {
     list-style: none;
 }
@@ -99,7 +96,28 @@ hr {
     border-color: var(--accentColor);
     width: 100%;
     margin: 5px 0;
-} 
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1rem;
+    margin-bottom: 1px;
+}
+
+/* Classes */
+.element-box {
+    padding: 50px 20px;
+}
 
 .alignleft {
 	float: left;
@@ -132,6 +150,7 @@ hr {
 
 .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
+    color: var(--accentColor2)
 }
 
 .horizontal-container {
@@ -140,20 +159,114 @@ hr {
     align-items: center;
 }
 
-h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
+/* Easter eggs */
+#score {
+    display: none; /* Hide the score by default */
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+    /* border: none; */
+    cursor: pointer;
+}
+
+/* Style for the buttons */
+#pfpClicker {
+    position: relative;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.animButton {
+    position: relative;
+    padding: 10px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.animButton::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--border-color, rgb(255, 0, 0)); /* Default if no color is set */
+    border-radius: 50%; /* Rounded border effect */
+    transform: translate(-50%, -50%) scale(2); /* Start scale */
+    opacity: 0; /* Start opacity */
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(0, 0, 0, 1.01), opacity 0.5s ease, border-color 0.5s ease;
+}
+
+.animButton.active::after {
+    transform: translate(-50%, -50%) scale(0.5); /* Scales the border outward */
+    opacity: 1; /* Full opacity at animation start */
+    border-color: var(--transparent-border-color, rgba(255, 0, 0, 0)); /* Fades border to transparent */
+}
+
+.hidden-button {
+    border: none;
+    z-index: 1000; /* Above other content */
+    padding: 0px 0px;
+    cursor: pointer;
+    pointer-events: auto; /* Allows clicking on buttons */
+}
+
+.hidden-button img {
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px;
+}
+
+.hidden-award {
+    display: none; /* Hide awards by default */
+}
+
+#button1 {
+    width: 32px;
+    height: 32px;
+    margin-left: 500px;
+}
+
+#button2 {
+    width: 32px;
+    height: 32px;
+}
+
+#button3 {
+    width: 32px;
+    height: 32px;
+    margin-left: 500px;
+}
+
+/* Main content styling */
+.overlay-content {
+    position: relative;
+    z-index: 1; /* Keeps content above the overlay */
+    padding: 20px;
     text-align: center;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-size: 1rem;
-    margin-bottom: 1px;
+/* Overlay styling */
+.transparent-overlay {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://bifrostgames.org/assets/img/SmallGrainBgwhite.gif'); /* Replace with the path to your GIF */
+    background-repeat: repeat; /* Repeats the GIF horizontally and vertically */
+    opacity: 0; /* Fully transperant by default */
+    pointer-events: none; /* Allows interaction with content beneath */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* A high z-index to ensure it appears on top */
 }
 
 
