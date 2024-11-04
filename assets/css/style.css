@@ -254,16 +254,19 @@ button {
 
 /* Overlay styling */
 .overlay {
-    position: fixed;
+    position: fixed; /* Sticks to the viewport */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image: url('https://bifrostgames.org/assets/img/SmallGrainBgwhite.gif'); /* Replace with the path to your GIF */
     background-repeat: repeat; /* Repeats the GIF horizontally and vertically */
     opacity: 0.5; /* Adjust for transparency level */
     pointer-events: none; /* Allows interaction with content beneath */
-    z-index: 100; /* Keeps the overlay behind the content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* A high z-index to ensure it appears on top */
 }
 
 
