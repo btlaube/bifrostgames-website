@@ -5,6 +5,7 @@
     --bgColor2: #050505;
     --accentColor: #ffffff;
     --accentColor2: #61005c;
+    --goldColor: #ffd700;
     --font: 'Karla', sans-serif;
 }
 
@@ -92,8 +93,8 @@ nav a:hover {
 }
 
 hr {
-    border: solid 1px var(--accentColor);
-    border-color: var(--accentColor);
+    border: solid 1px var(--goldColor);
+    border-color: var(--goldColor);
     width: 100%;
     margin: 5px 0;
 }
