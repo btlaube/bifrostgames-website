@@ -6,6 +6,9 @@ var hiddenButtons = document.querySelectorAll('.hidden-button');
 // Select all hiddenAward
 var awards = document.querySelectorAll(".hidden-award")
 var hiddenAwardCounter = 0;
+// Hidden award glow test
+var bannerImage = document.getElementById("banner-image");
+var bannerHr = document.getElementById("banner-hr");
 
 // Attach event listeners to each button
 buttons.forEach(button => {
