@@ -15,6 +15,10 @@ var hiddenButtons = document.querySelectorAll(".hidden-button");
 var awards = document.querySelectorAll(".hidden-award")
 var hiddenAwardCounter = 0;
 
+// Hidden award glow test
+var bannerImage = document.getElementById("banner-image");
+var bannerHr = document.getElementById("banner-hr");
+
 // Array of image sources for animation frames
 const imageFrames = [
     "../assets/img/PfpAnimFrames/Frame3.png",
@@ -115,8 +119,26 @@ hiddenButtons.forEach(button => {
     };
 });
 
-function revealHidden(button) {
+function revealHidden(button) 
+{
     button.style.display = "none";
     awards[hiddenAwardCounter].style.display = "inline";
     hiddenAwardCounter++;
+    if (hiddenAwardCounter == 3)
+        activateShine();
+}
+
+function activateShine()
+{
+    // Change banner image to glow image
+    bannerImage.src = url("https://bifrostgames.org/assets/img/NewLogoBanner_Purple_GoldBlur.png");
+    // Change all hidden awards image from white to gold
+    awards.forEach(award => {
+        award.src = url("https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png");
+    })
+    // Change banner hr to gold
+    // Get the value of --goldColor
+    const goldColor = getComputedStyle(document.documentElement).getPropertyValue('--goldColor').trim();
+    // Apply it to --border-color
+    bannerHr.style.setProperty("--border-color", goldColor);
 }

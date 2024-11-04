@@ -93,8 +93,7 @@ nav a:hover {
 }
 
 hr {
-    border: solid 1px var(--goldColor);
-    border-color: var(--goldColor);
+    border: solid 1px #ffffff; /* Horizontal line is white by default */
     width: 100%;
     margin: 5px 0;
 }
