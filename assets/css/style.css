@@ -242,4 +242,28 @@ button {
     margin-left: 500px;
 }
 
+/* Main content styling */
+.overlay-content {
+    position: relative;
+    z-index: 1; /* Keeps content above the overlay */
+    padding: 20px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: Arial, sans-serif;
+}
+
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://bifrostgames.org/assets/img/SmallGrainBgwhite.gif'); /* Replace with the path to your GIF */
+    background-repeat: repeat; /* Repeats the GIF horizontally and vertically */
+    opacity: 0.5; /* Adjust for transparency level */
+    pointer-events: none; /* Allows interaction with content beneath */
+    z-index: 100; /* Keeps the overlay behind the content */
+}
+
 
