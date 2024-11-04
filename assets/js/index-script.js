@@ -56,4 +56,22 @@ function revealHidden(button) {
     button.style.display = "none";
     awards[hiddenAwardCounter].style.display = "inline";
     hiddenAwardCounter++;
+    if (hiddenAwardCounter == 3)
+        activateShine();
+}
+
+function activateShine()
+{
+    // Change banner image to glow image
+    bannerImage.src = "https://bifrostgames.org/assets/img/BannerLogo_Bifrost_Gold_Blur.png";
+    // Change all hidden awards image from white to gold
+    awards.forEach(award => {
+        // Select the inner <img> tag within each award element
+        const imgTag = award.querySelector("img");
+        if (imgTag) { // Check if the <img> tag exists
+            imgTag.src = "https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png";
+        }
+    });
+    // Change banner hr to gold
+    bannerHr.style.borderColor = "#ffd700";
 }
