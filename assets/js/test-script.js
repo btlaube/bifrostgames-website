@@ -134,8 +134,12 @@ function activateShine()
     bannerImage.src = "https://bifrostgames.org/assets/img/BannerLogo_Bifrost_Gold_Blur.png";
     // Change all hidden awards image from white to gold
     awards.forEach(award => {
-        award.src = "https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png";
-    })
+        // Select the inner <img> tag within each award element
+        const imgTag = award.querySelector("img");
+        if (imgTag) { // Check if the <img> tag exists
+            imgTag.src = "https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png";
+        }
+    });
     // Change banner hr to gold
     // Get the value of --goldColor
     const goldColor = getComputedStyle(document.documentElement).getPropertyValue('--goldColor').trim();
