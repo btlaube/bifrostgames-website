@@ -61,7 +61,8 @@ function animatePfp()
 
 function fadeInOverlay()
 {
-    transOverlay.style.opacity = (counter / 100);
+    if (counter <= 25)
+        transOverlay.style.opacity = (counter / 100);
 }
 
 var updateScore = setInterval(function()
