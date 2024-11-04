@@ -266,15 +266,16 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* A high z-index to ensure it appears on top */
+    z-index: -200; /* A high z-index to ensure it appears on top */
 }
 
 .background1 {
     position: fixed; /* Sticks to the viewport */
     top: 0;
-    left: 25%;
-    width: 50%;
+    left: 50%;
+    width: 900px;
     height: 100vh;
+    transform: translateX(-50%); /* Center the element horizontally */
     background-color: var(--bgColor);
     opacity: 1; /* Fully transperant by default */
     pointer-events: none; /* Allows interaction with content beneath */
@@ -296,7 +297,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: -200; /* A high z-index to ensure it appears on top */
+    z-index: -300; /* A high z-index to ensure it appears on top */
 }
 
 
