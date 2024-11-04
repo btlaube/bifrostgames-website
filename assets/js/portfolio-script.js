@@ -6,6 +6,9 @@ var scoreText = document.getElementById("score");
 // Select all buttons with the animButton class
 var buttons = document.querySelectorAll('.animButton');
 
+// Transperant overlay test
+var transOverlay = document.querySelector(".transparent-overlay");
+
 // Select all hiddenButton
 var hiddenButtons = document.querySelectorAll('.hidden-button');
 // Select all hiddenAward
