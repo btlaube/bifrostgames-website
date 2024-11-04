@@ -25,6 +25,7 @@ pfpClicker.onclick = function()
 {
     addScore();
     animatePfp();
+    fadeInOverlay();
 };
 
 // 
@@ -53,6 +54,12 @@ function animatePfp()
             clearInterval(intervalId); // Stop the animation
         }
     }, 200); // Change frame every 200ms (adjust as needed)
+}
+
+function fadeInOverlay()
+{
+    if (counter <= 25)
+        transOverlay.style.opacity = (counter / 100);
 }
 
 var updateScore = setInterval(function()

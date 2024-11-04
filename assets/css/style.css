@@ -242,18 +242,8 @@ button {
     margin-left: 500px;
 }
 
-/* Main content styling */
-.overlay-content {
-    position: relative;
-    z-index: 1; /* Keeps content above the overlay */
-    padding: 20px;
-    text-align: center;
-    color: whitesmoke;
-    font-family: Arial, sans-serif;
-}
-
 /* Overlay styling */
-.overlay {
+.transparent-overlay {
     position: fixed; /* Sticks to the viewport */
     top: 0;
     left: 0;
@@ -261,12 +251,27 @@ button {
     height: 100vh;
     background-image: url('https://bifrostgames.org/assets/img/SmallGrainBgwhite.gif'); /* Replace with the path to your GIF */
     background-repeat: repeat; /* Repeats the GIF horizontally and vertically */
-    opacity: 0.5; /* Adjust for transparency level */
+    opacity: 0; /* Fully transperant by default */
     pointer-events: none; /* Allows interaction with content beneath */
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000; /* A high z-index to ensure it appears on top */
+    z-index: -200; /* A high z-index to ensure it appears on top */
 }
 
+.background1 {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 50%;
+    width: 900px;
+    height: 100vh;
+    transform: translateX(-50%); /* Center the element horizontally */
+    background-color: var(--bgColor2);
+    opacity: 0.5; /* Fully transperant by default */
+    pointer-events: none; /* Allows interaction with content beneath */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -100; /* A high z-index to ensure it appears on top */
+}
 
