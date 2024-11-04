@@ -269,4 +269,35 @@ button {
     z-index: 1000; /* A high z-index to ensure it appears on top */
 }
 
+.background1 {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--bgColor);
+    opacity: 1; /* Fully transperant by default */
+    pointer-events: none; /* Allows interaction with content beneath */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -100; /* A high z-index to ensure it appears on top */
+}
+
+.background2 {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bgColor2);
+    opacity: 1; /* Fully transperant by default */
+    pointer-events: none; /* Allows interaction with content beneath */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -200; /* A high z-index to ensure it appears on top */
+}
+
+
 
