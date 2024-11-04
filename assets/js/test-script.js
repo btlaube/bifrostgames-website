@@ -131,10 +131,10 @@ function revealHidden(button)
 function activateShine()
 {
     // Change banner image to glow image
-    bannerImage.src = url("https://bifrostgames.org/assets/img/BannerLogo_Bifrost_Gold_Blur.png");
+    bannerImage.src = "https://bifrostgames.org/assets/img/BannerLogo_Bifrost_Gold_Blur.png";
     // Change all hidden awards image from white to gold
     awards.forEach(award => {
-        award.src = url("https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png");
+        award.src = "https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png";
     })
     // Change banner hr to gold
     // Get the value of --goldColor
