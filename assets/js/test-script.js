@@ -141,8 +141,5 @@ function activateShine()
         }
     });
     // Change banner hr to gold
-    // Get the value of --goldColor
-    const goldColor = getComputedStyle(document.documentElement).getPropertyValue('--goldColor').trim();
-    // Apply it to --border-color
-    bannerHr.style.setProperty("--border-color", goldColor);
+    bannerHr.style.borderColor = "#ffd700";
 }
