@@ -276,8 +276,8 @@ button {
     width: 900px;
     height: 100vh;
     transform: translateX(-50%); /* Center the element horizontally */
-    background-color: var(--bgColor);
-    opacity: 1; /* Fully transperant by default */
+    background-color: var(--bgColor2);
+    opacity: 0.5; /* Fully transperant by default */
     pointer-events: none; /* Allows interaction with content beneath */
     display: flex;
     align-items: center;
@@ -291,7 +291,7 @@ button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bgColor2);
+    background-color: var(--bgColor);
     opacity: 1; /* Fully transperant by default */
     pointer-events: none; /* Allows interaction with content beneath */
     display: flex;
