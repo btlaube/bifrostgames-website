@@ -157,7 +157,6 @@ itemButtons.forEach(button => {
 // Update stat displays
 // Score
 var updateScore = setInterval(function() {
-    scoreSpan.innerHTML = counter;
     updateInventory(inventory);
     updateStats(stats);
 }, 100);
