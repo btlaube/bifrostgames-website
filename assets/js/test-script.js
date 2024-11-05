@@ -91,7 +91,7 @@ saveDataButton.onclick = function()
     // Call the function to save stats
     saveStatsToLocalStorage(stats);
     // Call the function to save inventory items
-    saveInventoryToLocalStorage(stats);
+    saveInventoryToLocalStorage(inventory);
 };
 
 // Function to save each stat to localStorage
@@ -154,8 +154,8 @@ var updateScore = setInterval(function() {
 }, 100);
 
 // Stats
-function updateStats(stastDict) {
-    for (const [key, value] of Object.entries(stastDict)) {
+function updateStats(statsDict) {
+    for (const [key, value] of Object.entries(statsDict)) {
         const nameElement = document.getElementById("${key.toLowerCase()}-name");
         const countElement = document.getElementById("${key.toLowerCase()}-count");
 
