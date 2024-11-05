@@ -198,7 +198,7 @@ function checkButtonAvailability() {
         const requiredResource = requiredResources[itemName];
 
         // Enable the button if enough resources are available for the previous item
-        if (itemName === "coal" || inventory[requiredResource] >= resourceCosts[itemName]) {
+        if (itemName === "coal" || (requiredResource && inventory[requiredResource] >= resourceCosts[itemName])) {
             button.disabled = false; // Enable button
         } else {
             button.disabled = true; // Disable button if not enough resources
