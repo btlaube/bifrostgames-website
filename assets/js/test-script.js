@@ -174,7 +174,7 @@ itemButtons.forEach(button => {
     
     button.onclick = function() {
         addItemToInventory(itemName); // Pass the item name directly
-        removeItemFromInventory(resourceCosts[itemName]);
+        removeItemFromInventory(requiredResources[itemName]);
     };
 });
 
