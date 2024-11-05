@@ -145,10 +145,10 @@ resetButton.onclick = function()
 };
 
 // Function to add an item to the inventory
-function addItemToInventory(itemName) {
+function addItemToInventory(itemName, amount) {
     // Check if the item exists in the inventory
     if (inventory.hasOwnProperty(itemName)) {
-        inventory[itemName] += 1; // Increment the count for the item
+        inventory[itemName] += amount; // Increment the count for the item
     }
 
     // Update the displayed inventory
@@ -157,10 +157,10 @@ function addItemToInventory(itemName) {
 }
 
 // Function to add an item to the inventory
-function removeItemFromInventory(itemName) {
+function removeItemFromInventory(itemName, amount) {
     // Check if the item exists in the inventory
     if (inventory.hasOwnProperty(itemName)) {
-        inventory[itemName] -= 1; // Increment the count for the item
+        inventory[itemName] -= amount; // Increment the count for the item
     }
 
     // Update the displayed inventory
@@ -174,8 +174,8 @@ itemButtons.forEach(button => {
     const itemName = button.querySelector('p').innerText.toLowerCase();
     
     button.onclick = function() {
-        addItemToInventory(itemName); // Pass the item name directly
-        removeItemFromInventory(requiredResources[itemName]);
+        addItemToInventory(itemName, 1); // Pass the item name directly
+        removeItemFromInventory(requiredResources[itemName], resourceCosts[itemName]);
     };
 });
 
