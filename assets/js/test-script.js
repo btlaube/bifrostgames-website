@@ -60,15 +60,14 @@ startModal.style.display = "block";
 startButton.onclick = function()
 {
     startModal.style.display = "none";
-    startGame();
 };
 
-// Function to start the game
-function startGame()
-{
-    counter = 0;
-    block.style.animation = "block 1s infinite linear";
-}
+// Function to start the jump game
+// function startGame()
+// {
+//     counter = 0;
+//     block.style.animation = "block 1s infinite linear";
+// }
 
 // var checkDead = setInterval(function()
 //     {
@@ -84,13 +83,6 @@ function startGame()
 //         }
 //     }, 10);
 
-function showModal()
-{
-    modal.style.display = "block";
-    modalText.innerHTML = "Game Over. Score: " + Math.floor(counter / 100);
-}
-
-// Close modal and restart game
 saveDataButton.onclick = function()
 {
     // Save data
@@ -150,7 +142,7 @@ function addItemToInventory(itemName) {
     }
 
     // Update the displayed inventory
-    updateInventory();
+    updateInventory(inventory);
     checkButtonAvailability();
 }
 
@@ -163,13 +155,6 @@ itemButtons.forEach(button => {
         addItemToInventory(itemName); // Pass the item name directly
     };
 });
-
-// Update stat displays
-// Score
-var updateScore = setInterval(function() {
-    updateInventory(inventory);
-    updateStats(stats);
-}, 100);
 
 // Stats
 function updateStats(statsDict) {
