@@ -162,7 +162,6 @@ function addItemToInventory(itemName) {
 }
 
 // Attach event listeners to each button
-const itemButtons = document.querySelectorAll('.itemButton');
 itemButtons.forEach(button => {
     // Get the item name from the button text (lowercase)
     const itemName = button.querySelector('p').innerText.toLowerCase();
