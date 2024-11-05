@@ -2,10 +2,10 @@
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 var counter = 0;
-var modal = document.getElementById("gameOverModal");
-var modalText = document.getElementById("modalText");
-var restartButton = document.getElementById("restartButton");
-var quitButton = document.getElementById("quitButton");
+var saveDataButton = document.getElementById("saveDataButton");
+var loadDataButton = document.getElementById("loadDataButton");
+var clearDataButton = document.getElementById("clearDataButton");
+var resetButton = document.getElementById("resetButton");
 var startModal = document.getElementById("startModal");
 var startModalText = document.getElementById("startModalText");
 var startButton = document.getElementById("startButton");
@@ -15,6 +15,11 @@ var counter = 0;
 var clicker = document.getElementById("button1");
 var clickerImage = document.getElementById('button1-image');
 var scoreSpan =  document.getElementById("scoreSpan");
+
+// Test
+
+
+
 
 /* Jump code */
 function jump()
@@ -26,11 +31,9 @@ function jump()
     }, 300);
 }
 
-function showStartModal()
-{
-    startModal.style.display = "block";
-    startModalText.innerHTML = "Play the jump game!";
-}
+// Show start modal
+startModalText.innerHTML = "Play the jump game!";
+startModal.style.display = "block";
 
 startButton.onclick = function()
 {
@@ -66,16 +69,29 @@ function showModal()
 }
 
 // Close modal and restart game
-restartButton.onclick = function()
+saveDataButton.onclick = function()
 {
-    modal.style.display = "none";
-    startGame();
+    // Save data
+    localStorage.setItem("clickCount", counter);
 };
 
-quitButton.onclick = function()
+loadDataButton.onclick = function()
 {
-    modal.style.display = "none";
-    alert("Thanks for playing!"); 
+    // Retrieve data
+    const savedClickCount = localStorage.getItem("clickCount");
+    counter = savedClickCount;
+};
+
+clearDataButton.onclick = function()
+{
+    // Clear saved data
+    localStorage.removeItem("clickCount");
+};
+
+resetButton.onclick = function()
+{
+    // Reset progress
+    counter = 0;
 };
 
 /* Clicker code */

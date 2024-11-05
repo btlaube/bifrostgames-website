@@ -48,7 +48,7 @@ body {
     position: relative;
     top: 131px;
     left: 500px;
-    animation: block 1s infinite linear;
+    animation: none; /* No animation by default (wait until game start) */
 }
 @keyframes block{
     0%{left: 500px}
@@ -81,6 +81,7 @@ p{
 }
 
 button {
+    background-color: rgba(255, 255, 255, 0.5);
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;

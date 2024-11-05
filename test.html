@@ -10,11 +10,18 @@
         <div id="character"></div>
         <div id="block"></div>
     </div>
-    <p>Score: <span id="scoreSpan"></span></p>
 
     <button id="button1"><a><img id="button1-image" src="/assets/img/Icons/HiddenAwardGold.png" alt="Hello, world!"></a></button>
     <p id="score">Wowee! x<span id="scoreSpan"></span></p>
 
+    <div id="dataControls">
+        <button id="saveDataButton">Save Progress</button>
+        <button id="loadDataButton">Load Progress</button>
+        <button id="clearDataButton">Clear Data</button>     
+        <button id="resetButton">Reset Progress</button>
+    </div>
+
+<!-- 
     <div id="gameOverModal" class="modal">
         <div class="modal-content">
             <span id="modalText"></span>
@@ -22,10 +29,11 @@
             <button id="quitButton">Quit</button>
         </div>
     </div>
+-->
 
     <div id="startModal" class="modal">
         <div class="modal-content">
-            <span id="startModalTest"></span>
+            <span id="startModalText"></span>
             <button id="startButton">Start</button>
         </div>
     </div>
