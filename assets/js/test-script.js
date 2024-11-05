@@ -133,20 +133,6 @@ resetButton.onclick = function()
     counter = 0;
 };
 
-/* Clicker code */
-clicker.onclick = function()
-{
-    addScore();
-    // TODO: add auto save feature
-};
-
-function addScore()
-{
-    counter++;
-}
-
-
-
 // Function to add an item to the inventory
 function addItemToInventory(itemName) {
     // Check if the item exists in the inventory
