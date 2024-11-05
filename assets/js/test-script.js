@@ -43,6 +43,14 @@ const resourceCosts = {
     "magnesium": 4         // Requires sulfur to unlock
 };
 
+// Mapping of required resources for each item
+var requiredResources = {
+    "copper": "coal",
+    "iron": "copper",
+    "sulfur": "iron",
+    "magnesium": "sulfur"
+};
+
 /* Jump code */
 function jump()
 {
@@ -187,10 +195,10 @@ function checkButtonAvailability() {
     // Loop through each button and check if the player has enough resources
     document.querySelectorAll('.itemButton').forEach(button => {
         const itemName = button.querySelector('p').innerText.toLowerCase();
-        const requiredResource = resourceCosts[itemName];
+        const requiredResource = requiredResources[itemName];
 
         // Enable the button if enough resources are available for the previous item
-        if (itemName === "coal" || inventory[requiredResource] >= requiredResource) {
+        if (itemName === "coal" || inventory[requiredResource] >= resourceCosts[itemName]) {
             button.disabled = false; // Enable button
         } else {
             button.disabled = true; // Disable button if not enough resources
