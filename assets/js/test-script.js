@@ -65,6 +65,7 @@ function jump()
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
+checkButtonAvailability();
 
 startButton.onclick = function()
 {
