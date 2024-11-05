@@ -80,28 +80,27 @@ var automatorRecipes = {
 // }
 
 // Function to check and update button availability based on inventory
-function checkAutomatorAvailability() {
-    // Loop through each button and check if the player has enough resources
-    document.querySelectorAll('.automator').forEach(automator => {
-        const automatorName = automator.id;
+function checkAutomatorAvailability(automator) {
         
-        for (ingredient in automatorRecipes[automatorName])
-        {
-            // Enable the button if enough resources are available for the previous item
-            if (inventory[ingredient[0]] < inventory[ingredient[1]]) {
-                return false; // cannot afford :(
-            }
+    for (ingredient in automatorRecipes[automator])
+    {
+        // Enable the button if enough resources are available for the previous item
+        if (inventory[ingredient[0]] < inventory[ingredient[1]]) {
+            return false; // cannot afford :(
         }
-        return true; // Can afford :)
-    });
+    }
+    return true; // Can afford :)
 }
 
 // Show start modal
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
-checkButtonAvailability();
-checkAutomatorAvailability();
+document.querySelectorAll('.automator').forEach(automator => {
+    const automatorName = automator.id;
+    button.disabled = !(checkAutomatorAvailability(automatorName));
+});
+
 
 startButton.onclick = function()
 {
