@@ -99,7 +99,7 @@ updateInventory(inventory);
 checkButtonAvailability();
 document.querySelectorAll('.automator').forEach(automator => {
     const automatorName = automator.id;
-    button.disabled = !(checkAutomatorAvailability(automatorName));
+    automator.disabled = !(checkAutomatorAvailability(automatorName));
 });
 
 
