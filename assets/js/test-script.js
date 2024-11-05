@@ -150,7 +150,21 @@ function addScore()
 var updateScore = setInterval(function() {
     scoreSpan.innerHTML = counter;
     updateInventory();
+    updateStats();
 }, 100);
+
+// Stats
+function updateStats(stastDict) {
+    for (const [key, value] of Object.entries(stastDict)) {
+        const nameElement = document.getElementById("${key.toLowerCase()}-name");
+        const countElement = document.getElementById("${key.toLowerCase()}-count");
+
+        if (nameElement && countElement) {
+            nameElement.innerHTML = key; // Display the stat name
+            countElement.innerHTML = value; // Display the stat value
+        }
+    }
+}
 
 // Inventory
 function updateInventory(inventoryDict) {
@@ -164,4 +178,6 @@ function updateInventory(inventoryDict) {
         }
     }
 }
+
+
 
