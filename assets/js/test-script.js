@@ -12,9 +12,6 @@ var startButton = document.getElementById("startButton");
 
 /* Clicker vars */
 var counter = 0;
-var clicker = document.getElementById("button1");
-var clickerImage = document.getElementById('button1-image');
-var scoreSpan =  document.getElementById("scoreSpan");
 
 // Select all buttons with the itemButton class
 var itemButtons = document.querySelectorAll('.itemButton');
