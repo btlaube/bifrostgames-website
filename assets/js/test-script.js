@@ -16,10 +16,23 @@ var clicker = document.getElementById("button1");
 var clickerImage = document.getElementById('button1-image');
 var scoreSpan =  document.getElementById("scoreSpan");
 
-// Test
+// Sample data dictionary
+var stats = {
+    "strength": 10,
+    "agility": 8,
+    "intelligence": 15,
+    "endurance": 12,
+    "luck": 5
+};
 
-
-
+// Sample data dictionary
+var inventory = {
+    "coal": 10,
+    "copper": 8,
+    "iron": 15,
+    "sulfur": 12,
+    "magnesium": 5
+};
 
 /* Jump code */
 function jump()
@@ -73,11 +86,35 @@ saveDataButton.onclick = function()
 {
     // Save data
     localStorage.setItem("clickCount", counter);
+
+    // Save other data
+    // Call the function to save stats
+    saveStatsToLocalStorage(stats);
+    // Call the function to save inventory items
+    saveInventoryToLocalStorage(stats);
 };
+
+// Function to save each stat to localStorage
+function saveStatsToLocalStorage(statDict) {
+    for (let stat in statDict) {
+        if (statDict.hasOwnProperty(stat)) { // Check if it’s a direct property of the object
+            localStorage.setItem(stat, statDict[stat]);
+        }
+    }
+}
+
+// Function to save each item to localStorage
+function saveInventoryToLocalStorage(inventoryDict) {
+    for (let item in inventoryDict) {
+        if (inventoryDict.hasOwnProperty(item)) { // Check if it’s a direct property of the object
+            localStorage.setItem(item, inventoryDict[item]);
+        }
+    }
+}
 
 loadDataButton.onclick = function()
 {
-    // Check for data to retrieve
+    // TODO: Check for data to retrieve
         // If not, do not overwrite current progress
     // Retrieve data
     const savedClickCount = localStorage.getItem("clickCount");
@@ -100,6 +137,7 @@ resetButton.onclick = function()
 clicker.onclick = function()
 {
     addScore();
+    // TODO: add auto save feature
 };
 
 function addScore()
@@ -107,6 +145,23 @@ function addScore()
     counter++;
 }
 
+// Update stat displays
+// Score
 var updateScore = setInterval(function() {
     scoreSpan.innerHTML = counter;
+    updateInventory();
 }, 100);
+
+// Inventory
+function updateInventory(inventoryDict) {
+    for (const [key, value] of Object.entries(inventoryDict)) {
+        const nameElement = document.getElementById("${key.toLowerCase()}-name");
+        const countElement = document.getElementById("${key.toLowerCase()}-count");
+
+        if (nameElement && countElement) {
+            nameElement.innerHTML = key; // Display the stat name
+            countElement.innerHTML = value; // Display the stat value
+        }
+    }
+}
+
