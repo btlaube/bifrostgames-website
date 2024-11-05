@@ -34,6 +34,15 @@ var inventory = {
     "magnesium": 0
 };
 
+// Resource costs for each item (previous item required to unlock the next)
+const resourceCosts = {
+    "coal": 0,             // No cost for the first item
+    "copper": 1,           // Requires coal to unlock
+    "iron": 2,             // Requires copper to unlock
+    "sulfur": 3,           // Requires iron to unlock
+    "magnesium": 4         // Requires sulfur to unlock
+};
+
 /* Jump code */
 function jump()
 {
@@ -141,7 +150,8 @@ function addItemToInventory(itemName) {
     }
 
     // Update the displayed inventory
-    updateInventoryDisplay();
+    updateInventory();
+    checkButtonAvailability();
 }
 
 // Attach event listeners to each button
@@ -185,6 +195,22 @@ function updateInventory(inventoryDict) {
             countElement.innerHTML = value; // Display the stat value
         }
     }
+}
+
+// Function to check and update button availability based on inventory
+function checkButtonAvailability() {
+    // Loop through each button and check if the player has enough resources
+    document.querySelectorAll('.itemButton').forEach(button => {
+        const itemName = button.querySelector('p').innerText.toLowerCase();
+        const requiredResource = resourceCosts[itemName];
+
+        // Enable the button if enough resources are available for the previous item
+        if (itemName === "coal" || inventory[requiredResource] >= requiredResource) {
+            button.disabled = false; // Enable button
+        } else {
+            button.disabled = true; // Disable button if not enough resources
+        }
+    });
 }
 
 
