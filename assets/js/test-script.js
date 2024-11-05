@@ -100,7 +100,6 @@ resetButton.onclick = function()
 clicker.onclick = function()
 {
     addScore();
-    updateScore();
 };
 
 function addScore()
