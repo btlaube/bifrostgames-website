@@ -99,3 +99,8 @@ button {
     justify-content: space-around;
     align-items: center;
 }
+
+.itemButton
+{
+    border-color: rgb(125, 0, 125);
+}
