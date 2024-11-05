@@ -96,6 +96,7 @@ function checkAutomatorAvailability(automator) {
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
+checkButtonAvailability();
 document.querySelectorAll('.automator').forEach(automator => {
     const automatorName = automator.id;
     button.disabled = !(checkAutomatorAvailability(automatorName));
