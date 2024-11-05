@@ -64,6 +64,7 @@ function jump()
 // Show start modal
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
+updateInventory(inventory);
 
 startButton.onclick = function()
 {
@@ -154,6 +155,18 @@ function addItemToInventory(itemName) {
     checkButtonAvailability();
 }
 
+// Function to add an item to the inventory
+function removeItemFromInventory(itemName) {
+    // Check if the item exists in the inventory
+    if (inventory.hasOwnProperty(itemName)) {
+        inventory[itemName] -= 1; // Increment the count for the item
+    }
+
+    // Update the displayed inventory
+    updateInventory(inventory);
+    checkButtonAvailability();
+}
+
 // Attach event listeners to each button
 itemButtons.forEach(button => {
     // Get the item name from the button text (lowercase)
@@ -161,6 +174,7 @@ itemButtons.forEach(button => {
     
     button.onclick = function() {
         addItemToInventory(itemName); // Pass the item name directly
+        removeItemFromInventory(resourceCosts[itemName]);
     };
 });
 
