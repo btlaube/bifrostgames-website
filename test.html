@@ -11,8 +11,15 @@
         <div id="block"></div>
     </div>
 
-    <button id="button1"><a><img id="button1-image" src="/assets/img/Icons/HiddenAwardGold.png" alt="Hello, world!"></a></button>
     <p id="score">Wowee! x<span id="scoreSpan"></span></p>
+
+    <div class="horizontal-container">
+        <button class="itemButton" id="coal-button"><p>Coal</p></button>
+        <button class="itemButton" id="copper-button"><p>Copper</p></button>
+        <button class="itemButton" id="iron-button"><p>Iron</p></button>
+        <button class="itemButton" id="sulfur-button"><p>Sulfur</p></button>
+        <button class="itemButton" id="magnesium-button"><p>Magnesium</p></button>
+    </div>
 
     <div id="dataControls">
         <button id="saveDataButton">Save Progress</button>
@@ -21,21 +28,25 @@
         <button id="resetButton">Reset Progress</button>
     </div>
 
-    <div id="stats">
-        <p id="strength"><span id="strength-name"></span>: <span id="strength-count"></span></p>
-        <p id="agility"><span id="agility-name"></span>: <span id="agility-count"></span></p>
-        <p id="intelligence"><span id="intelligence-name"></span>: <span id="intelligence-count"></span></p>
-        <p id="endurance"><span id="endurance-name"></span>: <span id="endurance-count"></span></p>
-        <p id="luck"><span id="luck-name"></span>: <span id="luck-count"></span></p>
+    <div class="horizontal-container">
+        <div id="stats">
+            <p id="strength"><span id="strength-name"></span>: <span id="strength-count"></span></p>
+            <p id="agility"><span id="agility-name"></span>: <span id="agility-count"></span></p>
+            <p id="intelligence"><span id="intelligence-name"></span>: <span id="intelligence-count"></span></p>
+            <p id="endurance"><span id="endurance-name"></span>: <span id="endurance-count"></span></p>
+            <p id="luck"><span id="luck-name"></span>: <span id="luck-count"></span></p>
+        </div>
+    
+        <div id="inventory">
+            <p id="coal"><span id="coal-name"></span>: <span id="coal-count"></span></p>
+            <p id="copper"><span id="copper-name"></span>: <span id="copper-count"></span></p>
+            <p id="iron"><span id="iron-name"></span>: <span id="iron-count"></span></p>
+            <p id="sulfur"><span id="sulfur-name"></span>: <span id="sulfur-count"></span></p>
+            <p id="magnesium"><span id="magnesium-name"></span>: <span id="magnesium-count"></span></p>
+        </div>
     </div>
 
-    <div id="inventory">
-        <p id="coal"><span id="coal-name"></span>: <span id="coal-count"></span></p>
-        <p id="copper"><span id="copper-name"></span>: <span id="copper-count"></span></p>
-        <p id="iron"><span id="iron-name"></span>: <span id="iron-count"></span></p>
-        <p id="sulfur"><span id="sulfur-name"></span>: <span id="sulfur-count"></span></p>
-        <p id="magnesium"><span id="magnesium-name"></span>: <span id="magnesium-count"></span></p>
-    </div>
+    
 
 <!-- 
     <div id="gameOverModal" class="modal">
@@ -46,6 +57,8 @@
         </div>
     </div>
 -->
+
+    <!-- TODO: Make buttons unlockable with enough of previous material -->
 
     <div id="startModal" class="modal">
         <div class="modal-content">

@@ -16,22 +16,25 @@ var clicker = document.getElementById("button1");
 var clickerImage = document.getElementById('button1-image');
 var scoreSpan =  document.getElementById("scoreSpan");
 
+// Select all buttons with the itemButton class
+var itemButtons = document.querySelectorAll('.itemButton');
+
 // Sample data dictionary
 var stats = {
-    "strength": 10,
-    "agility": 8,
-    "intelligence": 15,
-    "endurance": 12,
-    "luck": 5
+    "strength": 2,
+    "agility": 2,
+    "intelligence": 2,
+    "endurance": 2,
+    "luck": 2
 };
 
 // Sample data dictionary
 var inventory = {
-    "coal": 10,
-    "copper": 8,
-    "iron": 15,
-    "sulfur": 12,
-    "magnesium": 5
+    "coal": 0,
+    "copper": 0,
+    "iron": 0,
+    "sulfur": 0,
+    "magnesium": 0
 };
 
 /* Jump code */
@@ -144,6 +147,30 @@ function addScore()
 {
     counter++;
 }
+
+
+
+// Function to add an item to the inventory
+function addItemToInventory(itemName) {
+    // Check if the item exists in the inventory
+    if (inventory.hasOwnProperty(itemName)) {
+        inventory[itemName] += 1; // Increment the count for the item
+    }
+
+    // Update the displayed inventory
+    updateInventoryDisplay();
+}
+
+// Attach event listeners to each button
+const itemButtons = document.querySelectorAll('.itemButton');
+itemButtons.forEach(button => {
+    // Get the item name from the button text (lowercase)
+    const itemName = button.querySelector('p').innerText.toLowerCase();
+    
+    button.onclick = function() {
+        addItemToInventory(itemName); // Pass the item name directly
+    };
+});
 
 // Update stat displays
 // Score
