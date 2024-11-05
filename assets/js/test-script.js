@@ -149,8 +149,8 @@ function addScore()
 // Score
 var updateScore = setInterval(function() {
     scoreSpan.innerHTML = counter;
-    updateInventory();
-    updateStats();
+    updateInventory(inventory);
+    updateStats(stats);
 }, 100);
 
 // Stats
