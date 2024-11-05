@@ -156,8 +156,8 @@ var updateScore = setInterval(function() {
 // Stats
 function updateStats(statsDict) {
     for (const [key, value] of Object.entries(statsDict)) {
-        const nameElement = document.getElementById("${key.toLowerCase()}-name");
-        const countElement = document.getElementById("${key.toLowerCase()}-count");
+        const nameElement = document.getElementById(`${key.toLowerCase()}-name`);
+        const countElement = document.getElementById(`${key.toLowerCase()}-count`);
 
         if (nameElement && countElement) {
             nameElement.innerHTML = key; // Display the stat name
@@ -169,8 +169,8 @@ function updateStats(statsDict) {
 // Inventory
 function updateInventory(inventoryDict) {
     for (const [key, value] of Object.entries(inventoryDict)) {
-        const nameElement = document.getElementById("${key.toLowerCase()}-name");
-        const countElement = document.getElementById("${key.toLowerCase()}-count");
+        const nameElement = document.getElementById(`${key.toLowerCase()}-name`);
+        const countElement = document.getElementById(`${key.toLowerCase()}-count`);
 
         if (nameElement && countElement) {
             nameElement.innerHTML = key; // Display the stat name
