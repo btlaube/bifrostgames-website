@@ -1,142 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" onclick="jump()">
 <head>
-	<title>Test</title>
-    <link rel="icon" href="/assets/img/Bridge2_Gradient2_LPBG_Larger.png" type="image/x-icon" />
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/assets/css/teststyle.css">
+    <meta charset="UTF-8">
+    <title>Jump Game</title>
+    <link rel="stylesheet" href="/assets/css/test-style.css">
 </head>
-
 <body>
-    <div class="transparent-overlay"></div>
-    <div class="background1"></div>
-    <!-- <div class="background2"></div> -->
-    
-	<header>
-        <nav>
-			<ul>
-                <li><a href="/" target="_blank">BifrostGames</a></li>
-                <li><a href="/portfolio">/ Portfolio</a></li>
-			</ul>
-		</nav>
-		<nav>
-			<ul>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#links">Links</a></li>
-                <li><a href="/portfolio/devlogs/">Dev Logs</a></li>
-			</ul>
-		</nav>
-	</header>
-    
-	<section id="banner" class="element-box">
-        <a href="./"><img id="banner-image" src="../assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
-        <hr id="banner-hr">
-        <div class="horizontal-container">
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></a>
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></a>
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></a>
-        </div>
-    </section>
-
-	<section id="about" class="element-box">
-		<h1>About Me</h1>
-        <div class="image-text-container">
-            <div class="text-container">
-                <p>Hi there!</p>
-                <p>My name is Ben Laube and I recently graduated with a bachelor of science in Computer Science at the University of Nebraska-Lincoln. My passion is video game development, and I've been captivated by the endless possibilities of video games since childhood and making my own games for years. This passion motivated me to gain a strong education in programming and software design practices.</p>
-                <p>I have been making games for years, from block-based visual programming like Scratch to high-level game engines like Unity, and I hope to create innovative and exciting games that capture the imaginations of players around the world!</p>
-                <p>Thank you for taking the time to read a little bit about me.</p>
-            </div>
-            <button id="pfpClicker"><a><img id="profileImage" src="../assets/img/PfpAnimFrames/Frame1.png" alt="BifrostGames"></a></button>
-        </div>
-        <p id="score">Youch! x<span id="scoreSpan"></span></p>
-	</section>
-    <div>
-        <button class="hidden-button" id="button1"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></button>
+    <div class="game">
+        <div id="character"></div>
+        <div id="block"></div>
     </div>
-	<section id="portfolio" class="element-box">
-		<h1>Games Collection</h1>
-        <div>
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/SS_Cover.png" alt="shifty-scales"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank"><h2>Shifty Scales</h2></a>
-                    <h3>August 20, 2024</h3>
-                    <p>At Shifty Scales, you run a shady shop with a clever machine that swaps the sizes of objects! Receive customer orders and solve puzzles by resizing and reshaping items to meet their demands.</p>
-                    <a href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
-                </div>
-            </div>
+    <p>Score: <span id="scoreSpan"></span></p>
 
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/SR_Cover.png" alt="(Shadow) Retriever"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/shadow-retriever" target="_blank"><h2>(Shadow) Retriever</h2></a>
-                    <h3>July 31st, 2024</h3>
-                    <p>You are the alchemist's shadow summoned for the task of retrieving lost alchemical artifacts.</p>
-                    <a href="https://bifrostgames.itch.io/shadow-retriever" target="_blank">Play on Itch</a>
-                </div>
-            </div>
+    <button id="button1"><a><img id="button1-image" src="/assets/img/Icons/HiddenAwardGold.png" alt="Hello, world!"></a></button>
+    <p id="score">Wowee! x<span id="scoreSpan"></span></p>
 
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/VG_Cover.png" alt="The Vice's Grip"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/vice-grip" target="_blank"><h2>The Vice's Grip</h2></a>
-                    <h3>October 2nd, 2023</h3>
-                    <p>Caught by the Trash Compactor Killer! Can you escape before the walls close in?</p>
-                    <a href="https://bifrostgames.itch.io/vice-grip" target="_blank">Play on Itch</a>
-                </div>
-            </div>
-            
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/AL_Cover.png" alt="At Large"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/at-large" target="_blank"><h2>At Large</h2></a>
-                    <h3>November 14th, 2022</h3>
-                    <p>You are an escaped convict at large, and every 5 seconds you need to make sure you are hidden amongst the crowd.</p>
-                    <a href="https://bifrostgames.itch.io/at-large" target="_blank">Play on Itch</a>
-                    <div>
-                        <button class="hidden-button" id="button2"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/RoD_Cover.png" alt="Roll or Die"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/roll-or-die" target="_blank"><h2>Roll or Die</h2></a>
-                    <h3>July 18th, 2022</h3>
-                    <p>Roll dice and choose to use the rolled values to heal, attack, or get more dice.</p>
-                    <a href="https://bifrostgames.itch.io/roll-or-die" target="_blank">Play on Itch</a>
-                </div>
-            </div>
-            
-            <div class="image-text-container">
-                <button class="animButton"><a><img src="/assets/img/Games/DSCU_Cover.png" alt="Deep Space Clean Up"></a></button>
-                <div class="text-container">
-                    <a class="subtle-link" href="https://bifrostgames.itch.io/deep-space-clean-up" target="_blank"><h2>Deep Space Clean Up</h2></a>
-                    <h3>June 15th, 2022</h3>
-                    <p>Your crew of space janitors becomes stranded on an abandoned space station...and it looks like whoever this station belonged to was performing strange experiments.</p>
-                    <a href="https://bifrostgames.itch.io/deep-space-clean-up" target="_blank">Play on Itch</a>
-                </div>
-            </div>
-            
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <span id="modalText"></span>
+            <button id="restartButton">Restart</button>
+            <button id="quitButton">Quit</button>
         </div>
-	</section>
-
-    <div>
-        <button class="hidden-button" id="button3"><img src="/assets/img/Icons/HiddenAward.png" alt="Test"></button>
     </div>
 
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#banner">To top</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 BifrostGames. All rights reserved.</p>
-    </footer>
+    <div id="startModal" class="modal">
+        <div class="modal-content">
+            <span id="startModalTest"></span>
+            <button id="startButton">Start</button>
+        </div>
+    </div>
 </body>
-<script src="./assets/js/test-script.js"></script>
+<script src="/assets/js/test-script.js"></script>
 </html>
-

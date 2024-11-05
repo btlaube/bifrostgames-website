@@ -1,305 +1,94 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
-
-:root {
-    --bgColor: #280126;
-    --bgColor2: #050505;
-    --accentColor: #ffffff;
-    --accentColor2: #61005c;
-    --goldColor: #ffd700;
-    --font: 'Karla', sans-serif;
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding: 10rem;
-    display: table;
-    margin: auto;
-}
-
-/* Section Styles */
-#banner {
-    display: flex;
-    flex-direction: column; /* Arrange children in a column */
-    align-items: center;    /* Center items horizontally within the column */
-    justify-content: center; /* Center items vertically within the column */
-}
-
-/* Header styles */
-#header {
-    padding: 50px 0px;
-}
-
-/* Links */
-#links {
-    max-width: 800px;
-    margin: 27px auto;
-}
-
-.link {
-    color: var(--accentColor);
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.link:hover {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
-.link:active {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
-/* Footer styles */
-footer {
-    padding-top: 150px;
-    padding-bottom: 10px;
-    text-align: center;
-}
-
-/* Basic styles for the entire website */
 body {
-    font-family: var(--font);
-    background: var(--bgColor2);
-    color: var(--accentColor);
     max-width: 900px;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-nav a {
-    display: block;
-    padding: 5px;
-    color: var(--accentColor);
-    text-decoration: none;
-}
-
-nav a:hover {
-    background-color: var(--accentColor2);
-    color: var(--accentColor);
-}
-
-hr {
-    border: solid 1px;
-    border-color: #ffffff; /* Horizontal line is white by default */
-    width: 100%;
-    margin: 5px 0;
-}
-
-h1 {
-    font-size: 3rem;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-size: 1rem;
-    margin-bottom: 1px;
-}
-
-/* Classes */
-.element-box {
+    background-color: rgb(10, 0, 10);
     padding: 50px 20px;
-}
-
-.alignleft {
-	float: left;
-}
-.alignright {
-	float: right;
-}
-
-.image-text-container {
-    display: flex;
-    justify-content: space-around;
-}
-  
-.image-text-container img {
-    width: 300px;
-    height: auto;
-    padding: 10px;
-}
-
-.text-container {
     text-align: left;
-    width: auto;
-    padding: 10px;
-}
-
-.subtle-link {
-    color: var(--accentColor);
-    text-decoration: none;
-}
-
-.subtle-link:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: var(--accentColor2)
-}
-
-.horizontal-container {
+    color: whitesmoke;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-/* Easter eggs */
-#score {
-    display: none; /* Hide the score by default */
+.game{
+    width: 500px;
+    height: 200px;
+    border: 1px solid rgb(125, 0, 125);
+    margin: auto;
+}
+#character{
+    width: 17px;
+    height: 51px;
+    background-color: rgba(100, 0, 100, 0);
+    background-image: url("https://bifrostgames.org/assets/img/JumpGame/Player.png");
+    position:relative;
+    top: 149px;
+}
+.animate{
+    animation: jump 0.3s linear;
+}
+@keyframes jump{
+    0%{top: 149px;}
+    30%{top: 99px;}
+    70%{top: 99px;}
+    100%{top: 149px;}
+}
+
+#block{
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url("https://bifrostgames.org/assets/img/JumpGame/Haz.png");
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 131px;
+    left: 500px;
+    animation: block 1s infinite linear;
+}
+@keyframes block{
+    0%{left: 500px}
+    100%{left: -20px}
+}
+p{
+    text-align: center;
+}
+
+.modal {
+    display: none; /* Hide the modal by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: rgb(10, 0, 10);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out; /* Optional fade-in effect */
 }
 
 button {
-    background-color: rgba(0, 0, 0, 0);
-    /* border: none; */
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-/* Style for the buttons */
-#pfpClicker {
-    position: relative;
-    border: none;
-    background: none;
-    outline: none;
+/* Optional fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-
-.animButton {
-    position: relative;
-    padding: 10px;
-    border: none;
-    background: none;
-    outline: none;
-}
-
-.animButton::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--border-color, rgb(255, 0, 0)); /* Default if no color is set */
-    border-radius: 50%; /* Rounded border effect */
-    transform: translate(-50%, -50%) scale(2); /* Start scale */
-    opacity: 0; /* Start opacity */
-    pointer-events: none;
-    transition: transform 0.5s cubic-bezier(0, 0, 0, 1.01), opacity 0.5s ease, border-color 0.5s ease;
-}
-
-.animButton.active::after {
-    transform: translate(-50%, -50%) scale(0.5); /* Scales the border outward */
-    opacity: 1; /* Full opacity at animation start */
-    border-color: var(--transparent-border-color, rgba(255, 0, 0, 0)); /* Fades border to transparent */
-}
-
-.hidden-button {
-    border: none;
-    z-index: 1000; /* Above other content */
-    padding: 0px 0px;
-    cursor: pointer;
-    pointer-events: auto; /* Allows clicking on buttons */
-}
-
-.hidden-button img {
-    width: 100%;
-    height: 100%;
-    padding: 0px 0px;
-}
-
-.hidden-award {
-    display: none; /* Hide awards by default */
-}
-
-#button1 {
-    width: 32px;
-    height: 32px;
-    margin-left: 500px;
-}
-
-#button2 {
-    width: 32px;
-    height: 32px;
-}
-
-#button3 {
-    width: 32px;
-    height: 32px;
-    margin-left: 500px;
-}
-
-/* Main content styling */
-.overlay-content {
-    position: relative;
-    z-index: 1; /* Keeps content above the overlay */
-    padding: 20px;
-    text-align: center;
-    color: whitesmoke;
-    font-family: Arial, sans-serif;
-}
-
-/* Overlay styling */
-.transparent-overlay {
-    position: fixed; /* Sticks to the viewport */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url('https://bifrostgames.org/assets/img/SmallGrainBgwhite.gif'); /* Replace with the path to your GIF */
-    background-repeat: repeat; /* Repeats the GIF horizontally and vertically */
-    opacity: 0; /* Fully transperant by default */
-    pointer-events: none; /* Allows interaction with content beneath */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -200; /* A high z-index to ensure it appears on top */
-}
-
-.background1 {
-    position: fixed; /* Sticks to the viewport */
-    top: 0;
-    left: 50%;
-    width: 900px;
-    height: 100vh;
-    transform: translateX(-50%); /* Center the element horizontally */
-    background-color: var(--bgColor2);
-    opacity: 0.5; /* Fully transperant by default */
-    pointer-events: none; /* Allows interaction with content beneath */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -100; /* A high z-index to ensure it appears on top */
-}
-
-.background2 {
-    position: fixed; /* Sticks to the viewport */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--bgColor);
-    opacity: 1; /* Fully transperant by default */
-    pointer-events: none; /* Allows interaction with content beneath */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -300; /* A high z-index to ensure it appears on top */
-}
-
-
-

@@ -1,145 +1,96 @@
+/* Jump vars */
+var character = document.getElementById("character");
+var block = document.getElementById("block");
 var counter = 0;
-var pfpClicker = document.getElementById("pfpClicker");
-var profileImage = document.getElementById("profileImage");
+var modal = document.getElementById("gameOverModal");
+var modalText = document.getElementById("modalText");
+var restartButton = document.getElementById("restartButton");
+var quitButton = document.getElementById("quitButton");
+var startModal = document.getElementById("startModal");
+var startModalText = document.getElementById("startModalText");
+var startButton = document.getElementById("startButton");
+
+/* Clicker vars */
+var counter = 0;
+var clicker = document.getElementById("button1");
+var clickerImage = document.getElementById('button1-image');
 var scoreSpan =  document.getElementById("scoreSpan");
-var scoreText = document.getElementById("score");
-// Select all buttons with the animButton class
-var buttons = document.querySelectorAll(".animButton");
 
-// Transperant overlay test
-var transOverlay = document.querySelector(".transparent-overlay");
-
-// Select all hiddenButton
-var hiddenButtons = document.querySelectorAll(".hidden-button");
-// Select all hiddenAward
-var awards = document.querySelectorAll(".hidden-award")
-var hiddenAwardCounter = 0;
-
-// Hidden award glow test
-var bannerImage = document.getElementById("banner-image");
-var bannerHr = document.getElementById("banner-hr");
-
-// Array of image sources for animation frames
-const imageFrames = [
-    "../assets/img/PfpAnimFrames/Frame3.png",
-    "../assets/img/PfpAnimFrames/Frame2.png",
-    "../assets/img/PfpAnimFrames/Frame1.png"
-];
-
-
-// 
-pfpClicker.onclick = function()
+/* Jump code */
+function jump()
 {
-    addScore();
-    animatePfp();
-    fadeInOverlay();
+    if(character.classList.contains("animate")){ return; }
+    character.classList.add("animate");
+    setTimeout(function(){
+        character.classList.remove("animate");
+    }, 300);
+}
+
+function showStartModal()
+{
+    startModal.style.display = "block";
+    startModalText.innerHTML = "Play the jump game!";
+}
+
+startButton.onclick = function()
+{
+    startModal.style.display = "none";
+    startGame();
 };
 
-// 
+// Function to start the game
+function startGame()
+{
+    counter = 0;
+    block.style.animation = "block 1s infinite linear";
+}
+
+// var checkDead = setInterval(function()
+//     {
+//         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+//         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+//         // Check if block is at player down position and check if player is in down (not jumping) position
+//         if(blockLeft < 17 && blockLeft > -17 && characterTop >= 130){
+//             block.style.animation = "none";
+//             showModal();
+//         } else {
+//             counter++;
+//             document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
+//         }
+//     }, 10);
+
+function showModal()
+{
+    modal.style.display = "block";
+    modalText.innerHTML = "Game Over. Score: " + Math.floor(counter / 100);
+}
+
+// Close modal and restart game
+restartButton.onclick = function()
+{
+    modal.style.display = "none";
+    startGame();
+};
+
+quitButton.onclick = function()
+{
+    modal.style.display = "none";
+    alert("Thanks for playing!"); 
+};
+
+/* Clicker code */
+clicker.onclick = function()
+{
+    addScore();
+    updateScore();
+};
+
 function addScore()
 {
     counter++;
-    scoreText.style.display = "inline"; /* Show the score */
 }
 
-function animatePfp()
-{
-    let currentFrame = 0;
-    let intervalId;
-    
-    // Clear any existing interval before starting a new one
-    clearInterval(intervalId);
-        
-    // Animation logic - cycles through image frames
-    intervalId = setInterval(function() {
-        // Update the image source
-        profileImage.src = imageFrames[currentFrame];
-        // Move to the next frame
-        currentFrame++;
-        // Stop the interval after completing one loop
-        if (currentFrame >= imageFrames.length) {
-            clearInterval(intervalId); // Stop the animation
-        }
-    }, 200); // Change frame every 200ms (adjust as needed)
-}
-
-function fadeInOverlay()
-{
-    if (counter <= 25)
-        transOverlay.style.opacity = (counter / 100);
-}
-
-var updateScore = setInterval(function()
+function updateScore()
 {
     scoreSpan.innerHTML = counter;
-}, 10);
-
-// Attach event listeners to each button
-buttons.forEach(button => {
-    button.onclick = function() {
-        animateBorder(button);
-    };
-});
-
-// Function to generate a random RGB color
-function getRandomColor() {
-    const r = Math.floor(Math.random() * 256); // Random red value
-    const g = Math.floor(Math.random() * 256); // Random green value
-    const b = Math.floor(Math.random() * 256); // Random blue value
-    return { r, g, b };
-}
-
-// Function to trigger border animation with a random color
-function animateBorder(button) {
-    if (button.classList.contains("active")) { return; }
-    
-    // Generate a random RGB color and set it to the button"s border
-    const color = getRandomColor();
-    const borderColor = `rgb(${color.r}, ${color.g}, ${color.b})`;
-    const transparentBorderColor = `rgba(${color.r}, ${color.g}, ${color.b}, 0)`;
-
-    // Apply the colors to the button"s ::after pseudo-element
-    button.style.setProperty("--border-color", borderColor);
-    button.style.setProperty("--transparent-border-color", transparentBorderColor);
-
-    // Add the active class to start the animation
-    button.classList.add("active");
-
-    // Remove the active class after animation ends
-    setTimeout(() => {
-        button.classList.remove("active");
-    }, 500); // Matches the duration of the CSS animation
-}
-
-// Hidden buttons
-hiddenButtons.forEach(button => {
-    button.onclick = function() {
-        // animateBorder(button);
-        revealHidden(button);
-    };
-});
-
-function revealHidden(button) 
-{
-    button.style.display = "none";
-    awards[hiddenAwardCounter].style.display = "inline";
-    hiddenAwardCounter++;
-    if (hiddenAwardCounter == 3)
-        activateShine();
-}
-
-function activateShine()
-{
-    // Change banner image to glow image
-    bannerImage.src = "https://bifrostgames.org/assets/img/BannerLogo_Bifrost_Gold_Blur.png";
-    // Change all hidden awards image from white to gold
-    awards.forEach(award => {
-        // Select the inner <img> tag within each award element
-        const imgTag = award.querySelector("img");
-        if (imgTag) { // Check if the <img> tag exists
-            imgTag.src = "https://bifrostgames.org/assets/img/Icons/HiddenAwardGold.png";
-        }
-    });
-    // Change banner hr to gold
-    bannerHr.style.borderColor = "#ffd700";
 }
