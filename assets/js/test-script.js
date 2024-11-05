@@ -77,6 +77,8 @@ saveDataButton.onclick = function()
 
 loadDataButton.onclick = function()
 {
+    // Check for data to retrieve
+        // If not, do not overwrite current progress
     // Retrieve data
     const savedClickCount = localStorage.getItem("clickCount");
     counter = savedClickCount;
@@ -106,7 +108,6 @@ function addScore()
     counter++;
 }
 
-function updateScore()
-{
+var updateScore = setInterval(function() {
     scoreSpan.innerHTML = counter;
-}
+}, 100);
