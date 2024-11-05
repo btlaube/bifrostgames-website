@@ -15,6 +15,7 @@ var counter = 0;
 
 // Select all buttons with the itemButton class
 var itemButtons = document.querySelectorAll('.itemButton');
+var automators = document.querySelectorAll('.automator');
 
 // Sample data dictionary
 var stats = {
@@ -51,14 +52,48 @@ var requiredResources = {
     "magnesium": "sulfur"
 };
 
-/* Jump code */
-function jump()
-{
-    if(character.classList.contains("animate")){ return; }
-    character.classList.add("animate");
-    setTimeout(function(){
-        character.classList.remove("animate");
-    }, 300);
+var automatorRecipes = {
+    "coal-automator": {"iron": 10},
+    "copper-automator": {"iron": 10},
+    "iron-automator": {"sulfur": 10},
+    "sulfur-automator": {"magnesium": 10},
+}
+
+// Attach event listeners to each button
+// automators.forEach(automator => {
+//     // Get the item name from the button's ID by removing "-button"
+//     const itemName = automator.id.split("-automator")[0]; // Extracts "coal" from "coal-button"
+    
+//     button.onclick = function() {
+//         if (checkRecipe(automatorRecipes[automator]))
+//     };
+// });
+
+// function buyAutomator(automatorName) {
+//     if (checkRecipe(automatorName))
+//         // Activate automator
+//         console.log($`purchased: {automatorName}`);
+
+//     // Update the displayed inventory
+//     updateInventory(inventory);
+//     checkButtonAvailability();
+// }
+
+// Function to check and update button availability based on inventory
+function checkAutomatorAvailability() {
+    // Loop through each button and check if the player has enough resources
+    document.querySelectorAll('.automator').forEach(automator => {
+        const automatorName = automator.id;
+        
+        for (ingredient in automatorRecipes[automatorName])
+        {
+            // Enable the button if enough resources are available for the previous item
+            if (inventory[ingredient[0]] < inventory[ingredient[1]]) {
+                return false; // cannot afford :(
+            }
+        }
+        return true; // Can afford :)
+    });
 }
 
 // Show start modal
@@ -66,32 +101,12 @@ startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
 checkButtonAvailability();
+checkAutomatorAvailability();
 
 startButton.onclick = function()
 {
     startModal.style.display = "none";
 };
-
-// Function to start the jump game
-// function startGame()
-// {
-//     counter = 0;
-//     block.style.animation = "block 1s infinite linear";
-// }
-
-// var checkDead = setInterval(function()
-//     {
-//         let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
-//         let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
-//         // Check if block is at player down position and check if player is in down (not jumping) position
-//         if(blockLeft < 17 && blockLeft > -17 && characterTop >= 130){
-//             block.style.animation = "none";
-//             showModal();
-//         } else {
-//             counter++;
-//             document.getElementById("scoreSpan").innerHTML = Math.floor(counter / 100);
-//         }
-//     }, 10);
 
 saveDataButton.onclick = function()
 {
