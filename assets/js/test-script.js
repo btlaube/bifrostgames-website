@@ -109,11 +109,11 @@ function incrementGeneratorCost(automator) {
 function updateAutomatorDisplays() {
     // Iterate through each button in automators
     automators.forEach(button => {
-        const buttonId = button.id.split('-')[0];
+        const resource = button.id.split('-')[0]; // Get coal from coal-automator
         const recipe = automatorRecipes[button.id];
 
-        const costElement = document.getElementById(`${buttonId}-cost`);
-        const rateElement = document.getElementById(`${buttonId}-rate`);
+        const costElement = document.getElementById(`${resource}-cost`);
+        const rateElement = document.getElementById(`${resource}-rate`);
 
         // Extract required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
@@ -125,7 +125,7 @@ function updateAutomatorDisplays() {
 
         // Update generation rate display
         if (rateElement) {
-            const rate = generationAmounts[buttonId] || 0;
+            const rate = generationAmounts[resource] || 0;
             rateElement.textContent = `${rate}/sec`;
         }
 
@@ -194,12 +194,13 @@ itemButtons.forEach(button => {
 function updateButtonDisplays() {
     // Iterate through each button in automatorRecipes
     itemButtons.forEach(button => {
-        console.log(button.id);
+        // console.log(button.id);
         if (button.id != 'coal-button') {
-            const recipe = itemRecipes[button.id];
+            const resource = button.id.split('-')[0]; // Get copper from copper-button
+            const recipe = itemRecipes[resource];
             
-            const costElement = document.getElementById(`${button.id}-cost`);
-            const rateElement = document.getElementById(`${button.id}-rate`);
+            const costElement = document.getElementById(`${resource}-cost`);
+            const rateElement = document.getElementById(`${resource}-rate`);
 
             // Extract the required resource and amount from the recipe
             const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
@@ -211,7 +212,7 @@ function updateButtonDisplays() {
 
             // Update generation rate display
             if (rateElement) {
-                const rate = generationAmounts[button.id] || 0; // Assuming generationAmounts has corresponding rates
+                const rate = generationAmounts[resource] || 0; // Assuming generationAmounts has corresponding rates
                 rateElement.textContent = `${rate}/click`;
             }
 
