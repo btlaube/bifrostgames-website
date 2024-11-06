@@ -194,6 +194,7 @@ itemButtons.forEach(button => {
 function updateButtonDisplays() {
     // Iterate through each button in automatorRecipes
     itemButtons.forEach(button => {
+        console.log(button.id);
         if (button.id != 'coal-button') {
             const recipe = itemRecipes[button.id];
             
