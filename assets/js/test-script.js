@@ -70,7 +70,7 @@ var generationIntervals = {};
 // Function to add the resource to inventory based on the generation amount
 function generateResource(resource) {
     inventory[resource] += generationAmounts[resource];
-    console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
+    // console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
     updateInventory(inventory);
     updateAutomatorDisplays();
     updateButtonDisplays();
@@ -117,6 +117,7 @@ function updateAutomatorDisplays() {
 
         // Extract required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
+        console.log(`${button.id} ${requiredResource} ${requiredAmount}`);
 
         // Update cost display
         if (costElement) {
