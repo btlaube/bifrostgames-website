@@ -195,28 +195,30 @@ function updateButtonDisplays() {
     // Iterate through each button in automatorRecipes
     itemButtons.forEach(button => {
         const buttonId = button.id.split('-')[0];
-        const recipe = itemRecipes[buttonId];
-        
-        const costElement = document.getElementById(`${buttonId}-cost`);
-        const rateElement = document.getElementById(`${buttonId}-rate`);
+        if (buttonId != 'coal-button') {
+            const recipe = itemRecipes[buttonId];
+            
+            const costElement = document.getElementById(`${buttonId}-cost`);
+            const rateElement = document.getElementById(`${buttonId}-rate`);
 
-        // Extract the required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
+            // Extract the required resource and amount from the recipe
+            const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
 
-        // Update cost display
-        if (costElement) {
-            costElement.textContent = `Cost: ${requiredResource.charAt(0).toUpperCase() + requiredResource.slice(1)} ${requiredAmount}`;
-        }
+            // Update cost display
+            if (costElement) {
+                costElement.textContent = `Cost: ${requiredResource.charAt(0).toUpperCase() + requiredResource.slice(1)} ${requiredAmount}`;
+            }
 
-        // Update generation rate display
-        if (rateElement) {
-            const rate = generationAmounts[buttonId] || 0; // Assuming generationAmounts has corresponding rates
-            rateElement.textContent = `${rate}/click`;
-        }
+            // Update generation rate display
+            if (rateElement) {
+                const rate = generationAmounts[buttonId] || 0; // Assuming generationAmounts has corresponding rates
+                rateElement.textContent = `${rate}/click`;
+            }
 
-        // Enable or disable button based on inventory
-        if (requiredResource) {
-            button.disabled = inventory[requiredResource] < requiredAmount;
+            // Enable or disable button based on inventory
+            if (requiredResource) {
+                button.disabled = inventory[requiredResource] < requiredAmount;
+            }
         }
     });
 }
