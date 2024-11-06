@@ -44,10 +44,10 @@ var automatorRecipes = {
 
 // Generation amounts for each resource (items per second)
 var generationAmounts = {
-    "coal": 0, // initially 0 until activated by first click
-    "copper": 0,
-    "iron": 0,
-    "sulfur": 0
+    "coal-automator": 0, // initially 0 until activated by first click
+    "copper-automator": 0,
+    "iron-automator": 0,
+    "sulfur-automator": 0
 };
 
 
@@ -68,40 +68,45 @@ function updateInventory(inventoryDict) {
 var generationIntervals = {};
 
 // Function to add the resource to inventory based on the generation amount
-function generateResource(resource) {
-    inventory[resource] += generationAmounts[resource];
-    // console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
+function generateResourceFromAutomator(automator) {
+    resource = automator.id.split('-')[0];
+    addItemToInventory(resource, generationAmounts[resource]);
     updateInventory(inventory);
     updateAutomatorDisplays();
     updateButtonDisplays();
 }
 
-// Function to start the generator and increase the amount per second
-function incrementGeneratorAmount(resource) {
-    // Increase the generation amount per second with each click
-    generationAmounts[resource] += 1 + generationAmounts[resource] ** 0.1; // Exponential growth based on current rate
-
-    // Update the display of the generation rate for this resource
-    document.getElementById(`${resource}-rate`).innerText = `${generationAmounts[resource]}/sec`;
-
-
+function checkAutomator(automator)
+{
     // If the generator is not already active, start the 1-second interval
-    if (!generationIntervals[resource]) {
-        generationIntervals[resource] = setInterval(() => {
-            generateResource(resource);
-        }, 1000); // Fixed 1-second interval for all generators
+    if (!generationIntervals[automator]) {
+        activateAutomator(automator);
+    }
+    else
+    {
+        incrementAutomatorAmount(automator);
+        incrementAutomatorCost(automator);
+        updateAutomatorDisplays();
     }
 }
 
+// Activate Automato
+function activateAutomator(automator)
+{
+    generationIntervals[automator] = setInterval(() => {
+        generateResourceFromAutomator(automator);
+    }, 1000); // Fixed 1-second interval for all generators
+}
+
+// Function to start the generator and increase the amount per second
+function incrementAutomatorAmount(automator) {
+    generationAmounts[automator] += 1 + generationAmounts[automator] ** 0.1; // Exponential growth based on current rate
+}
+
 // Function to increase automator cost
-function incrementGeneratorCost(automator) {
-    // TODO: Fix this awful code...
-    // Increase the generation amount per second with each click
-    for (ingredient in automatorRecipes[automator])
-    {
+function incrementAutomatorCost(automator) {
+    for (ingredient in automatorRecipes[automator]) {
         automatorRecipes[automator][ingredient] += 1 + automatorRecipes[automator][ingredient] ** 0.1; // Exponential growth based on current rate
-        // Update the display of the generation cost for this resource
-        document.getElementById(`${resource}-cost`).innerText = `${ingredient}: ${automatorRecipes[automator][ingredient]}`;
     }
 }
 
@@ -109,11 +114,10 @@ function incrementGeneratorCost(automator) {
 function updateAutomatorDisplays() {
     // Iterate through each button in automators
     automators.forEach(button => {
-        const resource = button.id.split('-')[0]; // Get coal from coal-automator
         const recipe = automatorRecipes[button.id];
 
-        const costElement = document.getElementById(`${resource}-cost`);
-        const rateElement = document.getElementById(`${resource}-rate`);
+        const costElement = document.getElementById(`${button.id}-cost`);
+        const rateElement = document.getElementById(`${button.id}-rate`);
 
         // Extract required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
@@ -126,7 +130,7 @@ function updateAutomatorDisplays() {
 
         // Update generation rate display
         if (rateElement) {
-            const rate = generationAmounts[resource] || 0;
+            const rate = generationAmounts[button.id] || 0;
             rateElement.textContent = `${rate}/sec`;
         }
 
@@ -143,19 +147,15 @@ function spendRecipe(recipe)
     {
         if (inventory.hasOwnProperty(ingredient)) {
             removeItemFromInventory(ingredient, recipe[ingredient]);
-            // inventory[ingredient] -= recipe[ingredient];
         }
     }
 }
 
 // Attach event listeners to each automator button
-document.querySelectorAll('.automator').forEach(button => {
-    const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
-
-    button.onclick = function() {
-        incrementGeneratorAmount(resource);
-        incrementGeneratorCost(button);
-        spendRecipe(automatorRecipes[button.id]);
+document.querySelectorAll('.automator').forEach(automator => {
+    automator.onclick = function() {
+        checkAutomator(automator);
+        spendRecipe(automatorRecipes[automator.id]);
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
