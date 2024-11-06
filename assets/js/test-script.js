@@ -113,7 +113,7 @@ document.querySelectorAll('.automator').forEach(button => {
     button.onclick = function() {
         incrementGeneratorAmount(resource);
         incrementGeneratorCost(button);
-        spendRecipe(button.id);
+        spendRecipe(automatorRecipes[button.id]);
     };
 });
 
