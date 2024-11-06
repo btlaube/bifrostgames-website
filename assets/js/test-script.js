@@ -18,15 +18,6 @@ var itemButtons = document.querySelectorAll('.itemButton');
 var automators = document.querySelectorAll('.automator');
 
 // Sample data dictionary
-var stats = {
-    "strength": 2,
-    "agility": 2,
-    "intelligence": 2,
-    "endurance": 2,
-    "luck": 2
-};
-
-// Sample data dictionary
 var inventory = {
     "coal": 0,
     "copper": 0,
@@ -36,20 +27,12 @@ var inventory = {
 };
 
 // Resource costs for each item (previous item required to unlock the next)
-const resourceCosts = {
-    "coal": 0,             // No cost for the first item
-    "copper": 1,           // Requires coal to unlock
-    "iron": 2,             // Requires copper to unlock
-    "sulfur": 3,           // Requires iron to unlock
-    "magnesium": 4         // Requires sulfur to unlock
-};
-
-// Mapping of required resources for each item
-var requiredResources = {
-    "copper": "coal",
-    "iron": "copper",
-    "sulfur": "iron",
-    "magnesium": "sulfur"
+var itemRecipes = {
+    "coal": {},                    // No cost or prerequisite for coal
+    "copper": {"coal": 1},         // Copper requires 1 Coal
+    "iron": {"copper": 2},         // Iron requires 2 Copper
+    "sulfur": {"iron": 3},         // Sulfur requires 3 Iron
+    "magnesium": {"sulfur": 4}     // Magnesium requires 4 Sulfur
 };
 
 var automatorRecipes = {
@@ -67,6 +50,20 @@ var generationAmounts = {
     "sulfur": 0
 };
 
+
+// Inventory
+function updateInventory(inventoryDict) {
+    for (const [key, value] of Object.entries(inventoryDict)) {
+        const nameElement = document.getElementById(`${key.toLowerCase()}-name`);
+        const countElement = document.getElementById(`${key.toLowerCase()}-count`);
+
+        if (nameElement && countElement) {
+            nameElement.innerHTML = key; // Display the stat name
+            countElement.innerHTML = value; // Display the stat value
+        }
+    }
+}
+
 // Interval timers for each resource generator
 var generationIntervals = {};
 
@@ -75,8 +72,8 @@ function generateResource(resource) {
     inventory[resource] += generationAmounts[resource];
     console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
     updateInventory(inventory);
+    updateAutomatorDisplays();
     updateButtonDisplays();
-    checkButtonAvailability();
 }
 
 // Function to start the generator and increase the amount per second
@@ -109,18 +106,14 @@ function incrementGeneratorCost(automator) {
 }
 
 // Function to update button displays
-function updateButtonDisplays() {
+function updateAutomatorDisplays() {
     // Iterate through each automator in automatorRecipes
-    for (let automatorId in automatorRecipes) {
-        const recipe = automatorRecipes[automatorId];
-        const resourceKey = automatorId.split('-')[0]; // Get resource name from automatorId
-
-        const costElement = document.getElementById(`${resourceKey}-cost`);
-        const rateElement = document.getElementById(`${resourceKey}-rate`);
-        const button = document.getElementById(automatorId);
+    for (let automator in automators) {
+        const costElement = document.getElementById(`${automator.id}-cost`);
+        const rateElement = document.getElementById(`${automatorid}-rate`);
 
         // Extract the required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = automatorRecipes[automatorId];
+        const [requiredResource, requiredAmount] = automatorRecipes[automator.id];
 
         // Update cost display
         if (costElement) {
@@ -140,20 +133,6 @@ function updateButtonDisplays() {
     }
 }
 
-// Attach event listeners to each automator button
-document.querySelectorAll('.automator').forEach(button => {
-    const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
-
-    button.onclick = function() {
-        incrementGeneratorAmount(resource);
-        incrementGeneratorCost(button);
-        spendRecipe(automatorRecipes[button.id]);
-        updateInventory(inventory);
-        checkAutomatorAvailabilityAll();
-        updateButtonDisplays();
-    };
-});
-
 function spendRecipe(recipe)
 {
     for (ingredient in recipe)
@@ -164,26 +143,86 @@ function spendRecipe(recipe)
     }
 }
 
-function checkAutomatorAvailabilityAll()
-{
-    document.querySelectorAll('.automator').forEach(automator => {
-        const automatorName = automator.id;
-        automator.disabled = !(checkAutomatorAvailability(automatorName));
-    });
+// Attach event listeners to each automator button
+document.querySelectorAll('.automator').forEach(button => {
+    const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
+
+    button.onclick = function() {
+        incrementGeneratorAmount(resource);
+        incrementGeneratorCost(button);
+        spendRecipe(automatorRecipes[button.id]);
+        updateInventory(inventory);
+        updateButtonDisplays();
+        updateAutomatorDisplays();
+    };
+});
+
+// Function to add an item to the inventory
+function addItemToInventory(itemName, amount) {
+    // Check if the item exists in the inventory
+    if (inventory.hasOwnProperty(itemName)) {
+        inventory[itemName] += amount; // Increment the count for the item
+    }
 }
 
-// Function to check and update button availability based on inventory
-function checkAutomatorAvailability(automator) {
-        
-    for (ingredient in automatorRecipes[automator])
-    {
-        // Enable the button if enough resources are available for the previous item
-        if (inventory[ingredient] < automatorRecipes[automator][ingredient]) {
-            return false; // cannot afford :(
+// Function to add an item to the inventory
+function removeItemFromInventory(itemName, amount) {
+    // Check if the item exists in the inventory
+    if (inventory.hasOwnProperty(itemName)) {
+        inventory[itemName] -= amount; // Increment the count for the item
+    }
+}
+
+// Attach event listeners to each button
+itemButtons.forEach(button => {
+    // Get the item name from the button text (lowercase)
+    const itemName = button.querySelector('p').innerText.toLowerCase();
+    
+    button.onclick = function() {
+        addItemToInventory(itemName, 1); // Pass the item name directly
+        removeItemFromInventory(requiredResources[itemName], resourceCosts[itemName]);
+        updateInventory(inventory);
+        updateButtonDisplays();
+        updateAutomatorDisplays();
+    };
+});
+
+// Function to update button displays
+function updateButtonDisplays() {
+    // Iterate through each button in automatorRecipes
+    for (let button in itemButtons) {
+        const costElement = document.getElementById(`${button.id}-cost`);
+        const rateElement = document.getElementById(`${button.id}-rate`);
+
+        // Extract the required resource and amount from the recipe
+        const [requiredResource, requiredAmount] = itemRecipes[button.id];
+
+        // Update cost display
+        if (costElement) {
+            costElement.textContent = `Cost: ${requiredResource.charAt(0).toUpperCase() + requiredResource.slice(1)} ${requiredAmount}`;
+        }
+
+        // Update generation rate display
+        if (rateElement) {
+            const rate = generationAmounts[resourceKey] || 0;
+            rateElement.textContent = `${rate}/sec`;
+        }
+
+        // Enable or disable button based on inventory
+        if (button) {
+            button.disabled = inventory[requiredResource] < requiredAmount;
         }
     }
-    return true; // Can afford :)
 }
+
+
+
+
+
+
+
+
+
 
 // Show start modal
 startModalText.innerHTML = "Play the jump game!";
@@ -191,7 +230,6 @@ startModal.style.display = "block";
 updateInventory(inventory);
 checkButtonAvailability();
 checkAutomatorAvailabilityAll();
-
 
 startButton.onclick = function()
 {
@@ -249,84 +287,6 @@ resetButton.onclick = function()
     counter = 0;
 };
 
-// Function to add an item to the inventory
-function addItemToInventory(itemName, amount) {
-    // Check if the item exists in the inventory
-    if (inventory.hasOwnProperty(itemName)) {
-        inventory[itemName] += amount; // Increment the count for the item
-    }
-
-    // Update the displayed inventory
-    updateInventory(inventory);
-    checkButtonAvailability();
-    checkAutomatorAvailabilityAll();
-}
-
-// Function to add an item to the inventory
-function removeItemFromInventory(itemName, amount) {
-    // Check if the item exists in the inventory
-    if (inventory.hasOwnProperty(itemName)) {
-        inventory[itemName] -= amount; // Increment the count for the item
-    }
-
-    // Update the displayed inventory
-    updateInventory(inventory);
-    checkButtonAvailability();
-    checkAutomatorAvailabilityAll();
-}
-
-// Attach event listeners to each button
-itemButtons.forEach(button => {
-    // Get the item name from the button text (lowercase)
-    const itemName = button.querySelector('p').innerText.toLowerCase();
-    
-    button.onclick = function() {
-        addItemToInventory(itemName, 1); // Pass the item name directly
-        removeItemFromInventory(requiredResources[itemName], resourceCosts[itemName]);
-    };
-});
-
-// Stats
-function updateStats(statsDict) {
-    for (const [key, value] of Object.entries(statsDict)) {
-        const nameElement = document.getElementById(`${key.toLowerCase()}-name`);
-        const countElement = document.getElementById(`${key.toLowerCase()}-count`);
-
-        if (nameElement && countElement) {
-            nameElement.innerHTML = key; // Display the stat name
-            countElement.innerHTML = value; // Display the stat value
-        }
-    }
-}
-
-// Inventory
-function updateInventory(inventoryDict) {
-    for (const [key, value] of Object.entries(inventoryDict)) {
-        const nameElement = document.getElementById(`${key.toLowerCase()}-name`);
-        const countElement = document.getElementById(`${key.toLowerCase()}-count`);
-
-        if (nameElement && countElement) {
-            nameElement.innerHTML = key; // Display the stat name
-            countElement.innerHTML = value; // Display the stat value
-        }
-    }
-}
-
-// Function to check and update button availability based on inventory
-function checkButtonAvailability() {
-    // Loop through each button and check if the player has enough resources
-    document.querySelectorAll('.itemButton').forEach(button => {
-        const itemName = button.querySelector('p').innerText.toLowerCase();
-        const requiredResource = requiredResources[itemName];
-
-        // Enable the button if enough resources are available for the previous item
-        if (itemName === "coal" || (requiredResource && inventory[requiredResource] >= resourceCosts[itemName])) {
-            button.disabled = false; // Enable button
-        } else {
-            button.disabled = true; // Disable button if not enough resources
-        }
-    });
-}
 
 
 
