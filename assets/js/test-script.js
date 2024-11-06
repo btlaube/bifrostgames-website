@@ -93,7 +93,7 @@ function checkAutomatorAvailability(automator) {
     for (ingredient in automatorRecipes[automator])
     {
         // Enable the button if enough resources are available for the previous item
-        if (inventory[ingredient[0]] < automatorRecipes[automator][ingredient]) {
+        if (inventory[ingredient] < automatorRecipes[automator][ingredient]) {
             return false; // cannot afford :(
         }
     }
