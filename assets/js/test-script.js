@@ -112,8 +112,10 @@ function updateAutomatorDisplays() {
         const costElement = document.getElementById(`${automator.id}-cost`);
         const rateElement = document.getElementById(`${automatorid}-rate`);
 
+        const recipe = automatorRecipes[button.id.split('-')[0]];
+
         // Extract the required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = automatorRecipes[automator.id];
+        const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
 
         // Update cost display
         if (costElement) {
@@ -194,8 +196,10 @@ function updateButtonDisplays() {
         const costElement = document.getElementById(`${button.id}-cost`);
         const rateElement = document.getElementById(`${button.id}-rate`);
 
+        const recipe = itemRecipes[button.id.split('-')[0]];
+
         // Extract the required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = itemRecipes[button.id];
+        const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
 
         // Update cost display
         if (costElement) {
