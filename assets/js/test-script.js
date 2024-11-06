@@ -53,7 +53,7 @@ var requiredResources = {
 };
 
 var automatorRecipes = {
-    "coal-automator": {"iron": 10},
+    "coal-automator": {"copper": 10},
     "copper-automator": {"iron": 10},
     "iron-automator": {"sulfur": 10},
     "sulfur-automator": {"magnesium": 10},
@@ -93,7 +93,7 @@ function checkAutomatorAvailability(automator) {
     for (ingredient in automatorRecipes[automator])
     {
         // Enable the button if enough resources are available for the previous item
-        if (inventory[ingredient[0]] < inventory[ingredient[1]]) {
+        if (inventory[ingredient[0]] < automatorRecipes[automator][ingredient]) {
             return false; // cannot afford :(
         }
     }
