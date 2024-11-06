@@ -116,7 +116,7 @@ function updateAutomatorDisplays() {
         const rateElement = document.getElementById(`${buttonId}-rate`);
 
         // Extract required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
+        const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
 
         // Update cost display
         if (costElement) {
