@@ -202,7 +202,7 @@ function updateButtonDisplays() {
             const rateElement = document.getElementById(`${button.id}-rate`);
 
             // Extract the required resource and amount from the recipe
-            const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
+            const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
 
             // Update cost display
             if (costElement) {
