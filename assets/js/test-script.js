@@ -79,7 +79,7 @@ function generateResource(resource) {
 // Function to start the generator and increase the amount per second
 function incrementGeneratorAmount(resource) {
     // Increase the generation amount per second with each click
-    generationAmounts[resource] *= 1.17; // Each click increases items generated per second
+    generationAmounts[resource] += 1 + generationAmounts[resource] ** 0.1; // Exponential growth based on current rate
 
     // Update the display of the generation rate for this resource
     document.getElementById(`${resource}-rate`).innerText = `${generationAmounts[resource]}/sec`;
