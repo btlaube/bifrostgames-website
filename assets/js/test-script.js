@@ -43,7 +43,7 @@ var automatorRecipes = {
 }
 
 // Generation amounts for each resource (items per second)
-var generationAmounts = {
+var automatorRates = {
     "coal-automator": 0, // initially 0 until activated by first click
     "copper-automator": 0,
     "iron-automator": 0,
@@ -70,7 +70,7 @@ var generationIntervals = {};
 // Function to add the resource to inventory based on the generation amount
 function generateResourceFromAutomator(automator) {
     resource = automator.id.split('-')[0];
-    addItemToInventory(resource, generationAmounts[resource]);
+    addItemToInventory(resource, automatorRates[automator]);
     updateInventory(inventory);
     updateAutomatorDisplays();
     updateButtonDisplays();
@@ -100,7 +100,7 @@ function activateAutomator(automator)
 
 // Function to start the generator and increase the amount per second
 function incrementAutomatorAmount(automator) {
-    generationAmounts[automator] += 1 + generationAmounts[automator] ** 0.1; // Exponential growth based on current rate
+    automatorRates[automator] += 1 + automatorRates[automator] ** 0.1; // Exponential growth based on current rate
 }
 
 // Function to increase automator cost
@@ -130,7 +130,7 @@ function updateAutomatorDisplays() {
 
         // Update generation rate display
         if (rateElement) {
-            const rate = generationAmounts[button.id] || 0;
+            const rate = automatorRates[button.id] || 0;
             rateElement.textContent = `${rate}/sec`;
         }
 
@@ -212,11 +212,7 @@ function updateButtonDisplays() {
                 costElement.textContent = `Cost: ${requiredResource.charAt(0).toUpperCase() + requiredResource.slice(1)} ${requiredAmount}`;
             }
 
-            // Update generation rate display
-            if (rateElement) {
-                const rate = generationAmounts[resource] || 0; // Assuming generationAmounts has corresponding rates
-                rateElement.textContent = `${rate}/click`;
-            }
+            rateElement.textContent = "1/click";
 
             // Enable or disable button based on inventory
             if (requiredResource) {
