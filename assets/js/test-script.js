@@ -75,6 +75,7 @@ function generateResource(resource) {
     inventory[resource] += generationAmounts[resource];
     console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
     updateInventory();
+    updateButtonDisplays()
 }
 
 // Function to start the generator and increase the amount per second
@@ -106,6 +107,38 @@ function incrementGeneratorCost(automator) {
     }
 }
 
+// Function to update button displays
+function updateButtonDisplays() {
+    // Iterate through each automator in automatorRecipes
+    for (let automatorId in automatorRecipes) {
+        const recipe = automatorRecipes[automatorId];
+        const resourceKey = automatorId.split('-')[0]; // Get resource name from automatorId
+
+        const costElement = document.getElementById(`${resourceKey}-cost`);
+        const rateElement = document.getElementById(`${resourceKey}-rate`);
+        const button = document.getElementById(automatorId);
+
+        // Extract the required resource and amount from the recipe
+        const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
+
+        // Update cost display
+        if (costElement) {
+            costElement.textContent = `Cost: ${requiredResource.charAt(0).toUpperCase() + requiredResource.slice(1)} ${requiredAmount}`;
+        }
+
+        // Update generation rate display
+        if (rateElement) {
+            const rate = generationAmounts[resourceKey] || 0;
+            rateElement.textContent = `${rate}/sec`;
+        }
+
+        // Enable or disable button based on inventory
+        if (button) {
+            button.disabled = inventory[requiredResource] < requiredAmount;
+        }
+    }
+}
+
 // Attach event listeners to each automator button
 document.querySelectorAll('.automator').forEach(button => {
     const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
@@ -116,6 +149,7 @@ document.querySelectorAll('.automator').forEach(button => {
         spendRecipe(automatorRecipes[button.id]);
         updateInventory();
         checkAutomatorAvailabilityAll();
+        updateButtonDisplays();
     };
 });
 
