@@ -228,8 +228,8 @@ function updateButtonDisplays() {
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
-checkButtonAvailability();
-checkAutomatorAvailabilityAll();
+updateButtonDisplays();
+updateAutomatorDisplays();
 
 startButton.onclick = function()
 {
