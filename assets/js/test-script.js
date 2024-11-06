@@ -147,7 +147,7 @@ document.querySelectorAll('.automator').forEach(button => {
         incrementGeneratorAmount(resource);
         incrementGeneratorCost(button);
         spendRecipe(automatorRecipes[button.id]);
-        updateInventory();
+        updateInventory(inventory);
         checkAutomatorAvailabilityAll();
         updateButtonDisplays();
     };
