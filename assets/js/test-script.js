@@ -59,25 +59,48 @@ var automatorRecipes = {
     "sulfur-automator": {"magnesium": 10},
 }
 
-// Attach event listeners to each button
-// automators.forEach(automator => {
-//     // Get the item name from the button's ID by removing "-button"
-//     const itemName = automator.id.split("-automator")[0]; // Extracts "coal" from "coal-button"
-    
-//     button.onclick = function() {
-//         if (checkRecipe(automatorRecipes[automator]))
-//     };
-// });
+// Generation amounts for each resource (items per second)
+var generationAmounts = {
+    "coal": 0, // initially 0 until activated by first click
+    "copper": 0,
+    "iron": 0,
+    "sulfur": 0
+};
 
-// function buyAutomator(automatorName) {
-//     if (checkRecipe(automatorName))
-//         // Activate automator
-//         console.log($`purchased: {automatorName}`);
+// Interval timers for each resource generator
+var generationIntervals = {};
 
-//     // Update the displayed inventory
-//     updateInventory(inventory);
-//     checkButtonAvailability();
-// }
+// Function to add the resource to inventory based on the generation amount
+function generateResource(resource) {
+    inventory[resource] += generationAmounts[resource];
+    console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
+}
+
+// Function to start the generator and increase the amount per second
+function incrementGeneratorAmount(resource) {
+    // Increase the generation amount per second with each click
+    generationAmounts[resource] *= 1.17; // Each click increases items generated per second
+
+    // Update the display of the generation rate for this resource
+    document.getElementById(`${resource}-rate`).innerText = `${generationAmounts[resource]}/sec`;
+
+
+    // If the generator is not already active, start the 1-second interval
+    if (!generationIntervals[resource]) {
+        generationIntervals[resource] = setInterval(() => {
+            generateResource(resource);
+        }, 1000); // Fixed 1-second interval for all generators
+    }
+}
+
+// Attach event listeners to each automator button
+document.querySelectorAll('.automator').forEach(button => {
+    const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
+
+    button.onclick = function() {
+        incrementGeneratorAmount(resource);
+    };
+});
 
 function checkAutomatorAvailabilityAll()
 {
