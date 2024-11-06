@@ -141,7 +141,8 @@ function spendRecipe(recipe)
     for (ingredient in recipe)
     {
         if (inventory.hasOwnProperty(ingredient)) {
-            inventory[ingredient] -= recipe[ingredient];
+            removeItemFromInventory(ingredient, recipe[ingredient]);
+            // inventory[ingredient] -= recipe[ingredient];
         }
     }
 }
