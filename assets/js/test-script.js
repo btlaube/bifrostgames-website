@@ -119,7 +119,7 @@ function updateButtonDisplays() {
         const button = document.getElementById(automatorId);
 
         // Extract the required resource and amount from the recipe
-        const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
+        const [requiredResource, requiredAmount] = automatorRecipes[automatorId];
 
         // Update cost display
         if (costElement) {
