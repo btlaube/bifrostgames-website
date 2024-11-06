@@ -74,6 +74,7 @@ var generationIntervals = {};
 function generateResource(resource) {
     inventory[resource] += generationAmounts[resource];
     console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
+    updateInventory();
 }
 
 // Function to start the generator and increase the amount per second
