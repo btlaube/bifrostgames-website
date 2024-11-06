@@ -107,14 +107,15 @@ function incrementGeneratorCost(automator) {
 
 // Function to update button displays
 function updateAutomatorDisplays() {
-    // Iterate through each automator in automatorRecipes
-    for (let automator in automators) {
-        const costElement = document.getElementById(`${automator.id}-cost`);
-        const rateElement = document.getElementById(`${automatorid}-rate`);
+    // Iterate through each button in automators
+    automators.forEach(button => {
+        const buttonId = button.id.split('-')[0];
+        const recipe = automatorRecipes[button.id];
 
-        const recipe = automatorRecipes[button.id.split('-')[0]];
+        const costElement = document.getElementById(`${buttonId}-cost`);
+        const rateElement = document.getElementById(`${buttonId}-rate`);
 
-        // Extract the required resource and amount from the recipe
+        // Extract required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
 
         // Update cost display
@@ -124,15 +125,15 @@ function updateAutomatorDisplays() {
 
         // Update generation rate display
         if (rateElement) {
-            const rate = generationAmounts[resourceKey] || 0;
+            const rate = generationAmounts[buttonId] || 0;
             rateElement.textContent = `${rate}/sec`;
         }
 
         // Enable or disable button based on inventory
-        if (button) {
+        if (requiredResource) {
             button.disabled = inventory[requiredResource] < requiredAmount;
         }
-    }
+    });
 }
 
 function spendRecipe(recipe)
@@ -192,11 +193,12 @@ itemButtons.forEach(button => {
 // Function to update button displays
 function updateButtonDisplays() {
     // Iterate through each button in automatorRecipes
-    for (let button in itemButtons) {
-        const costElement = document.getElementById(`${button.id}-cost`);
-        const rateElement = document.getElementById(`${button.id}-rate`);
-
-        const recipe = itemRecipes[button.id.split('-')[0]];
+    itemButtons.forEach(button => {
+        const buttonId = button.id.split('-')[0];
+        const recipe = itemRecipes[buttonId];
+        
+        const costElement = document.getElementById(`${buttonId}-cost`);
+        const rateElement = document.getElementById(`${buttonId}-rate`);
 
         // Extract the required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
@@ -208,15 +210,15 @@ function updateButtonDisplays() {
 
         // Update generation rate display
         if (rateElement) {
-            const rate = generationAmounts[resourceKey] || 0;
-            rateElement.textContent = `${rate}/sec`;
+            const rate = generationAmounts[buttonId] || 0; // Assuming generationAmounts has corresponding rates
+            rateElement.textContent = `${rate}/click`;
         }
 
         // Enable or disable button based on inventory
-        if (button) {
+        if (requiredResource) {
             button.disabled = inventory[requiredResource] < requiredAmount;
         }
-    }
+    });
 }
 
 
