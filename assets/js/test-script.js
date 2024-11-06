@@ -79,6 +79,14 @@ var automatorRecipes = {
 //     checkButtonAvailability();
 // }
 
+function checkAutomatorAvailabilityAll()
+{
+    document.querySelectorAll('.automator').forEach(automator => {
+        const automatorName = automator.id;
+        automator.disabled = !(checkAutomatorAvailability(automatorName));
+    });
+}
+
 // Function to check and update button availability based on inventory
 function checkAutomatorAvailability(automator) {
         
@@ -97,10 +105,7 @@ startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
 updateInventory(inventory);
 checkButtonAvailability();
-document.querySelectorAll('.automator').forEach(automator => {
-    const automatorName = automator.id;
-    automator.disabled = !(checkAutomatorAvailability(automatorName));
-});
+checkAutomatorAvailabilityAll();
 
 
 startButton.onclick = function()
@@ -169,6 +174,7 @@ function addItemToInventory(itemName, amount) {
     // Update the displayed inventory
     updateInventory(inventory);
     checkButtonAvailability();
+    checkAutomatorAvailabilityAll();
 }
 
 // Function to add an item to the inventory
@@ -181,6 +187,7 @@ function removeItemFromInventory(itemName, amount) {
     // Update the displayed inventory
     updateInventory(inventory);
     checkButtonAvailability();
+    checkAutomatorAvailabilityAll();
 }
 
 // Attach event listeners to each button
