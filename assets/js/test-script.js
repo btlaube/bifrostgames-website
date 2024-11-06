@@ -76,6 +76,7 @@ function generateResource(resource) {
     console.log(`${resource} count: ${inventory[resource]}`); // For testing, logs inventory counts
     updateInventory(inventory);
     updateButtonDisplays();
+    checkButtonAvailability();
 }
 
 // Function to start the generator and increase the amount per second
