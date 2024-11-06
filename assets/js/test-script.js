@@ -114,6 +114,8 @@ document.querySelectorAll('.automator').forEach(button => {
         incrementGeneratorAmount(resource);
         incrementGeneratorCost(button);
         spendRecipe(automatorRecipes[button.id]);
+        updateInventory();
+        checkAutomatorAvailabilityAll();
     };
 });
 
