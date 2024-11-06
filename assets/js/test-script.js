@@ -194,12 +194,11 @@ itemButtons.forEach(button => {
 function updateButtonDisplays() {
     // Iterate through each button in automatorRecipes
     itemButtons.forEach(button => {
-        const buttonId = button.id.split('-')[0];
-        if (buttonId != 'coal-button') {
-            const recipe = itemRecipes[buttonId];
+        if (button.id != 'coal-button') {
+            const recipe = itemRecipes[button.id];
             
-            const costElement = document.getElementById(`${buttonId}-cost`);
-            const rateElement = document.getElementById(`${buttonId}-rate`);
+            const costElement = document.getElementById(`${button.id}-cost`);
+            const rateElement = document.getElementById(`${button.id}-rate`);
 
             // Extract the required resource and amount from the recipe
             const [requiredResource, requiredAmount] = Object.entries(recipe)[0] || [null, 0];
@@ -211,7 +210,7 @@ function updateButtonDisplays() {
 
             // Update generation rate display
             if (rateElement) {
-                const rate = generationAmounts[buttonId] || 0; // Assuming generationAmounts has corresponding rates
+                const rate = generationAmounts[button.id] || 0; // Assuming generationAmounts has corresponding rates
                 rateElement.textContent = `${rate}/click`;
             }
 
