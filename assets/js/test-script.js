@@ -113,8 +113,19 @@ document.querySelectorAll('.automator').forEach(button => {
     button.onclick = function() {
         incrementGeneratorAmount(resource);
         incrementGeneratorCost(button);
+        spendRecipe(button.id);
     };
 });
+
+function spendRecipe(recipe)
+{
+    for (ingredient in recipe)
+    {
+        if (inventory.hasOwnProperty(ingredient)) {
+            inventory[ingredient] -= recipe[ingredient];
+        }
+    }
+}
 
 function checkAutomatorAvailabilityAll()
 {
