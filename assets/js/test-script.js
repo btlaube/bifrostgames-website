@@ -94,12 +94,25 @@ function incrementGeneratorAmount(resource) {
     }
 }
 
+// Function to increase automator cost
+function incrementGeneratorCost(automator) {
+    // TODO: Fix this awful code...
+    // Increase the generation amount per second with each click
+    for (ingredient in automatorRecipes[automator])
+    {
+        automatorRecipes[automator][ingredient] += 1 + automatorRecipes[automator][ingredient] ** 0.1; // Exponential growth based on current rate
+        // Update the display of the generation cost for this resource
+        document.getElementById(`${resource}-cost`).innerText = `${ingredient}: ${automatorRecipes[automator][ingredient]}`;
+    }
+}
+
 // Attach event listeners to each automator button
 document.querySelectorAll('.automator').forEach(button => {
     const resource = button.id.split('-')[0]; // Get resource name from button id (e.g., "coal" from "coal-automator")
 
     button.onclick = function() {
         incrementGeneratorAmount(resource);
+        incrementGeneratorCost(button);
     };
 });
 
