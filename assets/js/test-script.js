@@ -183,7 +183,7 @@ itemButtons.forEach(button => {
     
     button.onclick = function() {
         addItemToInventory(itemName, 1); // Pass the item name directly
-        removeItemFromInventory(requiredResources[itemName], resourceCosts[itemName]);
+        spendRecipe(itemRecipes[button.id.split('-')[0]]);
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
