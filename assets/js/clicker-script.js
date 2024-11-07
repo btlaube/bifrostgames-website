@@ -58,6 +58,8 @@ if (data.inventory && Object.keys(data.inventory).length > 0)
 updateInventoryDisplay();
 updateButtonDisplays();
 updateAutomatorDisplays();
+// Initialize Automators
+initializeAutomators();
 // Save Data
 saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);
 
@@ -147,6 +149,14 @@ function updateButtonDisplays() {
 
 // Interval timers for each resource generator
 var generationIntervals = {};
+function initializeAutomators()
+{
+    automators.forEach(automator => {
+        if (generationIntervals[automator.id]) {
+            activateAutomator(automator);
+        }
+    });
+}
 function checkAutomator(automator)
 {
     // If the generator is not already active, start the 1-second interval
