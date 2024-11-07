@@ -133,13 +133,13 @@ function loadGameState() {
 }
 
 // Function to reset game state
-function resetGameState() {
-    localStorage.removeItem("inventory");
-    localStorage.removeItem("automatorRates");
-    localStorage.removeItem("automatorRecipes");
-    localStorage.removeItem("itemRecipes");
-    console.log("Game progress reset.");
-}
+// function resetGameState() {
+//     localStorage.removeItem("inventory");
+//     localStorage.removeItem("automatorRates");
+//     localStorage.removeItem("automatorRecipes");
+//     localStorage.removeItem("itemRecipes");
+//     console.log("Game progress reset.");
+// }
 
 // On load
 saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);

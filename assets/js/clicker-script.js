@@ -9,7 +9,7 @@ var automators = document.querySelectorAll('.automator');
 // Button references
 var saveDataButton = document.getElementById("saveDataButton");
 var loadDataButton = document.getElementById("loadDataButton");
-var resetButton = document.getElementById("resetButton");
+// var resetButton = document.getElementById("resetButton");
 
 // Initialize Inventory, Automator Rates, and Recipes (Empty initial state)
 var inventory = {};
@@ -37,18 +37,18 @@ loadDataButton.onclick = function() {
 };
 
 // Event listener for reset button
-resetButton.onclick = function() {
-    resetGameState();
-    inventory = {};
-    automatorRates = {};
-    automatorRecipes = {};
-    itemRecipes = {};
+// resetButton.onclick = function() {
+//     resetGameState();
+//     inventory = {};
+//     automatorRates = {};
+//     automatorRecipes = {};
+//     itemRecipes = {};
 
-    updateInventoryDisplay();
-    updateButtonDisplays();
-    updateAutomatorDisplays();
-    console.log("Game progress reset.");
-};
+//     updateInventoryDisplay();
+//     updateButtonDisplays();
+//     updateAutomatorDisplays();
+//     console.log("Game progress reset.");
+// };
 
 // Load data
 const data = loadGameState();
