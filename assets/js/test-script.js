@@ -70,7 +70,7 @@ var generationIntervals = {};
 // Function to add the resource to inventory based on the generation amount
 function generateResourceFromAutomator(automator) {
     resource = automator.id.split('-')[0];
-    addItemToInventory(resource, automatorRates[automator]);
+    addItemToInventory(resource, automatorRates[automator.id]);
     updateInventory(inventory);
     updateAutomatorDisplays();
     updateButtonDisplays();
