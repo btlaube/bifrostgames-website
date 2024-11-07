@@ -155,9 +155,6 @@ function spendRecipe(recipe)
 document.querySelectorAll('.automator').forEach(automator => {
     automator.onclick = function() {
         checkAutomator(automator);
-        if (automator.id != 'coal-button') { // Coal is FREE!
-            spendRecipe(automatorRecipes[automator.id]);
-        }
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
@@ -187,7 +184,9 @@ itemButtons.forEach(button => {
     
     button.onclick = function() {
         addItemToInventory(itemName, 1); // Pass the item name directly
-        spendRecipe(itemRecipes[button.id.split('-')[0]]);
+        if (button.id != 'coal-button') { // Coal is FREE!
+            spendRecipe(itemRecipes[button.id.split('-')[0]]);
+        }
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
