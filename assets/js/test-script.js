@@ -155,7 +155,7 @@ function spendRecipe(recipe)
 document.querySelectorAll('.automator').forEach(automator => {
     automator.onclick = function() {
         spendRecipe(automatorRecipes[automator.id]);
-        checkAutomator(automator);
+        checkAutomator(automator.id);
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
