@@ -50,6 +50,27 @@ resetButton.onclick = function() {
     console.log("Game progress reset.");
 };
 
+// Show start modal
+startModalText.innerHTML = "Play the jump game!";
+startModal.style.display = "block";
+updateInventoryDisplay();
+updateButtonDisplays();
+updateAutomatorDisplays();
+
+startButton.onclick = function()
+{
+    startModal.style.display = "none";
+    const data = loadGameState();
+    inventory = data.inventory;
+    automatorRates = data.automatorRates;
+    automatorRecipes = data.automatorRecipes;
+    itemRecipes = data.itemRecipes;
+
+    updateInventoryDisplay();
+    updateButtonDisplays();
+    updateAutomatorDisplays();
+    console.log("Game progress loaded.");
+};
 
 // Display update functions
 // Funciton to update inventory display
@@ -211,18 +232,3 @@ function spendRecipe(recipe)
         }
     }
 }
-
-// Show start modal
-startModalText.innerHTML = "Play the jump game!";
-startModal.style.display = "block";
-updateInventoryDisplay();
-updateButtonDisplays();
-updateAutomatorDisplays();
-
-startButton.onclick = function()
-{
-    startModal.style.display = "none";
-    loadGameState();
-};
-
-
