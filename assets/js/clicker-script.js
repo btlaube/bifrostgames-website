@@ -18,9 +18,9 @@ var automatorRecipes = {};
 var itemRecipes = {};
 
 // Event listener for save button
-saveDataButton.addEventListener("click", function() {
-    saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);
-});
+saveDataButton.onClick = function() {
+    saveClickerState();
+};
 
 // Event listener for load button
 loadDataButton.onclick = function() {
@@ -56,18 +56,18 @@ inventory = data.inventory;
 automatorRates = data.automatorRates;
 automatorRecipes = data.automatorRecipes;
 itemRecipes = data.itemRecipes;
+console.log("Game progress loaded.");
 
+// Update displays
 updateInventoryDisplay();
 updateButtonDisplays();
 updateAutomatorDisplays();
-console.log("Game progress loaded.");
+
+// Save Data
 
 // Show start modal
 startModalText.innerHTML = "Play the jump game!";
 startModal.style.display = "block";
-updateInventoryDisplay();
-updateButtonDisplays();
-updateAutomatorDisplays();
 
 startButton.onclick = function()
 {
@@ -147,7 +147,6 @@ function updateButtonDisplays() {
     });
 }
 
-
 // Interval timers for each resource generator
 var generationIntervals = {};
 function checkAutomator(automator)
@@ -185,6 +184,7 @@ automators.forEach(automator => {
         updateInventoryDisplay();
         updateButtonDisplays();
         updateAutomatorDisplays();
+        saveClickerState();
     };
 });
 
@@ -200,6 +200,7 @@ itemButtons.forEach(button => {
         updateInventoryDisplay();
         updateButtonDisplays();
         updateAutomatorDisplays();
+        saveClickerState();
     };
 });
 
@@ -209,6 +210,7 @@ function addItemToInventory(itemName, amount) {
     if (inventory.hasOwnProperty(itemName)) {
         inventory[itemName] += amount; // Increment the count for the item
     }
+    saveClickerState();
 }
 // Function to add the resource to inventory based on the generation amount
 function generateResourceFromAutomator(automator) {
@@ -233,4 +235,9 @@ function spendRecipe(recipe)
             removeItemFromInventory(ingredient, recipe[ingredient]);
         }
     }
+}
+
+function saveClickerState()
+{
+    saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);
 }
