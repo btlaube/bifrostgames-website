@@ -21,7 +21,7 @@ function jump()
 function showStartModal()
 {
     startModal.style.display = "block";
-    startModalText.innerHTML = "Clicker Game!";
+    startModalText.innerHTML = "Play the jump game!";
 }
 
 startButton.onclick = function()
