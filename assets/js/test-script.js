@@ -82,12 +82,9 @@ function checkAutomator(automator)
     if (!generationIntervals[automator.id]) {
         activateAutomator(automator);
     }
-    else
-    {
-        incrementAutomatorAmount(automator);
-        incrementAutomatorCost(automator);
-        updateAutomatorDisplays();
-    }
+    incrementAutomatorAmount(automator);
+    incrementAutomatorCost(automator);
+    updateAutomatorDisplays();
 }
 
 // Activate Automato
