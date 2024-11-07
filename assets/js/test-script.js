@@ -154,6 +154,7 @@ function spendRecipe(recipe)
 // Attach event listeners to each automator button
 document.querySelectorAll('.automator').forEach(automator => {
     automator.onclick = function() {
+        spendRecipe(recipe);
         checkAutomator(automator);
         updateInventory(inventory);
         updateButtonDisplays();
