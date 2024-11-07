@@ -140,15 +140,3 @@ function loadGameState() {
 //     localStorage.removeItem("itemRecipes");
 //     console.log("Game progress reset.");
 // }
-
-// On load
-// Load data
-const data = loadGameState();
-if (data.inventory && Object.keys(data.inventory).length > 0)
-{
-    inventory = data.inventory;
-    automatorRates = data.automatorRates;
-    automatorRecipes = data.automatorRecipes;
-    itemRecipes = data.itemRecipes;
-}
-saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);

@@ -11,12 +11,6 @@ var saveDataButton = document.getElementById("saveDataButton");
 var loadDataButton = document.getElementById("loadDataButton");
 // var resetButton = document.getElementById("resetButton");
 
-// Initialize Inventory, Automator Rates, and Recipes (Empty initial state)
-var inventory = {};
-var automatorRates = {};
-var automatorRecipes = {};
-var itemRecipes = {};
-
 // Event listener for save button
 saveDataButton.onClick = function() {
     saveClickerState();
@@ -50,20 +44,22 @@ loadDataButton.onclick = function() {
 //     console.log("Game progress reset.");
 // };
 
+// On load
 // Load data
 const data = loadGameState();
-inventory = data.inventory;
-automatorRates = data.automatorRates;
-automatorRecipes = data.automatorRecipes;
-itemRecipes = data.itemRecipes;
-console.log("Game progress loaded.");
-
+if (data.inventory && Object.keys(data.inventory).length > 0)
+{
+    inventory = data.inventory;
+    automatorRates = data.automatorRates;
+    automatorRecipes = data.automatorRecipes;
+    itemRecipes = data.itemRecipes;
+}
 // Update displays
 updateInventoryDisplay();
 updateButtonDisplays();
 updateAutomatorDisplays();
-
 // Save Data
+saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);
 
 // Show start modal
 startModalText.innerHTML = "Play the jump game!";
