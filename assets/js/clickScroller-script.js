@@ -42,15 +42,21 @@ var automatorRates = {
     "sulfur-automator": 0
 };
 
-startButton.onclick = function()
+if (startButton)
 {
-    startModal.style.display = "none";
-};
+    startButton.onclick = function()
+    {
+        startModal.style.display = "none";
+    };
+}
 
-// Assign onclick event to open clicker.html
-clickerButton.onclick = () => {
-    window.location.href = './clicker.html';
-};
+if (clickerButton)
+{
+    // Assign onclick event to open clicker.html
+    clickerButton.onclick = () => {
+        window.location.href = './clicker.html';
+    };
+}
 
 // Assign onclick event to open scroller.html
 scrollerButton.onclick = () => {
