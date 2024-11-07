@@ -16,10 +16,10 @@ startButton.onclick = function()
 
 // Assign onclick event to open clicker.html
 clickerButton.onclick = () => {
-    window.location.href = '/clicker.html';
+    window.location.href = './clicker.html';
 };
 
 // Assign onclick event to open scroller.html
 scrollerButton.onclick = () => {
-    window.location.href = '/scroller.html';
+    window.location.href = './scroller.html';
 };
