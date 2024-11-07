@@ -79,7 +79,7 @@ function generateResourceFromAutomator(automator) {
 function checkAutomator(automator)
 {
     // If the generator is not already active, start the 1-second interval
-    if (!generationIntervals[automator]) {
+    if (!generationIntervals[automator.id]) {
         activateAutomator(automator);
     }
     else
@@ -93,20 +93,20 @@ function checkAutomator(automator)
 // Activate Automato
 function activateAutomator(automator)
 {
-    generationIntervals[automator] = setInterval(() => {
+    generationIntervals[automator.id] = setInterval(() => {
         generateResourceFromAutomator(automator);
     }, 1000); // Fixed 1-second interval for all generators
 }
 
 // Function to start the generator and increase the amount per second
 function incrementAutomatorAmount(automator) {
-    automatorRates[automator] += 1 + automatorRates[automator] ** 0.1; // Exponential growth based on current rate
+    automatorRates[automator.id] += 1 + automatorRates[automator.id] ** 0.1; // Exponential growth based on current rate
 }
 
 // Function to increase automator cost
 function incrementAutomatorCost(automator) {
     for (ingredient in automatorRecipes[automator]) {
-        automatorRecipes[automator][ingredient] += 1 + automatorRecipes[automator][ingredient] ** 0.1; // Exponential growth based on current rate
+        automatorRecipes[automator.id][ingredient] += 1 + automatorRecipes[automator.id][ingredient] ** 0.1; // Exponential growth based on current rate
     }
 }
 
@@ -155,7 +155,7 @@ function spendRecipe(recipe)
 document.querySelectorAll('.automator').forEach(automator => {
     automator.onclick = function() {
         spendRecipe(automatorRecipes[automator.id]);
-        checkAutomator(automator.id);
+        checkAutomator(automator);
         updateInventory(inventory);
         updateButtonDisplays();
         updateAutomatorDisplays();
