@@ -121,7 +121,7 @@ function updateAutomatorDisplays() {
 
         // Extract required resource and amount from the recipe
         const [requiredResource, requiredAmount] = Object.entries(recipe)[0];
-        console.log(`${button.id} ${requiredResource} ${requiredAmount}`);
+        // console.log(`${button.id} ${requiredResource} ${requiredAmount}`);
 
         // Update cost display
         if (costElement) {
@@ -154,7 +154,7 @@ function spendRecipe(recipe)
 // Attach event listeners to each automator button
 document.querySelectorAll('.automator').forEach(automator => {
     automator.onclick = function() {
-        spendRecipe(automatorRecipes[automator]);
+        spendRecipe(automatorRecipes[automator.id]);
         checkAutomator(automator);
         updateInventory(inventory);
         updateButtonDisplays();
