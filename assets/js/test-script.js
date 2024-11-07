@@ -105,7 +105,7 @@ function incrementAutomatorAmount(automator) {
 
 // Function to increase automator cost
 function incrementAutomatorCost(automator) {
-    for (ingredient in automatorRecipes[automator]) {
+    for (ingredient in automatorRecipes[automator.id]) {
         automatorRecipes[automator.id][ingredient] += 1 + automatorRecipes[automator.id][ingredient] ** 0.1; // Exponential growth based on current rate
     }
 }
