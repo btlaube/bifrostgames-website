@@ -58,10 +58,13 @@ if (clickerButton)
     };
 }
 
-// Assign onclick event to open scroller.html
-scrollerButton.onclick = () => {
-    window.location.href = './scroller.html';
-};
+if (scrollerButton)
+{
+        // Assign onclick event to open scroller.html
+    scrollerButton.onclick = () => {
+        window.location.href = './scroller.html';
+    };
+}
 
 // Function to save a string
 function saveString(key, value) {
