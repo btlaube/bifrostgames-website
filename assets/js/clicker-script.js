@@ -42,7 +42,7 @@ class Inventory
 
     getItemQuantity(item)
     {
-        if (inventoryItems[item])
+        if (this.inventoryItems[item])
             return (this.inventoryItems[item]);
     }
 
@@ -50,19 +50,19 @@ class Inventory
     {
         if(inventoryItems[item])
         {
-            inventoryItems[item] += quantity;
+            this.inventoryItems[item] += quantity;
         }
         else
         {
-            inventoryItems[item] = quantity;
+            this.inventoryItems[item] = quantity;
         }
     }
 
     removeItem(item, quantity)
     {
-        if(inventoryItems[item])
+        if(this.inventoryItems[item])
         {
-            inventoryItems[item] -= quantity;
+            this.inventoryItems[item] -= quantity;
         }
     }
 }
@@ -79,9 +79,6 @@ class Button
 
     updateDisplay()
     {
-        const resource = this.display.id.split('-')[0]; // Get copper from copper-button
-        const recipe = itemRecipes[resource];
-        
         // Get the specific child elements within the parent display
         const labelElement = this.display.querySelector(`#label`);
         const resourceElement = this.display.querySelector(`#resource`);
