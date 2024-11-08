@@ -48,7 +48,7 @@ class Inventory
 
     addItem(item, quantity)
     {
-        if(inventoryItems[item])
+        if(this.inventoryItems[item])
         {
             this.inventoryItems[item] += quantity;
         }
