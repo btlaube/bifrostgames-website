@@ -67,34 +67,37 @@ class Inventory
     }
 }
 
-class Button
-{
-    constructor(label, resource, clickValue, display)
-    {
+class Button {
+    constructor(label, resource, clickValue, display, playerInstance) {
         this.label = label;
         this.resource = resource;
         this.clickValue = clickValue;
         this.display = display;
+        this.playerInstance = playerInstance; // Store the player instance
+
+        this.initializeButton();
     }
 
-    updateDisplay()
-    {
+    initializeButton() {
+        // Use an arrow function to maintain the correct 'this' context
+        this.display.onclick = () => {
+            this.playerInstance.collectItem(this.resource, this.clickValue);
+            console.log(`Collected ${this.clickValue} ${this.resource}`);
+        };
+    }
+
+    updateDisplay() {
         // Get the specific child elements within the parent display
         const labelElement = this.display.querySelector(`#label`);
         const resourceElement = this.display.querySelector(`#resource`);
         const clickValueElement = this.display.querySelector(`#clickValue`);
 
-        if (labelElement)
-            labelElement.textContent = `${this.label}`;
-
-        if (resourceElement)
-            resourceElement.textContent = `${this.resource}`;
-
-        if (clickValueElement)
-            clickValueElement.textContent = `${this.clickValue}/click`;
+        if (labelElement) labelElement.textContent = `${this.label}`;
+        if (resourceElement) resourceElement.textContent = `${this.resource}`;
+        if (clickValueElement) clickValueElement.textContent = `${this.clickValue}/click`;
     }
-
 }
+
 
 
 var player = new PlayerData();
