@@ -32,7 +32,7 @@ class Inventory
 {
     constructor()
     {
-        inventoryItems = {};
+        this.inventoryItems = {};
     }
 
     hasItem(item)
