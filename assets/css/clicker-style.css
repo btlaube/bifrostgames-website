@@ -4,6 +4,13 @@
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding: 10rem;
+    display: table;
+    margin: auto;
+}
+
 body {
     max-width: 900px;
     background-color: rgb(10, 0, 10);
