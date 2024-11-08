@@ -139,9 +139,7 @@ function updateButtonDisplays() {
 function initializeAutomators()
 {
     automators.forEach(automator => {
-        if (generationIntervals[automator.id]) {
-            activateAutomator(automator);
-        }
+        activateAutomator(automator);
     });
 }
 function checkAutomator(automator)
