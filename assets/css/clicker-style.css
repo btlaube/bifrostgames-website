@@ -112,10 +112,10 @@ button {
     align-items: center;
 }
 
-.resourceButton
-{
+.resourceButton {
     border-color: rgb(125, 0, 125);    
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row; /* Ensures horizontal alignment */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
 }
