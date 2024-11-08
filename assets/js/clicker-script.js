@@ -11,38 +11,8 @@ var saveDataButton = document.getElementById("saveDataButton");
 var loadDataButton = document.getElementById("loadDataButton");
 // var resetButton = document.getElementById("resetButton");
 
-// Event listener for save button
-saveDataButton.onClick = function() {
-    saveClickerState();
-};
-
-// Event listener for load button
-loadDataButton.onclick = function() {
-    const data = loadGameState();
-    inventory = data.inventory;
-    automatorRates = data.automatorRates;
-    automatorRecipes = data.automatorRecipes;
-    itemRecipes = data.itemRecipes;
-
-    updateInventoryDisplay();
-    updateButtonDisplays();
-    updateAutomatorDisplays();
-    console.log("Game progress loaded.");
-};
-
-// Event listener for reset button
-// resetButton.onclick = function() {
-//     resetGameState();
-//     inventory = {};
-//     automatorRates = {};
-//     automatorRecipes = {};
-//     itemRecipes = {};
-
-//     updateInventoryDisplay();
-//     updateButtonDisplays();
-//     updateAutomatorDisplays();
-//     console.log("Game progress reset.");
-// };
+// Interval timers for each resource generator
+var generationIntervals = {};
 
 // On load
 // Load data
@@ -70,6 +40,25 @@ startModal.style.display = "block";
 startButton.onclick = function()
 {
     startModal.style.display = "none";
+};
+
+// Event listener for save button
+saveDataButton.onClick = function() {
+    saveClickerState();
+};
+
+// Event listener for load button
+loadDataButton.onclick = function() {
+    const data = loadGameState();
+    inventory = data.inventory;
+    automatorRates = data.automatorRates;
+    automatorRecipes = data.automatorRecipes;
+    itemRecipes = data.itemRecipes;
+
+    updateInventoryDisplay();
+    updateButtonDisplays();
+    updateAutomatorDisplays();
+    console.log("Game progress loaded.");
 };
 
 // Display update functions
@@ -147,8 +136,6 @@ function updateButtonDisplays() {
     });
 }
 
-// Interval timers for each resource generator
-var generationIntervals = {};
 function initializeAutomators()
 {
     automators.forEach(automator => {
