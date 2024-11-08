@@ -9,7 +9,7 @@ var automators = document.querySelectorAll('.automator');
 // Button references
 var saveDataButton = document.getElementById("saveDataButton");
 var loadDataButton = document.getElementById("loadDataButton");
-// var resetButton = document.getElementById("resetButton");
+var resetButton = document.getElementById("resetButton");
 
 // Interval timers for each resource generator
 var generationIntervals = {};
@@ -60,6 +60,14 @@ loadDataButton.onclick = function() {
     updateAutomatorDisplays();
     console.log("Game progress loaded.");
 };
+
+resetButton.onClick = function()
+{
+    resetGameState();
+    updateInventoryDisplay();
+    updateButtonDisplays();
+    updateAutomatorDisplays();
+}
 
 // Display update functions
 // Funciton to update inventory display

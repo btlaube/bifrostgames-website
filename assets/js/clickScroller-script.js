@@ -133,10 +133,39 @@ function loadGameState() {
 }
 
 // Function to reset game state
-// function resetGameState() {
-//     localStorage.removeItem("inventory");
-//     localStorage.removeItem("automatorRates");
-//     localStorage.removeItem("automatorRecipes");
-//     localStorage.removeItem("itemRecipes");
-//     console.log("Game progress reset.");
-// }
+function clearProgress() {
+    inventory = {
+        "coal": 0,
+        "copper": 0,
+        "iron": 0,
+        "sulfur": 0,
+        "magnesium": 0
+    };
+    itemRecipes = {
+        "coal": {},                    // No cost or prerequisite for coal
+        "copper": {"coal": 1},         // Copper requires 1 Coal
+        "iron": {"copper": 2},         // Iron requires 2 Copper
+        "sulfur": {"iron": 3},         // Sulfur requires 3 Iron
+        "magnesium": {"sulfur": 4}     // Magnesium requires 4 Sulfur
+    };
+    automatorRecipes = {
+        "coal-automator": {"copper": 10},
+        "copper-automator": {"iron": 10},
+        "iron-automator": {"sulfur": 10},
+        "sulfur-automator": {"magnesium": 10},
+    }
+    automatorRates = {
+        "coal-automator": 0, // initially 0 until activated by first click
+        "copper-automator": 0,
+        "iron-automator": 0,
+        "sulfur-automator": 0
+    };
+}
+// Function to reset game state
+function resetGameState() {
+    localStorage.removeItem("inventory");
+    localStorage.removeItem("automatorRates");
+    localStorage.removeItem("automatorRecipes");
+    localStorage.removeItem("itemRecipes");
+    console.log("Game progress reset.");
+}
