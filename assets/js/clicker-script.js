@@ -105,9 +105,11 @@ player.spendItem("Stone", 50);
 player.outputData();
 
 var buttonElements = document.querySelectorAll('.resourceButton');
-var buttons = {}
-buttons[0] = new Button("Generate Coal", "coal", 1, buttonElements[0]);
-buttons[0] = new Button("Generate Copper", "copper", 1, buttonElements[0]);
-buttons[0] = new Button("Generate Iron", "iron", 1, buttonElements[0]);
-for (var button in buttons)
-    button.updateDisplay();
+var buttons = [
+    new Button("Generate Coal", "coal", 1, buttonElements[0]),
+    new Button("Generate Copper", "copper", 1, buttonElements[1]),
+    new Button("Generate Iron", "iron", 1, buttonElements[2])
+];
+
+// Iterate and update display
+buttons.forEach(button => button.updateDisplay());
