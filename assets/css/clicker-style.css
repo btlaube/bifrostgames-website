@@ -108,14 +108,16 @@ button {
 
 .horizontal-container {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-around; /* Space out buttons evenly */
+    align-items: center; /* Center buttons vertically within the container */
 }
 
 .resourceButton {
     border-color: rgb(125, 0, 125);    
     display: flex;
-    flex-direction: row; /* Ensures horizontal alignment */
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Centers children vertically */
+    flex-direction: column; /* Align child elements vertically */
+    justify-content: center; /* Center child elements vertically */
+    align-items: center; /* Center child elements horizontally */
+    padding: 10px;
+    gap: 5px; /* Optional: adds space between child elements */
 }
