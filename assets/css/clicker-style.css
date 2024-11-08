@@ -23,6 +23,11 @@ body {
     align-items: center;
 }
 
+/* Classes */
+.element-box {
+    padding: 50px 20px;
+}
+
 .game{
     width: 500px;
     height: 200px;
