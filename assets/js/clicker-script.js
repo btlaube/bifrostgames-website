@@ -109,10 +109,10 @@ player.outputData();
 
 var buttonElements = document.querySelectorAll('.resourceButton');
 var buttons = [
-    new Button("Generate Coal", "coal", 1, buttonElements[0]),
-    new Button("Generate Copper", "copper", 1, buttonElements[1]),
-    new Button("Generate Iron", "iron", 1, buttonElements[2])
+    new Button("Generate Coal", "coal", 1, buttonElements[0], player),
+    new Button("Generate Copper", "copper", 1, buttonElements[1], player),
+    new Button("Generate Iron", "iron", 1, buttonElements[2], player)
 ];
 
-// Iterate and update display
+// Update display for all buttons
 buttons.forEach(button => button.updateDisplay());
