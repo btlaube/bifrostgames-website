@@ -91,7 +91,7 @@ class Button
             resourceElement.textContent = `${this.resource}`;
 
         if (clickValueElement)
-            clickValueElement.textContent = `${this.clickValue}`;
+            clickValueElement.textContent = `${this.clickValue}/click`;
     }
 
 }
