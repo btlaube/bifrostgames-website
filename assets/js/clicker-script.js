@@ -67,6 +67,38 @@ class Inventory
     }
 }
 
+class Button
+{
+    constructor(label, resource, clickValue, display)
+    {
+        this.label = label;
+        this.resource = resource;
+        this.clickValue = clickValue;
+        this.display = display;
+    }
+
+    updateDisplay()
+    {
+        const resource = this.display.id.split('-')[0]; // Get copper from copper-button
+        const recipe = itemRecipes[resource];
+        
+        // Get the specific child elements within the parent display
+        const labelElement = this.display.querySelector(`#label`);
+        const resourceElement = this.display.querySelector(`#resource`);
+        const clickValueElement = this.display.querySelector(`#clickValue`);
+
+        if (labelElement)
+            labelElement.textContent = `${this.label}`;
+
+        if (resourceElement)
+            resourceElement.textContent = `${this.resource}`;
+
+        if (clickValueElement)
+            clickValueElement.textContent = `${this.clickValue}`;
+    }
+
+}
+
 
 var player = new PlayerData();
 player.outputData();
@@ -74,3 +106,7 @@ player.collectItem("Stone", 100);
 player.outputData();
 player.spendItem("Stone", 50);
 player.outputData();
+
+var testButton = document.getElementById("testButton");
+button = new Button("Generate Coal", "coal", 1, testButton);
+button.updateDisplay();
