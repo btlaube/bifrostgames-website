@@ -105,5 +105,5 @@ player.spendItem("Stone", 50);
 player.outputData();
 
 var testButton = document.getElementById("testButton");
-button = new Button("Generate Coal", "coal", 1, testButton);
+var button = new Button("Generate Coal", "coal", 1, testButton);
 button.updateDisplay();
