@@ -13,52 +13,67 @@
         <!-- Main Display Sections: Right to Left Order -->
         <div id="mainDisplay" class="horizontal-container">
             
-            <!-- Save/Load Section -->
-            <div class="element-box vertical-container">
+            <!-- Data Management Section -->
+            <div class="element-box">
                 <h2>Data Management</h2>
-                <button class="resourceButton">Save Game</button>
-                <button class="resourceButton">Load Game</button>
+                <div class="vertical-container">
+                    <button class="resourceButton">Save Game</button>
+                    <button class="resourceButton">Load Game</button>
+                </div>
             </div>
     
             <!-- Inventory Section -->
-            <div class="element-box horizontal-container">
+            <div class="element-box">
                 <h2>Player Inventory</h2>
-                <div class="vertical-container equipped-items">
-                    <h3>Equipped Items</h3>
-                    <p>Weapon: Sword</p>
-                    <p>Shield: Iron Shield</p>
-                    <p>Armor: Leather Armor</p>
-                </div>
-                <div class="grid-container grid-2x3">
-                    <h3>Unequipped Items</h3>
-                    <button class="resourceButton">Potion</button>
-                    <button class="resourceButton">Bow</button>
-                    <button class="resourceButton">Helmet</button>
-                    <button class="resourceButton">Boots</button>
-                    <button class="resourceButton">Ring</button>
-                    <button class="resourceButton">Amulet</button>
+                <div class="horizontal-container">
+                    <!-- Equipped Items -->
+                    <div class="element-box">
+                        <h3>Equipped Items</h3>
+                        <div class="vertical-container equipped-items">
+                            <p>Weapon: Sword</p>
+                            <p>Shield: Iron Shield</p>
+                            <p>Armor: Leather Armor</p>
+                        </div>
+                    </div>
+                    <!-- Unequipped Items -->
+                    <div class="element-box">
+                        <h3>Unequipped Items</h3>
+                        <div class="grid-container grid-2x3">
+                            <button class="resourceButton">Potion</button>
+                            <button class="resourceButton">Bow</button>
+                            <button class="resourceButton">Helmet</button>
+                            <button class="resourceButton">Boots</button>
+                            <button class="resourceButton">Ring</button>
+                            <button class="resourceButton">Amulet</button>
+                        </div>
+                    </div>
                 </div>
             </div>
     
-            <!-- Generators Section -->
-            <div class="element-box horizontal-container">
+            <!-- Resource Generators Section -->
+            <div class="element-box">
                 <h2>Resource Generators</h2>
-                <button class="resourceButton">Wood Cutter</button>
-                <button class="resourceButton">Stone Miner</button>
-                <button class="resourceButton">Gold Digger</button>
-                <button class="resourceButton">Fish Farmer</button>
+                <div class="horizontal-container">
+                    <button class="resourceButton">Wood Cutter</button>
+                    <button class="resourceButton">Stone Miner</button>
+                    <button class="resourceButton">Gold Digger</button>
+                    <button class="resourceButton">Fish Farmer</button>
+                </div>
             </div>
     
             <!-- Player Stats Section -->
-            <div class="element-box vertical-container">
+            <div class="element-box">
                 <h2>Player Stats</h2>
-                <p>Health: 100</p>
-                <p>Mana: 75</p>
-                <p>Strength: 20</p>
-                <p>Agility: 15</p>
+                <div class="vertical-container">
+                    <p>Health: 100</p>
+                    <p>Mana: 75</p>
+                    <p>Strength: 20</p>
+                    <p>Agility: 15</p>
+                </div>
             </div>
         </div>
     </div>
+    
     
 
     <div id="startModal" class="modal">
