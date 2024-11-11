@@ -1,9 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-}
-
 :root {
     --bgColor: #131313;
     --bgColor2: #360034;
@@ -58,41 +52,6 @@ nav a:hover {
     border: 1px solid rgb(125, 0, 125);
     margin: auto;
 }
-#character{
-    width: 17px;
-    height: 51px;
-    background-color: rgba(100, 0, 100, 0);
-    background-image: url("https://bifrostgames.org/assets/img/JumpGame/Player.png");
-    position:relative;
-    top: 149px;
-}
-.animate{
-    animation: jump 0.3s linear;
-}
-@keyframes jump{
-    0%{top: 149px;}
-    30%{top: 99px;}
-    70%{top: 99px;}
-    100%{top: 149px;}
-}
-
-#block{
-    background-color: rgba(255, 255, 255, 0);
-    background-image: url("https://bifrostgames.org/assets/img/JumpGame/Haz.png");
-    width: 18px;
-    height: 18px;
-    position: relative;
-    top: 131px;
-    left: 500px;
-    animation: none; /* No animation by default (wait until game start) */
-}
-@keyframes block{
-    0%{left: 500px}
-    100%{left: -20px}
-}
-p{
-    text-align: center;
-}
 
 .modal {
     display: none; /* Hide the modal by default */
@@ -135,7 +94,8 @@ button {
     position: absolute; 
     top: 0;
     left: 0;
-    width: 100%;
+    width: 900px;
+    height: 1000px;
     padding: 20px;
     background-color: var(--bgColor);
     color: var(--accentColor);
