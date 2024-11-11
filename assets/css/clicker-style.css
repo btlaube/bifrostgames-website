@@ -4,6 +4,13 @@
     overflow-x: hidden;
 }
 
+:root {
+    --bgColor: #280126;
+    --bgColor2: #050505;
+    --accentColor: #ffffff;
+    --accentColor2: #61005c;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding: 10rem;
@@ -21,6 +28,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Nav Tabs */
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 5px;
+    color: var(--accentColor);
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
 }
 
 /* Classes */
@@ -112,6 +141,13 @@ button {
     align-items: center; /* Center buttons vertically within the container */
 }
 
+.vertical-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-around; /* Space out items evenly */
+    align-items: center; /* Center items horizontally within the container */
+}
+
 .resourceButton {
     border-color: rgb(125, 0, 125);    
     display: flex;
@@ -120,4 +156,21 @@ button {
     align-items: center; /* Center child elements horizontally */
     padding: 10px;
     gap: 5px; /* Optional: adds space between child elements */
+}
+
+#gameContainer
+{
+    background-color: var(--bgColor);
+}
+
+#column1
+{
+    background-color: var(--bgColor2);
+    color: var(--accentColor);
+}
+
+#column2
+{
+    background-color: var(--bgColor2);
+    color: var(--accentColor);
 }
