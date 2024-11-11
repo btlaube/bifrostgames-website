@@ -136,12 +136,14 @@ button {
 }
 
 .horizontal-container {
+    padding: 50px 20px;
     display: flex;
     justify-content: space-around; /* Space out buttons evenly */
     align-items: center; /* Center buttons vertically within the container */
 }
 
 .vertical-container {
+    padding: 50px 20px;
     display: flex;
     flex-direction: column; /* Stack items vertically */
     justify-content: space-around; /* Space out items evenly */
@@ -161,6 +163,8 @@ button {
 #gameContainer
 {
     background-color: var(--bgColor);
+    width: 100%;
+    height: auto;
 }
 
 #columns
