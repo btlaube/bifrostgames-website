@@ -130,57 +130,95 @@ button {
     to { opacity: 1; }
 }
 
-/* Classes */
-.element-box {
-    padding: 50px 20px;
+/* Positioning the Game Container */
+#gameContainer {
+    position: absolute; /* Allows free positioning */
+    top: 0; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
+    width: 400px;
+    background-color: var(--bgColor);
+    color: var(--accentColor);
+    padding: 20px;
+    border: 2px solid var(--accentColor);
 }
 
+/* General Box Styling */
+.element-box {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Flex Containers */
 .horizontal-container {
-    padding: 50px 20px;
     display: flex;
-    justify-content: space-around; /* Space out buttons evenly */
-    align-items: center; /* Center buttons vertically within the container */
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .vertical-container {
-    padding: 50px 20px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: space-around; /* Space out items evenly */
-    align-items: center; /* Center items horizontally within the container */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.resourceButton {
-    border-color: rgb(125, 0, 125);    
-    display: flex;
-    flex-direction: column; /* Align child elements vertically */
-    justify-content: center; /* Center child elements vertically */
-    align-items: center; /* Center child elements horizontally */
-    padding: 10px;
-    gap: 5px; /* Optional: adds space between child elements */
+/* Modular Layout Helpers */
+.column {
+    flex: 1;
+    min-width: 150px;
 }
 
-#gameContainer
-{
-    background-color: var(--bgColor);
+.row {
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-2x2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Table Styling */
+.game-table {
     width: 100%;
-    height: auto;
+    border-collapse: collapse;
 }
 
-#columns
-{
-    background-color: var(--bgColor);
-    color: var(--accentColor);
+.game-table th, .game-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
 }
 
-#column1
-{
+.game-table th {
+    background-color: #f0f0f0;
+}
+
+/* Resource Button Styling */
+.resourceButton {
+    border: 2px solid rgb(125, 0, 125);
     background-color: var(--bgColor2);
     color: var(--accentColor);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-#column2
-{
-    background-color: var(--bgColor2);
-    color: var(--accentColor);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #gameContainer {
+        width: 100%;
+        left: 0;
+    }
+    .horizontal-container {
+        flex-direction: column;
+    }
 }
