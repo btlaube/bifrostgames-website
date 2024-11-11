@@ -10,77 +10,56 @@
     <div id="gameContainer" class="element-box">
         <h1>Game Interface</h1>
     
-        <!-- Two Columns with Sample Data -->
-        <div id="columns" class="horizontal-container">
-            <div class="vertical-container column">
+        <!-- Main Display Sections: Right to Left Order -->
+        <div id="mainDisplay" class="horizontal-container">
+            
+            <!-- Save/Load Section -->
+            <div class="element-box vertical-container">
+                <h2>Data Management</h2>
+                <button class="resourceButton">Save Game</button>
+                <button class="resourceButton">Load Game</button>
+            </div>
+    
+            <!-- Inventory Section -->
+            <div class="element-box horizontal-container">
+                <h2>Player Inventory</h2>
+                <div class="vertical-container equipped-items">
+                    <h3>Equipped Items</h3>
+                    <p>Weapon: Sword</p>
+                    <p>Shield: Iron Shield</p>
+                    <p>Armor: Leather Armor</p>
+                </div>
+                <div class="grid-container grid-2x3">
+                    <h3>Unequipped Items</h3>
+                    <button class="resourceButton">Potion</button>
+                    <button class="resourceButton">Bow</button>
+                    <button class="resourceButton">Helmet</button>
+                    <button class="resourceButton">Boots</button>
+                    <button class="resourceButton">Ring</button>
+                    <button class="resourceButton">Amulet</button>
+                </div>
+            </div>
+    
+            <!-- Generators Section -->
+            <div class="element-box horizontal-container">
+                <h2>Resource Generators</h2>
+                <button class="resourceButton">Wood Cutter</button>
+                <button class="resourceButton">Stone Miner</button>
+                <button class="resourceButton">Gold Digger</button>
+                <button class="resourceButton">Fish Farmer</button>
+            </div>
+    
+            <!-- Player Stats Section -->
+            <div class="element-box vertical-container">
                 <h2>Player Stats</h2>
                 <p>Health: 100</p>
-                <p>Mana: 50</p>
-                <p>Experience: 1200</p>
-            </div>
-            <div class="vertical-container column">
-                <h2>Inventory</h2>
-                <ul>
-                    <li>Sword</li>
-                    <li>Shield</li>
-                    <li>Potion</li>
-                </ul>
+                <p>Mana: 75</p>
+                <p>Strength: 20</p>
+                <p>Agility: 15</p>
             </div>
         </div>
+    </div>
     
-        <!-- Sample Table of Game Data -->
-        <div class="element-box">
-            <h2>Leaderboard</h2>
-            <table class="game-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Player</th>
-                        <th>Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Alice</td>
-                        <td>1500</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Bob</td>
-                        <td>1200</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Charlie</td>
-                        <td>900</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    
-        <!-- Grid of Buttons -->
-        <div class="element-box grid-container grid-2x2">
-            <button class="resourceButton">Attack</button>
-            <button class="resourceButton">Defend</button>
-            <button class="resourceButton">Use Potion</button>
-            <button class="resourceButton">Run</button>
-        </div>
-    
-        <!-- Horizontal List of Buttons -->
-        <div class="element-box horizontal-container">
-            <button class="resourceButton">Inventory</button>
-            <button class="resourceButton">Map</button>
-            <button class="resourceButton">Settings</button>
-        </div>
-    
-        <!-- Vertical List of Buttons -->
-        <div class="element-box vertical-container">
-            <button class="resourceButton">Save Game</button>
-            <button class="resourceButton">Load Game</button>
-            <button class="resourceButton">Exit</button>
-        </div>
-    </div>   
 
     <div id="startModal" class="modal">
         <div class="modal-content">

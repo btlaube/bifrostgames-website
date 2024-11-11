@@ -130,16 +130,25 @@ button {
     to { opacity: 1; }
 }
 
-/* Positioning the Game Container */
+/* Game Container Styling */
 #gameContainer {
-    position: absolute; /* Allows free positioning */
-    top: 0; /* Adjust as needed */
-    left: 0; /* Adjust as needed */
-    width: 400px;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
     background-color: var(--bgColor);
     color: var(--accentColor);
-    padding: 20px;
     border: 2px solid var(--accentColor);
+}
+
+/* Main Display Horizontal Arrangement */
+#mainDisplay {
+    display: flex;
+    flex-direction: row-reverse; /* Right to Left */
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 /* General Box Styling */
@@ -156,6 +165,7 @@ button {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
 }
 
 .vertical-container {
@@ -163,43 +173,25 @@ button {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-}
-
-/* Modular Layout Helpers */
-.column {
-    flex: 1;
-    min-width: 150px;
-}
-
-.row {
-    flex-wrap: wrap;
     gap: 10px;
 }
 
-/* Grid Layout */
+/* Modular Layout Helpers */
 .grid-container {
     display: grid;
     gap: 10px;
 }
 
-.grid-2x2 {
+.grid-2x3 {
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* Table Styling */
-.game-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.game-table th, .game-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
-
-.game-table th {
-    background-color: #f0f0f0;
+/* Equipped Items Styling */
+.equipped-items {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border: 1px solid var(--accentColor);
+    border-radius: 8px;
 }
 
 /* Resource Button Styling */
@@ -210,15 +202,20 @@ button {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+    width: 120px;
+}
+
+/* Save/Load, Inventory, Generators, Stats */
+button {
+    width: 150px;
+    text-align: center;
+    margin: 5px 0;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    #gameContainer {
-        width: 100%;
-        left: 0;
-    }
-    .horizontal-container {
-        flex-direction: column;
+    #mainDisplay {
+        flex-direction: column-reverse;
+        align-items: stretch;
     }
 }
