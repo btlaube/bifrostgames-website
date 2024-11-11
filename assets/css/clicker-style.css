@@ -5,8 +5,8 @@
 }
 
 :root {
-    --bgColor: #280126;
-    --bgColor2: #050505;
+    --bgColor: #131313;
+    --bgColor2: #360034;
     --accentColor: #ffffff;
     --accentColor2: #61005c;
 }
@@ -20,7 +20,7 @@ html {
 
 body {
     max-width: 900px;
-    background-color: rgb(10, 0, 10);
+    background-color: #000000;
     padding: 50px 20px;
     text-align: left;
     color: whitesmoke;
@@ -50,11 +50,6 @@ nav a {
 nav a:hover {
     background-color: var(--accentColor2);
     color: var(--accentColor);
-}
-
-/* Classes */
-.element-box {
-    padding: 50px 20px;
 }
 
 .game{
@@ -135,6 +130,11 @@ button {
     to { opacity: 1; }
 }
 
+/* Classes */
+.element-box {
+    padding: 50px 20px;
+}
+
 .horizontal-container {
     display: flex;
     justify-content: space-around; /* Space out buttons evenly */
@@ -161,6 +161,12 @@ button {
 #gameContainer
 {
     background-color: var(--bgColor);
+}
+
+#columns
+{
+    background-color: var(--bgColor);
+    color: var(--accentColor);
 }
 
 #column1
