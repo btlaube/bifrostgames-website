@@ -7,81 +7,211 @@
 </head>
 <body>
 
-    <div id="gameContainer" class="element-box">
+    <div id="gameContainer">
         <h1>Game Interface</h1>
-    
         <!-- Main Display Sections: Right to Left Order -->
         <div id="mainDisplay" class="horizontal-container">
             
-            <!-- Data Management Section -->
-            <div class="element-box">
-                <h2>Data Management</h2>
+            <div class="element-box stats">
+                <h2>Player</h2>
                 <div class="vertical-container">
-                    <button class="resourceButton">Save Game</button>
-                    <button class="resourceButton">Load Game</button>
+                    <p>Currency: 50</p>
+                    <p>Level: 2</p>
                 </div>
-            </div>
-    
-            <!-- Inventory Section -->
-            <div class="element-box">
-                <h2>Player Inventory</h2>
-                <div class="horizontal-container">
-                    <!-- Equipped Items -->
-                    <div class="element-box">
-                        <h3>Equipped Items</h3>
-                        <div class="vertical-container equipped-items">
-                            <p>Weapon: Sword</p>
-                            <p>Shield: Iron Shield</p>
-                            <p>Armor: Leather Armor</p>
-                        </div>
-                    </div>
-                    <!-- Unequipped Items -->
-                    <div class="element-box">
-                        <h3>Unequipped Items</h3>
-                        <div class="grid-container grid-2x3">
-                            <button class="resourceButton">Potion</button>
-                            <button class="resourceButton">Bow</button>
-                            <button class="resourceButton">Helmet</button>
-                            <button class="resourceButton">Boots</button>
-                            <button class="resourceButton">Ring</button>
-                            <button class="resourceButton">Amulet</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Resource Generators Section -->
-            <div class="element-box">
-                <h2>Resource Generators</h2>
-                <div class="horizontal-container">
-                    <button class="resourceButton">Wood Cutter</button>
-                    <button class="resourceButton">Stone Miner</button>
-                    <button class="resourceButton">Gold Digger</button>
-                    <button class="resourceButton">Fish Farmer</button>
-                </div>
-            </div>
-    
-            <!-- Player Stats Section -->
-            <div class="element-box">
-                <h2>Player Stats</h2>
+                
+                <h2>Stats</h2>
                 <div class="vertical-container">
-                    <p>Health: 100</p>
+                    <p>Health: 50</p>
                     <p>Mana: 75</p>
                     <p>Strength: 20</p>
                     <p>Agility: 15</p>
                 </div>
+                
+                <!-- New Resources Section -->
+                <h2>Resources</h2>
+                <div class="vertical-container">
+                    <p>Sticks: <span id="stick-count">0</span></p>
+                    <p>Logs: <span id="log-count">0</span></p>
+                    <p>Pine Logs: <span id="log-count">0</span></p>
+                    <p>Ironwood Logs: <span id="ironwood-log-count">0</span></p>
+                    <p>Stones: <span id="stone-count">0</span></p>
+                    <p>Coals: <span id="coal-count">0</span></p>
+                    <p>Coppers: <span id="copper-count">0</span></p>
+                    <p>Irons: <span id="iron-count">0</span></p>
+                    <p>Golds: <span id="gold-count">0</span></p>
+                    <p>Rubies: <span id="ruby-count">0</span></p>
+                    <p>Diamonds: <span id="diamond-count">0</span></p>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    
+            
 
-    <div id="startModal" class="modal">
-        <div class="modal-content">
-            <span id="startModalText"></span>
-            <button id="startButton">Start</button>
-        </div>
-    </div>
+            
+            <!-- Resource Generators Section -->
+            <div class="element-box">
+                <h2>Resource Generators</h2>
+                <div class="vertical-container">
+                    <!-- Mine Resource Generators -->
+                    <div class="horizontal-container">
+                        <p class="generators-label">Mine</p>
+                        <div class="element-box">
+                            <div class="horizontal-container resource-generators">
+                                <!-- Automator Info Section -->
+                                <div class="automator-info">
+                                    <p>Cost: <span id="mine-automator-cost">100 logs</span></p>
+                                    <button id="buy-mine-automator" class="buy-automator">Hire worker</button>
+                                    <p>Workers hired: <span id="mine-automator-count">0</span></p>
+                                    <p>Output:</p>
+                                    <span id="mine-generation-rate">0 sticks/sec</span>
+                                    <span id="mine-generation-rate">0 logs/sec</span>
+                                    <span id="mine-generation-rate">0 ironwood/sec</span>
+                                </div>
+                                <!-- Resource Buttons -->
+                                <button class="resourceButton" id="stick-button">
+                                    <p>1 stick/click</p>
+                                </button>
+                                <button class="resourceButton" id="log-button">
+                                    <p>1 log/click</p>
+                                </button>
+                                <button class="resourceButton" id="ironwood-log-button">
+                                    <p>1 ironwood log/click</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forest Resource Generators -->
+                <div class="horizontal-container">
+                    <p class="generators-label">Forest</p>
+                    <div class="element-box">
+                        <div class="horizontal-container resource-generators">
+                            <!-- Automator Info Section -->
+                            <div class="automator-info">
+                                <p>Cost: <span id="forest-automator-cost">200 stones</span></p>
+                                <button id="buy-forest-automator" class="buy-automator">Hire worker</button>
+                                <p>Workers hired: <span id="forest-automator-count">0</span></p>
+                                <p>Output:</p>
+                                <span id="forest-generation-rate">0 stone/sec</span><br>
+                                <span id="forest-generation-rate">0 coal/sec</span><br>
+                                <span id="forest-generation-rate">0 copper/sec</span>
+                            </div>
+                            <!-- Resource Buttons -->
+                            <button class="resourceButton" id="stone-button">
+                                <p>1 stone/click</p>
+                            </button>
+                            <button class="resourceButton" id="coal-button">
+                                <p>1 coal/click</p>
+                            </button>
+                            <button class="resourceButton" id="copper-button">
+                                <p>1 copper/click</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Mine Resource Generators -->
+                <div class="horizontal-container">
+                    <p class="generators-label">Deep Mine</p>
+                    <div class="element-box">
+                        <div class="horizontal-container resource-generators">
+                            <!-- Automator Info Section -->
+                            <div class="automator-info">
+                                <p>Cost: <span id="deepmine-automator-cost">300 golds</span></p>
+                                <button id="buy-deepmine-automator" class="buy-automator">Hire worker</button>
+                                <p>Workers hired: <span id="deepmine-automator-count">0</span></p>
+                                <p>Output:</p>
+                                <span id="deepmine-generation-rate">0 gold/sec</span><br>
+                                <span id="deepmine-generation-rate">0 ruby/sec</span><br>
+                                <span id="deepmine-generation-rate">0 diamond/sec</span>
+                            </div>
+                            <!-- Resource Buttons -->
+                            <button class="resourceButton" id="gold-button">
+                                <p>1 gold/click</p>
+                            </button>
+                            <button class="resourceButton" id="ruby-button">
+                                <p>1 ruby/click</p>
+                            </button>
+                            <button class="resourceButton" id="diamond-button">
+                                <p>1 diamond/click</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>   <!-- resource generators div-->
+
+            <!-- Tool Inventory Section -->
+            <div class="element-box">
+                <h2>Tool Inventory</h2>
+                <div class="vertical-container">
+
+                    <!-- Mine Tool Slot -->
+                    <div class="horizontal-container">
+                        <p class="generators-label">Mine Tool</p>
+                        <div class="element-box">
+                            <div class="horizontal-container">
+                                <!-- Tool Info Section -->
+                                <div class="tool-info">
+                                    <p>Current Tool Level: <span id="mine-tool-level">1</span></p>
+                                    <p>Upgrade Cost: <span id="mine-tool-upgrade-cost">50 logs</span></p>
+                                    <button id="upgrade-mine-tool" class="upgrade-tool-button">Upgrade Tool</button>
+                                    <p>Efficiency: <span id="mine-tool-efficiency">1.0x</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forest Tool Slot -->
+                    <div class="horizontal-container">
+                        <p class="generators-label">Forest Tool</p>
+                        <div class="element-box">
+                            <div class="horizontal-container">
+                                <!-- Tool Info Section -->
+                                <div class="tool-info">
+                                    <p>Current Tool Level: <span id="forest-tool-level">1</span></p>
+                                    <p>Upgrade Cost: <span id="forest-tool-upgrade-cost">100 stones</span></p>
+                                    <button id="upgrade-forest-tool" class="upgrade-tool-button">Upgrade Tool</button>
+                                    <p>Efficiency: <span id="forest-tool-efficiency">1.0x</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deep Mine Tool Slot -->
+                    <div class="horizontal-container">
+                        <p class="generators-label">Deep Mine Tool</p>
+                        <div class="element-box">
+                            <div class="horizontal-container">
+                                <!-- Tool Info Section -->
+                                <div class="tool-info">
+                                    <p>Current Tool Level: <span id="deepmine-tool-level">1</span></p>
+                                    <p>Upgrade Cost: <span id="deepmine-tool-upgrade-cost">200 golds</span></p>
+                                    <button id="upgrade-deepmine-tool" class="upgrade-tool-button">Upgrade Tool</button>
+                                    <p>Efficiency: <span id="deepmine-tool-efficiency">1.0x</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="vertical-container">
+                <div class="element-box">
+                    <h2>Scroller</h2>
+                    <button class="resourceButton">
+                        <p>Travel to another realm</p>
+                    </button>
+                </div>
+                <div class="element-box">
+                    <h2>Sample alert!</h2>
+                    <p>This is a sample alert.</p>
+                </div>
+            </div>
+            
+
+        </div>  <!-- maindisplay div-->
+    </div>  <!-- gameContainer div-->
 </body>
 <script src="/assets/js/clicker-script.js"></script>
 </html>
