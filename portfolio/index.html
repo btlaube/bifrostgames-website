@@ -214,31 +214,45 @@
                     </div>
                 </div>
 
-                <p><a><iframe src="https://bifrostgames.org/portfolio" width="100%" height="auto" frameborder="0" style="transform: scale(0.5); transform-origin: 0 0;"></iframe></a></p>
+                <div id="liveImageContainer">
+                    <a><img id="liveImage" src="" alt="Live preview" width="100%" height="auto"></a>
+                </div>
                 <div class="text-container">
                     <a class="subtle-link" href="https://bifrostgames.itch.io/deep-space-clean-up" target="_blank"><h2>BifrostGames.org</h2></a>
                     <h3>March 25th, 2023</h3>
-                    <p>I registed the domain, bifrostgames.org, on March 25th, 2023 to host the games I developed under the moniker, BifrostGames, as well as, to showcase my professional experience and qualifications.</p>
+                    <p>I registered the domain, bifrostgames.org, on March 25th, 2023 to host the games I developed under the moniker, BifrostGames, as well as, to showcase my professional experience and qualifications.</p>
                     <p>This project has been a continuous work in progress that I continue to update and develop as I improve as a programmer and designer.</p>
                 </div>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-
+                
                 <script>
-                    // Target the element to capture
-                    const targetElement = document.querySelector('.text-container'); // Replace with the container you want to capture
-                    
-                    // Function to capture and update iframe
-                    function updateIframe() {
-                        html2canvas(targetElement).then(canvas => {
-                            const iframe = document.getElementById('liveScreen');
-                            const dataUrl = canvas.toDataURL();  // Convert canvas to image
-                            iframe.src = dataUrl;  // Set the iframe source to the image
-                        });
+                    // Target the element to capture (the content inside liveImageContainer)
+                    const targetElement = document.getElementById('liveImageContainer');
+                
+                    // Function to capture and update the image
+                    function updateImage() {
+                        // Ensure targetElement is visible and fully rendered before capturing
+                        if (targetElement) {
+                            html2canvas(targetElement, {
+                                logging: false,  // Disable logging
+                                scrollY: 0,      // Prevent scrolling (important for capturing)
+                                scrollX: 0,
+                                useCORS: true    // Enable CORS support for images
+                            }).then(canvas => {
+                                const image = document.getElementById('liveImage');
+                                // Ensure the image source is set to the canvas data URL
+                                image.src = canvas.toDataURL('image/png');
+                            }).catch(err => {
+                                console.error('Error capturing the screenshot:', err);
+                            });
+                        }
                     }
                 
-                    // Set up a timer to update the iframe every 500 milliseconds (adjust as needed)
-                    setInterval(updateIframe, 500);
+                    // Set up a timer to update the image every 500 milliseconds (adjust the interval as needed)
+                    setInterval(updateImage, 500);
                 </script>
+                
+                
+                
 
             </div>
 	</section>

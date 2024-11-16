@@ -1,45 +1,27 @@
-<!-- Home Page Showcase -->
-<section id="highlighted-games">
-  <h2>Highlighted Games</h2>
-  <div class="game-card">
-    <h3>Game Title 1</h3>
-    <p>A short description of the game, highlighting key features or themes.</p>
-    <a href="https://itch.io/link-to-game" target="_blank">Play Now</a>
-  </div>
-  <div class="game-card">
-    <h3>Game Title 2</h3>
-    <p>A short description of the game, highlighting key features or themes.</p>
-    <a href="https://itch.io/link-to-game" target="_blank">Play Now</a>
-  </div>
-  <div class="game-card">
-    <h3>Game Title 3</h3>
-    <p>A short description of the game, highlighting key features or themes.</p>
-    <a href="https://itch.io/link-to-game" target="_blank">Play Now</a>
-  </div>
-</section>
-
-<style>
-  #highlighted-games {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .game-card {
-    border: 2px solid #ccc;
-    padding: 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  .game-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  .game-card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-  .game-card a {
-    text-decoration: none;
-    color: #0073e6;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to Image</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="content">
+        <h1>Hello, World!</h1>
+        <p>This content will be rendered to an image.</p>
+    </div>
+    <button id="capture">Capture as Image</button>
+    <script>
+        document.getElementById("capture").onclick = function() {
+            html2canvas(document.getElementById("content")).then(function(canvas) {
+                var img = canvas.toDataURL("image/png");
+                var link = document.createElement("a");
+                link.href = img;
+                link.download = "captured_image.png";
+                link.click();
+            });
+        };
+    </script>
+</body>
+</html>
