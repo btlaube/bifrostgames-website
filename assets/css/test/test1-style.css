@@ -156,19 +156,12 @@ h3 {
 
 .image-text-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
 }
   
 .image-text-container img {
     width: 300px;
     height: auto;
-    padding: 10px;
-}
-
-.image-text-container iframe {
-    width: 300px;
-    height: 100%;
     padding: 10px;
 }
 
@@ -188,15 +181,9 @@ h3 {
     color: var(--accentColor2)
 }
 
-.horizontal-container-between {
+.horizontal-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.horizontal-container-around {
-    display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 

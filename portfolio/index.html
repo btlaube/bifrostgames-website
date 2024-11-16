@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ben Laube</title>
+	<title>Portfolio | BifrostGames</title>
     <link rel="icon" href="/assets/img/Bridge2_Gradient2_LPBG_Larger.png" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 	<meta charset="UTF-8">
@@ -15,24 +15,31 @@
     
 	<header>
         <nav>
-			<ul>
+            <ul>
                 <li><a href="/">BifrostGames</a></li>
-                <li><a href="/portfolio">/ Portfolio</a></li>
-			</ul>
-		</nav>
-		<nav>
-			<ul>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#links">Links</a></li>
-                <li><a href="/portfolio/devlogs/">Dev Logs</a></li>
-			</ul>
-		</nav>
-	</header>
+                <li><a href="/portfolio/">Portfolio</a></li>
+                <li><a href="/games/">Games</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
     
 	<section id="banner" class="element-box">
         <a href="./"><img src="../assets/img/BannerLogo_BenLaube.png" alt="Bifrost Games Logo"></a>
 	</section>
-    <hr>
+
+    <!-- Sticky Navigation Tabs -->
+    <div class="sticky-nav">
+        <ul class="nav-tabs">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#links">Links</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </div>
+
 	<section id="about" class="element-box">
 		<h1>About Me</h1>
         <div class="image-text-container">
@@ -50,7 +57,7 @@
     <section id="resume" class="element-box">
         <h1><a class="subtle-link" href="../assets/Resume.pdf" download="ben_laube_resume">Resume&#10515;</a></h1>
     
-        <div class="horizontal-container">
+        <div class="horizontal-container-around">
             <a class="subtle-link">ben.t.laube@gmail.com</a>
             <a class="subtle-link" href="https://bifrostgames.org/" target="_blank">bifrostgames.org</a>
             <a class="subtle-link" href="https://www.linkedin.com/in/ben-laube/" target="_blank">linkedin.com/in/ben-laube</a>
@@ -63,7 +70,7 @@
         <p>Honors: National Society of Collegiate Scholars, University Honors Program; GPA: 3.7</p>
     
         <h2>Professional Experience</h2>
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">Intermediate Tutor, Tutor.com: A Service of the Princeton Review</h3>
             <span class="alignright">November 2023 - Present</span>
         </div>
@@ -72,7 +79,7 @@
             <li>Analyzed complex coding problems upon first encounter, providing clear, tailored explanations that guided students to independently reach solutions and deepen their understanding.</li>
         </ul>
     
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">Learning Assistant, University of Nebraska-Lincoln, Lincoln, NE</h3>
             <span class="alignright">January 2022 - May 2024</span>
         </div>
@@ -82,7 +89,7 @@
         </ul>
     
         <h2>Leadership Experience</h2>
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">Treasurer and Team Lead, UNL Game Development Club</h3>
             <span class="alignright">August 2020 - May 2024</span>
         </div>
@@ -91,18 +98,18 @@
             <li>Guided teams in game development principles, including level design, prototyping, and playtesting.</li>
             <li>Received feedback from faculty experts and presented projects at end-of-semester campus-wide events.</li>
         </ul>
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">Course Leader, University of Nebraska-Lincoln, Lincoln, NE</h3>
             <span class="alignright">August 2023 - May 2024</span>
         </div>
         <ul>
             <li>Delivered a 20 minute lecture on academic honesty and grading policies to promote academic integrity.</li>
             <li>Coordinated Learning Assistants and distributed grading for efficient and quality feedback to students.</li>
-            <li>Documented course leadership responsibilities in a public GitHub repository to aid future leaders.</li>
+            <li>Documented course leadership responsibilities in a public Source Code to aid future leaders.</li>
         </ul>
     
         <h2>Projects</h2>
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">GMTK Game Jam 2024: “Roll or Die”</h3>
             <span class="alignright">July 2022</span>
         </div>
@@ -111,7 +118,7 @@
             <li>Managed project scope by defining key features and prioritizing tasks for rapid prototyping, ensuring successful completion and competition placement.</li>
         </ul>
     
-        <div class="horizontal-container">
+        <div class="horizontal-container-between">
             <h3 class="alignleft">Virtual Reality Senior Design Project: “XRSurvive”</h3>
             <span class="alignright">August 2023 - May 2024</span>
         </div>
@@ -128,9 +135,8 @@
         </ul>
     </section>
     
-
     <section id="links" class="element-box">
-        <h1>Links</h1>
+        <h1>Profile Links</h1>
         <a class="link" href="https://github.com/btlaube" target="_blank">
             <i class="fab fa-github-square">&nbsp;</i> GitHub (for project repositories)
         </a>
@@ -138,6 +144,104 @@
             <i class="fab fa-linkedin">&nbsp;</i> LinkedIn (for professional experience and qualifications)
         </a>
     </section>
+
+    <section id="projects" class="element-box">
+		<h1>Projects</h1>
+        <hr>
+            <div>
+                <div class="image-text-container">
+                    <button class="animButton"><a><img src="/assets/img/Games/SS_Cover.png" alt="shifty-scales"></a></button>
+                    <div class="text-container">
+                        <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank"><h2>Shifty Scales</h2></a>
+                        <h3>August 20, 2024</h3>
+                        <p>At Shifty Scales, you run a shady shop with a clever machine that swaps the sizes of objects! Receive customer orders and solve puzzles by resizing and reshaping items to meet their demands.</p>
+                        <div class="horizontal-container-around">
+                            <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="subtle-link" href="https://github.com/btlaube/GMTK2024GameSubmission" target="_blank">Source Code</a>
+                        </div> 
+                    </div>
+                </div>
+    
+                <div class="image-text-container">
+                    <button class="animButton"><a><img src="/assets/img/Games/VG_Cover.png" alt="The Vice's Grip cover art"></a></button>
+                    <div class="text-container">
+                        <a class="subtle-link" href="https://bifrostgames.itch.io/vice-grip" target="_blank"><h2>The Vice's Grip</h2></a>
+                        <h3>October 2nd, 2023</h3>
+                        <p>Caught by the Trash Compactor Killer! Can you escape before the walls close in?</p>
+                        <div class="horizontal-container-around">
+                            <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="subtle-link" href="https://github.com/btlaube/GMTK2024GameSubmission" target="_blank">Source Code</a>
+                        </div>    
+                    </div>
+                </div>
+                
+                <div class="image-text-container">
+                    <button class="animButton"><a><img src="/assets/img/Games/AL_Cover.png" alt="At Large cover art"></a></button>
+                    <div class="text-container">
+                        <a class="subtle-link" href="https://bifrostgames.itch.io/at-large" target="_blank"><h2>At Large</h2></a>
+                        <h3>November 14th, 2022</h3>
+                        <p>You are an escaped convict at large, and every 5 seconds you need to make sure you are hidden amongst the crowd.</p>
+                        <div class="horizontal-container-around">
+                            <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="subtle-link" href="https://github.com/btlaube/GMTK2024GameSubmission" target="_blank">Source Code</a>
+                        </div>    
+                    </div>
+                </div>
+                
+                <div class="image-text-container">
+                    <button class="animButton"><a><img src="/assets/img/Games/RoD_Cover.png" alt="Roll or Die cover art"></a></button>
+                    <div class="text-container">
+                        <a class="subtle-link" href="https://bifrostgames.itch.io/roll-or-die" target="_blank"><h2>Roll or Die</h2></a>
+                        <h3>July 18th, 2022</h3>
+                        <p>Roll dice and choose to use the rolled values to heal, attack, or get more dice.</p>
+                        <div class="horizontal-container-around">
+                            <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="subtle-link" href="https://github.com/btlaube/GMTK2024GameSubmission" target="_blank">Source Code</a>
+                        </div>    
+                    </div>
+                </div>
+                
+                <div class="image-text-container">
+                    <button class="animButton"><a><img src="/assets/img/Games/DSCU_Cover.png" alt="Deep Space Clean Up cover art"></a></button>
+                    <div class="text-container">
+                        <a class="subtle-link" href="https://bifrostgames.itch.io/deep-space-clean-up" target="_blank"><h2>Deep Space Clean Up</h2></a>
+                        <h3>June 15th, 2022</h3>
+                        <p>Your crew of space janitors becomes stranded on an abandoned space station...and it looks like whoever this station belonged to was performing strange experiments.</p>
+                        <div class="horizontal-container-around">
+                            <a class="subtle-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="subtle-link" href="https://github.com/btlaube/GMTK2024GameSubmission" target="_blank">Source Code</a>
+                        </div>    
+                    </div>
+                </div>
+
+                <p><a><iframe src="https://bifrostgames.org/portfolio" width="100%" height="auto" frameborder="0" style="transform: scale(0.5); transform-origin: 0 0;"></iframe></a></p>
+                <div class="text-container">
+                    <a class="subtle-link" href="https://bifrostgames.itch.io/deep-space-clean-up" target="_blank"><h2>BifrostGames.org</h2></a>
+                    <h3>March 25th, 2023</h3>
+                    <p>I registed the domain, bifrostgames.org, on March 25th, 2023 to host the games I developed under the moniker, BifrostGames, as well as, to showcase my professional experience and qualifications.</p>
+                    <p>This project has been a continuous work in progress that I continue to update and develop as I improve as a programmer and designer.</p>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+                <script>
+                    // Target the element to capture
+                    const targetElement = document.querySelector('.text-container'); // Replace with the container you want to capture
+                    
+                    // Function to capture and update iframe
+                    function updateIframe() {
+                        html2canvas(targetElement).then(canvas => {
+                            const iframe = document.getElementById('liveScreen');
+                            const dataUrl = canvas.toDataURL();  // Convert canvas to image
+                            iframe.src = dataUrl;  // Set the iframe source to the image
+                        });
+                    }
+                
+                    // Set up a timer to update the iframe every 500 milliseconds (adjust as needed)
+                    setInterval(updateIframe, 500);
+                </script>
+
+            </div>
+	</section>
 
     <footer>
         <nav>
