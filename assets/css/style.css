@@ -28,33 +28,6 @@ html {
     padding: 50px 0px;
 }
 
-/* Links */
-#links {
-    max-width: 800px;
-    margin: 27px auto;
-}
-
-.link {
-    color: var(--accentColor);
-    border: solid var(--accentColor) 2px;
-    border-radius: 10px;
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.link:hover {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
-.link:active {
-    background-color: var(--accentColor);
-    color: var(--bgColor);
-}
-
 /* Footer styles */
 footer {
     padding-top: 150px;
@@ -68,6 +41,7 @@ body {
     background: var(--bgColor2);
     color: var(--accentColor);
     max-width: 900px;
+    width: 900px;
 }
 
 nav ul {
@@ -91,39 +65,11 @@ nav a:hover {
     color: var(--accentColor);
 }
 
-/* Sticky Navigation Styles */
-.sticky-nav {
-    position: sticky;
-    top: 0;
-    background-color: var(--bgColor2);
-    border-bottom: 2px solid #ddd;
-    z-index: 1000;
-}
-
-.nav-tabs {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-    list-style: none;
-}
-
-.nav-tabs li a {
-    text-decoration: none;
-    color: var(--accentColor);
-    padding: 0.5rem 1rem;
-    transition: color 0.3s;
-}
-
-.nav-tabs li a:hover {
-    background-color: var(--accentColor2);
-    color: var(--accentColor);
-}
 
 hr {
     border: solid 1px var(--accentColor);
     border-color: var(--accentColor);
     width: 100%;
-    margin: 0px 0;
 }
 
 h1 {
@@ -164,12 +110,66 @@ h3 {
     width: 300px;
     height: auto;
     padding: 10px;
+    /* box-shadow: 0px 0px 8px 1px rgba(200, 200, 200, 0.8);
+    border-radius: 5px; */
 }
 
 
+
+/* Sticky Navigation Styles */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background-color: var(--bgColor2);
+    border-bottom: 2px solid #ddd;
+    z-index: 1000;
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    list-style: none;
+}
+
+.nav-tabs li a {
+    text-decoration: none;
+    color: var(--accentColor);
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.nav-tabs li a:hover {
+    background-color: var(--accentColor2);
+    color: var(--accentColor);
+}
+
+.link {
+    /* width: 100%; */
+    height: auto;
+    color: var(--accentColor);
+    border: solid var(--accentColor) 2px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: var(--accentColor2);
+    color: var(--bgColor);
+}
+
+.link:active {
+    background-color: var(--accentColor);
+    color: var(--bgColor);
+}
+
 .text-container {
     text-align: left;
-    width: auto;
+    width: 100%;
     padding: 10px;
 }
 
@@ -194,6 +194,15 @@ h3 {
     justify-content: space-around;
     align-items: center;
 }
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the items horizontally */
+    justify-content: flex-start; /* Aligns items at the top */
+    gap: 20px; /* Adds space between the items */
+}
+  
 
 /* Easter eggs */
 #score {
@@ -264,7 +273,7 @@ button {
 #button1 {
     width: 32px;
     height: 32px;
-    margin-left: 500px;
+    margin-left: 400px;
 }
 
 #button2 {
