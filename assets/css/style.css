@@ -201,6 +201,9 @@ h3 {
     gap: 20px; /* Adds space between the items */
 }
   
+.border-image {
+    border: 2px solid var(--accentColor);
+}
 
 /* Easter eggs */
 #score {

@@ -21,7 +21,7 @@
     </header>
 
     <section id="banner" class="element-box">
-        <a href="./"><img src="/assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+        
     </section>
 
     <!-- Sticky Navigation Tabs -->
@@ -35,8 +35,7 @@
     <h1>Astral Pulse Dev Log</h1>
     <hr>
 
-    <main>
-        
+    <main>        
         <section class="entry">
             <h2>Dev Log 1: Design Pitch</h2>
             <h3>November 23, 2023</h3>
@@ -75,16 +74,16 @@
             <h2>Dev Log 2: Player Movement</h2>
             <h3>November 24, 2023</h3>
             <p>Day 2 was spent ironing out a movement system. It was fairly simple and did not take long. As you can see from the GIF below it is heavily inspired by asteroids as well as OUTBREAK</p>
-            <a><img src="/assets/img/Devlogs/astralPulse/playerMovement.gif" alt=""></a>
+            <a><img class="border-image" src="/assets/img/Devlogs/astralPulse/playerMovement.gif" alt=""></a>
         </section>
 
         <section class="entry">
             <h2>Dev Log 3: Player Attack Visuals</h2>
             <h3>November 25, 2023</h3>
             <p>I wanted to get an early start on visuals, specifically player visuals. I created multiple animations for the player: open/power on, idle, and a multi-stage attack animation that indicates the current charged attack level. </p>
-            <a><img src="/assets/img/Devlogs/astralPulse/openIdle.gif" alt=""></a>
+            <a><img class="border-image" src="/assets/img/Devlogs/astralPulse/openIdle.gif" alt=""></a>
             <p>I wanted another way to show the player charging up an attack with varying levels of output potential, so I used a particle system and wrote a script that modified various attributes of the particle system to show an increase in power. </p>
-            <a><img src="/assets/img/Devlogs/astralPulse/openIdleCharge.gif" alt=""></a>
+            <a><img class="border-image" src="/assets/img/Devlogs/astralPulse/openIdleCharge.gif" alt=""></a>
             <p>I had not implemented many particle systems in past projects, so this was a learning experience. I had not realized how many customizable features Unity particle systems had, so I spent quite a bit of time experimenting. One thing I added was making the particles increase with opacity over their lifetime, which gave the effect of the particles materializing around the player. I also wanted the particles to have trails that would increase in opacity as well; however, I could not figure out a way to do this. It seems using Unity’s built in particle trail would apply the opacity to the entire trail as opposed to giving the trail its own gradient. I may come back to this later; however, I think the particles without trails achieves the look I was going for.</p>
         </section>
 
@@ -92,9 +91,9 @@
             <h2>Dev Log 4: Additional Player Visuals</h2>
             <h3>November 26, 2023</h3>
             <p>I added a twinkle animation to the player attack for some additional visual juice. I looked up twinling stars for reference and drew the animation in Aesprite.</p>
-            <a><img src="/assets/img/Devlogs/astralPulse/attackTwinkle.gif" alt=""></a>
+            <a><img class="border-image" src="/assets/img/Devlogs/astralPulse/attackTwinkle.gif" alt=""></a>
             <p>I also made an attack pulse animation. I drew the image in gimp, applied a wave filter, applied the same filter on different layers but with varying phase shift to create a growing effect, then I copied the file into Aesprite to shrink/pixelate it and finally cleaned it up a bit.</p>
-            <a><img src="/assets/img/Devlogs/astralPulse/attackShowcase.gif" alt=""></a>
+            <a><img class="border-image" src="/assets/img/Devlogs/astralPulse/attackShowcase.gif" alt=""></a>
         </section>
 
         <section class="entry">
@@ -190,7 +189,12 @@
     </main>
 
     <footer>
-        <p>&copy; 2023 Ben Laube</p>
+        <nav>
+            <ul>
+                <li><a href="#banner">To top</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2024 BifrostGames. All rights reserved.</p>
     </footer>
 </body>
 </html>
