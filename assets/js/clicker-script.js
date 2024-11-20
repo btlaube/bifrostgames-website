@@ -34,7 +34,7 @@ initializeAutomators();
 saveGameState(inventory, automatorRates, automatorRecipes, itemRecipes);
 
 // Show start modal
-startModalText.innerHTML = "Play the jump game!";
+startModalText.innerHTML = "Start clicker";
 startModal.style.display = "block";
 
 startButton.onclick = function()
