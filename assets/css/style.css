@@ -221,7 +221,25 @@ button {
     border: none;
     background: none;
     outline: none;
+    cursor: pointer; /* Ensures it's clear that the button is clickable */
 }
+
+#pfpClicker img {
+    display: block; /* Removes inline spacing for images */
+    max-width: 100%; /* Ensures responsive image sizing */
+    height: auto; /* Maintains image proportions */
+}
+
+/* Hover effect */
+#pfpClicker:hover #profileImage {
+    content: url('/assets/img/PfpAnimFrames/Frame3.png'); /* Replaces the image when hovered */
+}
+
+/* Active effect */
+#pfpClicker:active #profileImage {
+    content: url('/assets/img/PfpAnimFrames/Frame2.png'); /* Replaces the image when clicked */
+}
+
 
 .animButton {
     position: relative;

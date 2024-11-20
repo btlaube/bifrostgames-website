@@ -27,7 +27,7 @@ const imageFrames = [
 pfpClicker.onclick = function()
 {
     addScore();
-    animatePfp();
+    // animatePfp();
     fadeInOverlay();
 };
 
