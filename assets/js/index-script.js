@@ -91,8 +91,8 @@ const games = [
         techStack: "Unity, C#, Blender, Audacity",
         jam: "Pirate Software Game Jam 15",
         keyFeatures: [
-            "Stealth mechanics: Navigate through levels by hiding in shadows.",
-            "Unique shadow retrieval system with dynamic light interactions.",
+            "Ability Progression: Unlock unique powers tied to collected artifacts, offering players new movement capabilities to overcome obstacles.",
+            "Dynamic Level Progression: ",
             "Artistic, atmospheric visuals and sound design."
         ]
     },
@@ -127,52 +127,6 @@ const games = [
             "Unique boss fights with mechanics tied to specific vices."
         ]
     }
-    // ,
-    // {
-    //     title: "At Large",
-    //     date: "March 12, 2024",
-    //     description: "a top-down action game where you play as a fugitive on the run, trying to evade capture while completing various heist missions.",
-    //     playLink: "https://bifrostgames.itch.io/at-large",
-    //     sourceLink: "https://github.com/btlaube/AtLarge2",
-    //     imageSrc: "/assets/img/Games/AL_Cover.png",
-    //     role: "Lead Developer & Game Designer",
-    //     techStack: "Unity, C#, Aseprite",
-    //     keyFeatures: [
-    //         "Dynamic heist mechanics with multiple approaches to missions.",
-    //         "AI-driven police chase system.",
-    //         "Procedural generation of some level elements."
-    //     ]
-    // },
-    // {
-    //     title: "Roll or Die",
-    //     date: "July 25, 2023",
-    //     description: "a dice-themed roguelike where you roll the dice to determine your abilities, facing randomized challenges with each roll.",
-    //     playLink: "https://bifrostgames.itch.io/roll-or-die",
-    //     sourceLink: "https://github.com/btlaube/GMTKGameJam",
-    //     imageSrc: "/assets/img/Games/RD_Cover.png",
-    //     role: "Game Developer & Designer",
-    //     techStack: "Unity, C#",
-    //     keyFeatures: [
-    //         "Unique dice-rolling mechanics that influence combat and abilities.",
-    //         "Procedurally generated dungeons and enemies.",
-    //         "Developed in 48 hours for a game jam."
-    //     ]
-    // },
-    // {
-    //     title: "Deep Space Clean Up",
-    //     date: "February 15, 2023",
-    //     description: "a metroidvania game where you clean up abandoned space stations infested with alien life.",
-    //     playLink: "https://bifrostgames.itch.io/deep-space-clean-up",
-    //     sourceLink: "https://github.com/btlaube/MetroidvaniaJamGame",
-    //     imageSrc: "/assets/img/Games/DSCU_Cover.png",
-    //     role: "Game Designer & Programmer",
-    //     techStack: "Unity, C#, Blender",
-    //     keyFeatures: [
-    //         "Classic metroidvania gameplay with unique cleaning mechanics.",
-    //         "Exploration of interconnected space stations.",
-    //         "Developed for Metroidvania Jam 2023."
-    //     ]
-    // }
 ];
 
 const gameContent = document.getElementById("game-content");
@@ -200,7 +154,6 @@ function createDots() {
         dotsContainer.appendChild(dot);
     });
 }
-
 
 // Function to update the highlighted dot
 function updateDots() {
@@ -245,25 +198,36 @@ function updateGameContent(newIndex, direction) {
             <div class="element-box">
                 <div class="image-text-container">
                     <button class="animButton">
-                        <a href="${game.playLink}" target="_blank">
-                            <img src="${game.imageSrc}" alt="${game.title} Cover Image">
-                        </a>
+                        ${game.imageSrc ? `<a>
+                            <img src="${game.imageSrc}" alt="${game.title || 'Game'} Cover Image">
+                        </a>` : ''}
                     </button>
                     <div class="text-container">
-                        <a class="subtle-link" href="${game.playLink}" target="_blank">
+                        ${game.title ? `<a class="subtle-link" href="${game.playLink || '#'}" target="_blank">
                             <h2>${game.title}</h2>
-                        </a>
-                        <h3>Release Date: ${game.date}</h3>
-                        <p><strong>${game.title}</strong> ${game.description}</p>
+                        </a>` : ''}
+                        ${game.date ? `<h3>Release Date: ${game.date}</h3>` : ''}
+                        ${game.description ? `<p><strong>${game.title || 'Untitled'}</strong> ${game.description}</p>` : ''}
+                        ${game.jam ? `<p><strong>Submission to ${game.jam || 'Untitled'}</strong></p>` : ''}
                         <div class="element-box links-section">
-                            <a class="link" href="${game.playLink}" target="_blank">Play Demo</a>
-                            <a class="link" href="${game.sourceLink}" target="_blank">Source Code</a>
+                            ${game.playLink ? `<a class="link" href="${game.playLink}" target="_blank">Play Demo</a>` : ''}
+                            ${game.sourceLink ? `<a class="link" href="${game.sourceLink}" target="_blank">Source Code</a>` : ''}
                         </div>
                     </div>
                 </div>
-                <p><strong>Tech Stack:</strong> ${game.techStack}</p>
+                ${game.techStack ? `<p><strong>Tech Stack:</strong> ${game.techStack}</p>` : ''}
             </div>
         `;
+
+        // Removed Key features
+        // TODO: Return once all key features are written
+                    // ${game.keyFeatures ? `
+                    //     <div class="key-features">
+                    //         <h3>Key Features:</h3>
+                    //         <ul>
+                    //             ${game.keyFeatures.map(feature => `<li>${feature}</li>`).join('')}
+                    //         </ul>
+                    //     </div>` : ''}
         
         // Step 3: Before fading in, move the new game to the opposite direction
         gameContent.style.transition = "transform 0s"; // Instant transition for moving off-screen
