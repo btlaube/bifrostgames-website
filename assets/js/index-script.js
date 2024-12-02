@@ -81,22 +81,6 @@ function activateShine()
 
 const games = [
     {
-        title: "Shifty Scales",
-        date: "August 20, 2024",
-        description: "is a puzzle game where you run a shop that fixes mis-scaled items with a special scale-shifting machine. Solve tricky puzzles and satisfy customer orders by resizing and reassembling objects.",
-        playLink: "https://bifrostgames.itch.io/shifty-scales",
-        sourceLink: "https://github.com/btlaube/GMTK2024GameSubmission",
-        imageSrc: "/assets/img/Games/SS_Cover.png",
-        // role: "Lead Developer & Puzzle Designer",
-        techStack: "Unity, C#, Aseprite, Audacity, GIMP",
-        jam: "GMTK Game Jam 2024",
-        keyFeatures: [
-            "Unique puzzle mechanics: Swap or match the scales of various objects to solve puzzles.",
-            "Drag-and-drop gameplay: Use the scale-shifting machine to reassemble items to their correct sizes.",
-            "Completed in 96 hours for GMTK 2024 Game Jam"
-        ]
-    },
-    {
         title: "Shadow Retriever",
         date: "July 10, 2024",
         description: "puts you in the role of the alchemist’s shadow, summoned to retrieve powerful lost artifacts. Explore the alchemist's lair and unlock new alchemical abilities from the items you collect to aid in your quest.",
@@ -110,6 +94,22 @@ const games = [
             "Stealth mechanics: Navigate through levels by hiding in shadows.",
             "Unique shadow retrieval system with dynamic light interactions.",
             "Artistic, atmospheric visuals and sound design."
+        ]
+    },
+    {
+        title: "Shifty Scales",
+        date: "August 20, 2024",
+        description: "is a puzzle game where you run a shop that fixes mis-scaled items with a special scale-shifting machine. Solve tricky puzzles and satisfy customer orders by resizing and reassembling objects.",
+        playLink: "https://bifrostgames.itch.io/shifty-scales",
+        sourceLink: "https://github.com/btlaube/GMTK2024GameSubmission",
+        imageSrc: "/assets/img/Games/SS_Cover.png",
+        // role: "Lead Developer & Puzzle Designer",
+        techStack: "Unity, C#, Aseprite, Audacity, GIMP",
+        jam: "GMTK Game Jam 2024",
+        keyFeatures: [
+            "Unique puzzle mechanics: Swap or match the scales of various objects to solve puzzles.",
+            "Drag-and-drop gameplay: Use the scale-shifting machine to reassemble items to their correct sizes.",
+            "Completed in 96 hours for GMTK 2024 Game Jam"
         ]
     },
     {
