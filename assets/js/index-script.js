@@ -87,8 +87,9 @@ const games = [
         playLink: "https://bifrostgames.itch.io/shifty-scales",
         sourceLink: "https://github.com/btlaube/GMTK2024GameSubmission",
         imageSrc: "/assets/img/Games/SS_Cover.png",
-        role: "Lead Developer & Puzzle Designer",
+        // role: "Lead Developer & Puzzle Designer",
         techStack: "Unity, C#, Aseprite, Audacity, GIMP",
+        jam: "GMTK Game Jam 2024",
         keyFeatures: [
             "Unique puzzle mechanics: Swap or match the scales of various objects to solve puzzles.",
             "Drag-and-drop gameplay: Use the scale-shifting machine to reassemble items to their correct sizes.",
@@ -102,8 +103,9 @@ const games = [
         playLink: "https://bifrostgames.itch.io/shadow-retriever",
         sourceLink: "https://github.com/btlaube/ShadowRetriever",
         imageSrc: "/assets/img/Games/SR_Cover.png",
-        role: "Lead Developer & Designer",
+        // role: "Lead Developer & Designer",
         techStack: "Unity, C#, Blender, Audacity",
+        jam: "Pirate Software Game Jam 15",
         keyFeatures: [
             "Stealth mechanics: Navigate through levels by hiding in shadows.",
             "Unique shadow retrieval system with dynamic light interactions.",
@@ -117,7 +119,7 @@ const games = [
         playLink: "https://bifrostgames.itch.io/vice-grip",
         sourceLink: "",
         imageSrc: "/assets/img/Games/VG_Cover.png",
-        role: "Game Designer & Level Designer",
+        // role: "Game Designer & Level Designer",
         techStack: "Unity, C#, Photoshop",
         keyFeatures: [
             "Challenging platforming and combat mechanics.",
@@ -259,7 +261,6 @@ function updateGameContent(newIndex, direction) {
                         </div>
                     </div>
                 </div>
-                <p><strong>Role:</strong> ${game.role}</p>
                 <p><strong>Tech Stack:</strong> ${game.techStack}</p>
             </div>
         `;
@@ -296,5 +297,3 @@ function pauseAndResumeAutoScroll() {
 updateGameContent(currentGameIndex, null); // Load first game without direction
 createDots();
 // Set interval for auto-scrolling
-const scrollInterval = 8000; // Interval time in milliseconds
-var autoScroll = setInterval(() => updateGameContent(currentGameIndex + 1, "next"), scrollInterval);

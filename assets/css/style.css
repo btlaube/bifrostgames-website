@@ -40,7 +40,7 @@ body {
     font-family: var(--font);
     background: var(--bgColor2);
     color: var(--accentColor);
-    max-width: 900px;
+    /* max-width: 900px; */
     width: 900px;
 }
 
@@ -90,10 +90,6 @@ h3 {
 }
 
 /* Classes */
-.element-box {
-    padding: 25px 20px;
-}
-
 .alignleft {
     float: left;
 }
@@ -101,19 +97,6 @@ h3 {
 .alignright {
     float: right;
 }
-
-.image-text-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.image-text-container img {
-    width: 300px;
-    height: auto;
-    padding: 10px;
-}
-
 
 /* Sticky Navigation Styles */
 .sticky-nav {
@@ -165,12 +148,6 @@ h3 {
     color: var(--bgColor);
 }
 
-.text-container {
-    text-align: left;
-    width: 100%;
-    padding: 10px;
-}
-
 .subtle-link {
     color: var(--accentColor);
     text-decoration: none;
@@ -179,6 +156,34 @@ h3 {
 .subtle-link:hover {
     text-decoration: underline; /* Underline on hover */
     color: var(--accentColor2)
+}
+
+/* Containers */
+.element-box {
+    padding: 25px 20px;
+}
+
+#featured {
+    background-color: var(--bgColor);
+    border-radius: 18px;
+}
+
+.image-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-text-container img {
+    width: 300px;
+    height: auto;
+    padding: 10px;
+}
+
+.text-container {
+    text-align: left;
+    width: 100%;
+    padding: 10px;
 }
 
 .horizontal-container-between {
@@ -191,6 +196,17 @@ h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 20px;
+}
+
+.horizontal-container-item {
+    width: 50%;
+}
+
+.horizontal-container-around img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .vertical-container {
@@ -200,7 +216,12 @@ h3 {
     justify-content: flex-start; /* Aligns items at the top */
     gap: 20px; /* Adds space between the items */
 }
-  
+
+.vertical-container img {
+    width: 300px;
+    height: auto;
+}
+
 .border-image {
     border: 2px solid var(--accentColor);
 }
