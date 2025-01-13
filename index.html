@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/home.css">
 </head>
 <body>
     <header>
@@ -21,87 +22,121 @@
         </nav>
     </header>
     
-    <section id="banner" class="element-box">
-        <a href="./"><img id="banner-image" src="../assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
-        <div class="horizontal-container-around">
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="HiddenAward1"></a>
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="HiddenAward2"></a>
-            <a class="hidden-award"><img src="/assets/img/Icons/HiddenAward.png" alt="HiddenAward3"></a>
+    <!-- <main> -->
+    <section id="banner" class="section banner">
+        <div class="banner-container">
+            <a href="./"><img class="banner-image" id="banner-image" src="../assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+            <hr>
         </div>
     </section>
 
     <!-- Sticky Navigation Tabs -->
     <div class="sticky-nav">
-        <ul class="nav-tabs">
+        <ul class="horizontal-container-between sticky-nav-tabs">
             <li><a href="#banner">Home</a></li>
             <li><a href="#featured-projects">Featured</a></li>
-            <li><a href="#links">Links</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#links">Links</a></li>
         </ul>
-    </div>    
-
-    <section id="featured-projects" class="element-box">
-		<h1>Featured Projects</h1>
-        <hr>
-        <div class="element-box">
-            <div id="game-display-container" class="game-container">
-                <div id="game-content" class="game-content"></div>
-            </div>
-            
-            <!-- Dots Indicator -->
-            <div id="dots-container" class="dots-container"></div>
-        </div>
-        <div class="element-box">
-            <a class="link" href="/games/">All Games</a>
-        </div>
-        <div>
-            <button class="hidden-button" id="button1"><img src="/assets/img/Icons/HiddenAward.png" alt="Alchemical Symbol"></button>
-        </div>
-	</section>
-            
-    <section id="links" class="element-box">
-        <h1>Links</h1>
-        <a class="link" href="https://www.youtube.com/@Bifrost_Games" target="_blank">
-            <i class="fab fa-youtube">&nbsp;</i> Youtube (for dev logs and trailers)
-        </a>
-        <a class="link" href="https://twitter.com/BifrostGamesDev" target="_blank">
-            <i class="fab fa-twitter">&nbsp;</i> Twitter (for updates)
-        </a>
-        <a class="link" href="https://bifrostgames.itch.io/" target="_blank">
-            <i class="fas fa-gamepad"></i> Itch.io (for my full games collections)
-        </a>
-    </section>
-    
-    <div>
-        <button class="hidden-button" id="button2"><img src="/assets/img/Icons/HiddenAward.png" alt="Alchemical Symbol"></button>
     </div>
 
-    <section id="about" class="element-box">
-		<h1>About Me</h1>
-        <div class="image-text-container">
-            <div class="text-container">
-                <p>Hi there!</p>
-                <p>My name is Ben Laube, the independent video game developer behind BifrostGames. I have been making games since 2019, and in that time I have developed games with my university's Game Development Club, participated in online game jams, such as GMTK, and published a mobile game.</p>
-                <!-- <p>View my <a href="/portfolio/" class="subtle-link">portfolio</a> for more about me...</p> -->
+    <section id="featured-projects" class="section">
+        <div class="container featured-projects">
+            <div class="vertical-container">
+                <h1>Featured Projects</h1>
+                <hr>
+                <div class="container game">
+                    <h2>Shadow of Alchemy</h2>
+                <div class="horizontal-container-around">
+                    <div class="vertical-container">
+                        <a><img src="assets/img/Games/shadow-retriever/screenshot-1.gif" class="display-image"></a>
+                        <div class="horizontal-container-around">
+                            <a><img src="assets/img/Games/shadow-retriever/screenshot-1.gif" class="dock-image"></a>
+                            <a><img src="assets/img/Games/shadow-retriever/screenshot-2.png" class="dock-image"></a>
+                            <a><img src="assets/img/Games/shadow-retriever/screenshot-3.png" class="dock-image"></a>
+                            <a><img src="assets/img/Games/shadow-retriever/screenshot-4.gif" class="dock-image"></a>
+                        </div>
+                    </div>
+                    <div class="vertical-container">
+                        <a><img src="assets/img/Games/SR_Cover.png" class="main-image"></a>
+                        <p>Shadow Retriever puts you in the role of the alchemist's shadow, summoned to retrieve powerful lost artifacts. Explore the alchemist's lair and unlock new alchemical abilities from the items you collect to aid in your quest.</p>
+                        <p class="align-left">Submission to Pirate Software Game Jam 15</p>
+                        <div class="horizontal-container-around">
+                            <a class="secondary-link" href="https://bifrostgames.itch.io/shadow-retriever" target="_blank">Play on Itch</a>
+                            <a class="secondary-link" href="https://github.com/btlaube/ShadowRetriever" target="_blank">Source Code</a>
+                        </div>
+                        <h4 class="align-right">Released: July 10, 2024</h4>
+                    </div>
+                </div>
             </div>
-            <a class="subtle-link" href="./jump" target="_blank"><img src="/assets/img/PfpAnimFrames/Frame1.png" alt="Hello, world!"></a>
+            
+            <div class="container game">
+                <h2>Shifty Scales</h2>
+                <div class="horizontal-container-around">
+                    <div class="vertical-container">
+                        <a><img src="assets/img/Games/SS_Cover.png" class="display-image"></a>
+                        <div class="horizontal-container-around">
+                            <a><img src="assets/img/Games/SS_Cover.png" class="dock-image"></a>
+                            <a><img src="assets/img/Games/SS_Cover.png" class="dock-image"></a>
+                            <a><img src="assets/img/Games/SS_Cover.png" class="dock-image"></a>
+                            <a><img src="assets/img/Games/SS_Cover.png" class="dock-image"></a>
+                        </div>
+                    </div>
+                    <div class="vertical-container">
+                        <a><img src="assets/img/Games/SS_Cover.png" class="main-image"></a>
+                        <p>Shifty Scales is a puzzle game where you run a shop that fixes mis-scaled items with a special scale-shifting machine. Solve tricky puzzles and satisfy customer orders by resizing and reassembling objects.</p>
+                        <p>Submission to GMTK Game Jam 2024</p>
+                        <div class="horizontal-container-around">
+                            <a class="secondary-link" href="https://bifrostgames.itch.io/shifty-scales" target="_blank">Play on Itch</a>
+                            <a class="secondary-link" href="https://github.com/btlaube/GMTKGameJam" target="_blank">Source Code</a>
+                        </div>
+                        <h4 class="align-right">Released: August 20, 2024</h4>
+                    </div>
+                </div>
+            </div>
+            <a class="secondary-link" href="/games/">More Games</a>
         </div>
-        <div class="element-box">
-            <a class="link" href="/about/">About (for more about me)</a>
-            <a class="link" href="/portfolio/">Portfolio (for my full projects list)</a>
+    </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container about-container">
+            <h1>About Me</h1>
+            <div class="horizontal-container-around">
+                <div class="vertical-container">
+                    <p>Hi there!</p>
+                    <p>My name is Ben Laube, the independent video game developer behind BifrostGames. I have been making games since 2019, and in that time I have developed games with my university's Game Development Club, participated in online game jams, such as GMTK, and published a mobile game.</p>
+                    <a class="secondary-link" href="/about/">More about me</a>
+                </div>
+                <a class="subtle-link" href="./jump" target="_blank"><img class="about-image" src="/assets/img/PfpAnimFrames/Frame1.png" alt="Hello, world!"></a>
+            </div>
         </div>
-        <div>
-            <button class="hidden-button" id="button3"><img src="/assets/img/Icons/HiddenAward.png" alt="Alchemical Symbol"></button>
+    </section>
+
+    <section id="links" class="section links">
+        <div class="container horizontal-container-around">
+            <a class="primary-link" href="https://www.youtube.com/@Bifrost_Games" target="_blank">
+                <i class="fab fa-youtube">&nbsp;</i> Youtube (for dev logs and trailers)
+            </a>
+            <a class="primary-link" href="https://twitter.com/BifrostGamesDev" target="_blank">
+                <i class="fab fa-twitter">&nbsp;</i> Twitter (for updates)
+            </a>
+            <a class="primary-link" href="https://bifrostgames.itch.io/" target="_blank">
+                <i class="fas fa-gamepad"></i> Itch.io (for my full games collections)
+            </a>
         </div>
-	</section>
+    </section>
+    <!-- </main> -->
        
     <footer>
-        <nav>
-            <ul>
-                <li><a href="#banner">To top</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 BifrostGames. All rights reserved.</p>
+        <div class="vertical-container">
+            <nav>
+                <ul>
+                    <li><a href="#banner">To top</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 BifrostGames. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 <script src="./assets/js/index-script.js"></script>

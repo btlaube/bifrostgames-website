@@ -1,0 +1,71 @@
+.entry {
+    max-width: 1200px;
+    background-color: var(--lightPurple3);
+    border-radius: 20px;
+    box-shadow: 0 0 3px 5px var(--shadowColor);
+}
+
+.entry h3 {
+    text-align: left;
+}
+
+ol, ul {
+    margin-left: 20px; /* Adjust indentation for all lists */
+  }
+
+ol ol, ul ul {
+    margin-left: 20px; /* Further indent nested lists */
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+#projects {
+    box-shadow: 0 0 3px 5px var(--shadowColor);
+}
+
+.project {
+    background: linear-gradient(to top left, var(--hoverAccent), rgba(0, 0, 0, 0));
+}
+
+.project-image {
+    width: auto;
+    height: auto;
+}
+
+#games {
+    box-shadow: 0 0 3px 5px var(--shadowColor);
+}
+
+.projects-container {
+    /* max-width: 1500px; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 30px;
+}
+
+/* Card styling */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 5px var(--shadowColor);
+    transition: transform 0.3s ease;
+    background-color: var(--darkPurple1);
+}
+
+#projects .secondary-link {
+    font-size: 1.125rem;
+}
+
+.project-card img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.project-card:hover {
+    transform: scale(1.065);
+}

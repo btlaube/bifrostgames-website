@@ -1,0 +1,12 @@
+.about-container {
+    max-width: 1200px;
+    background-color: var(--lightPurple3);
+    color: var(--textColor);
+    border-radius: 20px;
+    box-shadow: 0 0 3px 5px var(--shadowColor);
+}
+
+.about-image {
+    width: 400px;
+    height: auto;
+}

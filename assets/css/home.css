@@ -1,0 +1,63 @@
+#featured-projects {
+    color: var(--textColor); /* Updated for better readability */
+}
+
+.featured-projects {
+    gap: 20px;
+    background-color: var(--darkPurple1);
+    color: var(--textColor); /* Consistent text color */
+    border-radius: 15px;
+    box-shadow: 0 0 7px 1px var(--shadowColor);
+}
+
+.game {
+    background: linear-gradient(to top left, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    max-width: 1100px;
+}
+
+.display-image {
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px var(--shadowColor);
+}
+
+.dock-image {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.dock-image:hover {
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+.main-image {
+    width: 250px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin-left: 25%;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px var(--shadowColor);
+}
+
+.about-container {
+    max-width: 900px;
+    background-color: var(--lightPurple3);
+    color: var(--textColor);
+    border-radius: 20px;
+    box-shadow: 0 0 5px 2px var(--shadowColor);
+}
+
+.about-image {
+    width: 400px;
+    height: auto;
+}
+
+#links {
+    font-weight: bold;
+}

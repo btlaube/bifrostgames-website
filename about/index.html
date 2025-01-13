@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/about.css">
 </head>
 <body>
     <header>
@@ -21,42 +22,53 @@
         </nav>
     </header>
     
-    <section id="banner" class="element-box">
-        <a href="/index.html"><img id="banner-image" src="../assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+    <section id="banner" class="section banner">
+        <div class="banner-container">
+            <a href="./"><img class="banner-image" id="banner-image" src="../assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+            <hr>
+        </div>
     </section>
 
     <!-- Sticky Navigation Tabs -->
     <div class="sticky-nav">
-        <ul class="nav-tabs">
+        <ul class="horizontal-container-around sticky-nav-tabs">
             <li><a href="#banner">Home</a></li>
             <li><a href="#about">About</a></li>
         </ul>
-    </div>    
+    </div>
 
-    <section id="about" class="element-box">
-		<h1>About Me</h1>
-        <div class="image-text-container">
-            <div class="text-container">
-                <p>Hi there!</p>
-                <p>My name is Ben Laube, the independent video game developer behind BifrostGames. I have been making games since 2019, and in that time I have developed games with my university's Game Development Club, participated in online game jams, such as GMTK, and published a mobile game.</p>
-                <p>I recently graduated with a bachelor of science in Computer Science at the University of Nebraska-Lincoln. My passion is video game development, and I've been captivated by the endless possibilities of video games since childhood and making my own games for years. This passion motivated me to gain a strong education in programming and software design practices.</p>
-                <p>I have been making games for years, from block-based visual programming like Scratch to high-level game engines like Unity, and I hope to create innovative and exciting games that capture the imaginations of players around the world!</p>
-                <p>Thank you for taking the time to read a little bit about me.</p>
-                <p>More about BifrostGames coming soon...</p>
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="vertical-container">
+                <h1>About Me</h1>
+                <div class="horizontal-container-around">
+                    <div class="container vertical-container">
+                        <p>Hi there!</p>
+                        <p>My name is Ben Laube, the independent video game developer behind BifrostGames. I have been making games since 2019, and in that time I have developed games with my university's Game Development Club, participated in online game jams, such as GMTK, and published a mobile game.</p>
+                        <p>I recently graduated with a bachelor of science in Computer Science at the University of Nebraska-Lincoln. My passion is video game development, and I've been captivated by the endless possibilities of video games since childhood and making my own games for years. This passion motivated me to gain a strong education in programming and software design practices.</p>
+                        <p>I have been making games for years, from block-based visual programming like Scratch to high-level game engines like Unity, and I hope to create innovative and exciting games that capture the imaginations of players around the world!</p>
+                        <p>Thank you for taking the time to read a little bit about me.</p>
+                        <p>More about BifrostGames coming soon...</p>
+                    </div>
+                    <a><img class="about-image" id="profileImage" src="../assets/img/PfpAnimFrames/Frame1.png" alt="Hello, world!"></a>
+                </div>
             </div>
-            <a><img id="profileImage" src="../assets/img/PfpAnimFrames/Frame1.png" alt="Hello, world!"></a>
         </div>
+	</section>
+
+    <section id="about" class="section">
+		
 	</section>
     
     <footer>
-        <nav>
-            <ul>
-                <li><a href="#banner">To top</a></li>
-            </ul>
-        </nav>
-        <p>&copy; 2024 BifrostGames. All rights reserved.</p>
+        <div class="vertical-container">
+            <nav>
+                <ul>
+                    <li><a href="#banner">To top</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2024 BifrostGames. All rights reserved.</p>
+        </div>
     </footer>
-
-
 </body>
 </html>
