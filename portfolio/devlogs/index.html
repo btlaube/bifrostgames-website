@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/base.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/devlog.css">
 </head>
 <body>
     <header>
@@ -21,53 +22,65 @@
         </nav>
     </header>
 
-    <section id="banner" class="element-box">
-        <a href="./"><img src="/assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+    <section id="banner" class="section banner">
+        <div class="banner-container">
+            <a href="./"><img class="banner-image" id="banner-image" src="/assets/img/BannerLogo_Bifrost.png" alt="Bifrost Games Logo"></a>
+            <hr>
+        </div>
     </section>
 
     <!-- Sticky Navigation Tabs -->
     <div class="sticky-nav">
-        <ul class="nav-tabs">
+        <ul class="sticky-nav-tabs">
             <li><a href="#banner">Home</a></li>
         </ul>
     </div>
 
-	<section id="portfolio">
-		<h1>Development Logs</h1>
-        <div class="image-text-container">
-            <button class="animButton"><a><img src="/assets/img/Devlogs/astralPulse/NewCoverArt.png" alt="Astral Pulse Logo"></a></button>
-            <div class="text-container">
-                <a class="subtle-link" href="https://bifrostgames.itch.io/astral-pulse"><h2>Astral Pulse</h2></a>
-                <h3>December 6th, 2023</h3>
-                <p>Astral Pulse is an arcade-style game about piloting an orbital demolition drone and destroying incoming asteroids. You use a powerful pulse attack to break asteroids into fragments and collect the fragments to charge more attacks. Assignment completed for Game Design: Protyping in Unity.</p>
-                <div class="element-box">
-                    <a class="link" href="./astral-pulse.html">Development Log</a>
+	<section id="projects" class="section">
+        <div class="container vertical-container">
+            <h1>Development Logs</h1>
+            <div class="container projects-container">
+                <!-- Astral Pulse -->
+                <div class="container horizontal-container-around project-card">
+                    <div class="vertical-container">
+                        <img src="/assets/img/Devlogs/astralPulse/NewCoverArt.png" alt="shadow-retriever cover art">
+                        <div class="horizontal-container-around">
+                            <a class="secondary-link" href="./astral-pulse.html">Development Log</a>
+                        </div>
+                    </div>
+                    <div class="vertical-container project-info">
+                        <p>Assignment completed for Game Design: Protyping in Unity, to employ techniques taught in class to develop a full game with minimal creative restraint. Additionally, integrated notes from multiple playtesting sessions held during class time.</p>
+                    </div>
+                </div>
+
+                <!-- Personal Project (Faded Forest) -->
+                <div class="container horizontal-container-around project-card">
+                    <div class="vertical-container">
+                        <img src="/assets/img/Devlogs/personalProject/FF_Cover.png" alt="Personal Project cover art">
+                        <div class="horizontal-container-around">
+                            <a class="secondary-link" href="./personal-project.html">Development Log</a>
+                        </div>
+                    </div>
+                    <div class="vertical-container project-info">
+                        <p>Assignment, completed for Game Design: Protyping in Unity, to employ techniques taught in class to develop a full game with minimal creative restraint. Additionally, integrated notes from multiple playtesting sessions held during class time.</p>
+                    </div>
+                </div>
+
+                <!-- Modification Project -->
+                <div class="container horizontal-container-around project-card">
+                    <div class="vertical-container">
+                        <img src="/assets/img/Devlogs/ModificationProject/City_v1.png" alt="Modification Project cover art">
+                        <div class="horizontal-container-around">
+                            <a class="secondary-link" href="./modification-project.html">Development Log</a>
+                        </div>
+                    </div>
+                    <div class="vertical-container project-info">
+                        <p>Assignment, completed for Game Design: Protyping in Unity, to modify one of Unity's sample projects into a novel game. Familiarized myself with a professional example of how to use Unity's built in systems to develop a working game.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="image-text-container">
-            <button class="animButton"><a><img src="/assets/img/Devlogs/personalProject/FF_Cover.png" alt="Deep Space Clean Up"></a></button>
-            <div class="text-container">
-                <a class="subtle-link" href="./personal-project.html"><h2>Personal Project</h2></a>
-                <h3>October 13th, 2022</h3>
-                <p>Assignment, completed for Game Design: Protyping in Unity, to employ techniques taught in class to develop a full game with minimal creative restraint. Additionally, integrated notes from multiple playtesting sessions held during class time.</p>
-                <div class="element-box">
-                    <a class="link" href="./personal-project.html">Development Log</a>
-                </div>
-            </div>
-        </div>
-        <div class="image-text-container">
-            <button class="animButton"><a><img src="/assets/img/Devlogs/ModificationProject/City_v1.png" alt="At Large"></button>
-            <div class="text-container">
-                <a class="subtle-link" href="./modification-project.html"><h2>Modification Project</h2></a>
-                <h3>September 25th, 2022</h3>
-                <p>Assignment, completed for Game Design: Protyping in Unity, to modify one of Unity's sample projects into a novel game. Familiarized myself with a professional example of how to use Unity's built in systems to develop a working game.</p>
-                <div class="element-box">
-                    <a class="link" href="./modification-project.html">Development Log</a>
-                </div>
-            </div>
-        </div>
-	</section>
+    </section>
 
     <footer>
         <nav>
@@ -79,5 +92,4 @@
     </footer>
 
 </body>
-<script src="/assets/js/index-script.js"></script>
 </html>
