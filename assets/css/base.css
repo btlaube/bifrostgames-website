@@ -249,10 +249,12 @@ header {
 
 nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav li {
-    display: inline-block;
     margin-right: 10px;
 }
 
@@ -267,6 +269,11 @@ nav a {
 nav a:hover {
     background-color: var(--secondaryAccent);
     color: var(--accentColor);
+}
+
+.nav-image {
+    height: 40px;
+    width: auto;
 }
 
 /* Footer styles */
@@ -335,6 +342,6 @@ footer {
 }
 
 .banner-image {
-    height: 180px;
+    height: 150px;
     width: auto;
 }
