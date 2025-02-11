@@ -103,7 +103,6 @@ hr {
 /* Headings */
 h1, h2, h3 {
     color: var(--textColor2);
-    margin-bottom: 1rem;
 }
 
 h1 {
@@ -123,8 +122,18 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 p, a, li {
     font-size: 1.25rem;
+}
+
+ul {
+    margin-left: 50px;
 }
 
 /* Reusable Components */
@@ -199,9 +208,17 @@ p, a, li {
 .vertical-container {
     display: flex;
     flex-direction: column;
-    align-items: stretch; 
-    justify-content: flex-start; 
-    gap: 20px; 
+    justify-content: center; 
+    align-items: center;
+    gap: 20px;
+}
+
+.vertical-container-stretch {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between; 
+    gap: 20px;  
 }
 
 .vertical-container h1 {

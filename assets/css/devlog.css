@@ -10,11 +10,11 @@
 }
 
 ol, ul {
-    margin-left: 20px; /* Adjust indentation for all lists */
-  }
+    margin-left: 50px; /* Adjust indentation for all lists */
+}
 
 ol ol, ul ul {
-    margin-left: 20px; /* Further indent nested lists */
+    margin-left: 25px; /* Further indent nested lists */
 }
 
 li {
