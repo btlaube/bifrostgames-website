@@ -18,8 +18,16 @@ hr {
     margin-bottom: 30px;
 }
 
-ul, li {
+ol, ul, li {
     margin-bottom: 10px;
+}
+
+ol, ul {
+    margin-left: 50px; /* Adjust indentation for all lists */
+}
+
+ol ol, ul ul {
+    margin-left: 25px; /* Further indent nested lists */
 }
 
 .game-banner-container {
